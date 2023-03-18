@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cocina de Daniel</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/fefd93842b.js" crossorigin="anonymous"></script>
+<title>Feedback Sent</title>
+</head>
+<body>
+    <header style="background-color:Yellow;">
+        <nav>
+            <a style="background-color:rgb(223, 211, 211);" href="index.html">Home</a>
+            <a style="background-color:rgb(223, 211, 211);" href="acerca_de.html">Acerca de</a>
+            <a style="background-color:rgb(223, 211, 211);" href="contacto.html">Contacto</a>
+            <a style="background-color:rgb(223, 211, 211);" href="sucursales.html">Sucursales</a>
+            <a style="background-color:rgb(223, 211, 211);" href="registro.html">Registrese</a>
+        </nav>
+        <h1 style=" text-align: center;">La Cocina de Daniel</h1>
+    </header>
+<p align=center>&nbsp;</p>
+<h1 align=center><font size="+1">The following information has been sent as your
+  feedback:</font></h1>
+
+<table border="1" align=center width="226">
+  <tr>
+    <th align="center">Form Field</th>
+    <th align="center">Field Value</th>
+  </tr>
+
+<script language="javascript">
+var args = location.search.substr(1).split('&');
+for (var i = 0; i < args.length; ++i) {
+  var parts = args[i].split('=');
+  if (parts != null) {
+    var field = parts[0];
+    var value = parts[1];
+    if (value == null) {
+      value = "null"
+    }
+    else {
+      value = '"' + unescape(value.replace(/\+/g, ' ')) + '"';
+    }
+
+    document.writeln('<tr><td align="center">' + field + '</td>');
+    document.writeln('<td align="center">' + value + '</td></tr>');
+  }
+}
+</script>
+<noscript>
+<tr><td>
+<p>You need to turn on Javascript in your browser.</p>
+
+<p>In Microsoft Internet Explorer 4 or greater:</p>
+<ul>
+<li>From the "Tools" menu (in IE 4, it's the "View" menu), select "Internet Options".</li>
+<li>Click on the "Security" tab.</li>
+<li>Click on the "Custom Level" button. (In IE 4, select "Custom"
+and then click on "Settings...".)</li>
+<li>Under "Active scripting" make sure "Enable" is selected.</li>
+</ul>
+
+<p>In Netscape version 4 or greater:</p>
+<ul>
+<li>From the <b>Edit</b> menu, select <b>Preferences</b>.</li>
+<li>In the <b>Category</b> list on the left, click on the word "Advanced".</li>
+<li>In the panel on the right, make sure "Enable JavaScript" is checked.</li>
+<li>Click the <b>OK</b> button.</li>
+</ul>
+
+</td></tr>
+</noscript>
+
+</table>
+<footer style="background-color: aquamarine; text-align: center;"        >
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a >
+    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <br>
+<p style="text-align: center;">Derechos Reservados @-Marzo de 2023</p>
+</footer>
+</body>
+</html>

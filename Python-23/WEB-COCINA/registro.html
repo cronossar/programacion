@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Argentina</title>
-    <link rel="icon" href="img/HTML5_logo.ico">
+    <title>La Cocina de Daniel</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/fefd93842b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 
 <main>
 <h2>Registrese aquí para que lo podamos contactar</h2>
-<form action="">
+<form action="show_data.html" target="blank">
     <fieldset>
         <legend>Datos personales</legend>
 
@@ -45,7 +45,7 @@
 
                 <!-- Fecha de Nacimiento -->
                 <label for="fecnac">Fecha de Nacimiento: </label>
-                <input type="date" min="2018-01-01" max="2018-12-31" required>
+                <input type="date" min="1900-01-01" max="2030-12-31" required>
                
     </fieldset>
                 <br><br>
@@ -68,21 +68,23 @@
                 <input type="checkbox" name="estudio" value="Terciarios" > Terciarios
                 <input type="checkbox" name="estudio" value="Universitarios" > Universitarios
                 <input type="checkbox" name="estudio" value="Otro" > Otros
-            
-            <imput type="submit" value="Enviar">
+                <br><br>
+                <input type="submit" value="Enviar">
+                
     </fieldset>
     
-
+    
 </form>
-<p>Al hacer clic en el boton enviar pasará a otra pagina "show_data.html", resumen de lo que termina de cargar</p>
+
 </main>
-    <footer style="background-color: aquamarine;">
-        <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a >
-        <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-        <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    <p style=" text-align: center;">Derechos Reservados @-Marzo de 2023</p>
+
+<footer style="background-color: aquamarine; text-align: center;"        >
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a >
+    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
     <br>
-    </footer>
+<p style="text-align: center;">Derechos Reservados @-Marzo de 2023</p>
+</footer>
 </body>
 </html>
