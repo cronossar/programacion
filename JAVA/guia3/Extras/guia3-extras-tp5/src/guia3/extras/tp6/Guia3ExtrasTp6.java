@@ -35,7 +35,7 @@ public class Guia3ExtrasTp6 {
             System.out.println("3 - SOCIO TIPO C");
             System.out.println("4 - Salir del programa");
             menu=teclado.nextInt();
-           
+            
             
         switch(menu){
             case 1 -> {
