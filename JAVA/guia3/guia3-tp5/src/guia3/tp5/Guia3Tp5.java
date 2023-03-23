@@ -25,7 +25,7 @@ public class Guia3Tp5 {
             System.out.println("Ingrese un numero: ");
             suma = suma + leer.nextInt();
             System.out.println("Total de valores ingresados " + suma + " | " + "Valor limite "+ numlim);
-        } while (suma <= numlim);
+        } while (numlim >= suma);
         
     }
     

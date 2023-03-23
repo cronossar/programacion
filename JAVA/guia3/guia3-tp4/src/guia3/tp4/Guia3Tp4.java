@@ -21,6 +21,7 @@ public class Guia3Tp4 {
         p2 = palabra.substring(0,1);
         
         if (p2.toUpperCase().equals("A")){
+            
         System.out.println("CORRECTO");
         } else {
             System.out.println("INCORRECTO");
