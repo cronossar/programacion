@@ -62,9 +62,6 @@ public class Guia3Tp6 {
                     String salir = leer.next();
                     if (salir.toUpperCase().equals("S")){
                         break;
-                    } else if (salir.toUpperCase().equals("N")){
-                        menu=0;
-                        break;
                     } else {
                         menu=0;
                         break;

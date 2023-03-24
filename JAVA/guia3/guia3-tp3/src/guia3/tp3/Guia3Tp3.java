@@ -15,11 +15,11 @@ public class Guia3Tp3 {
         String palabra;
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese una palabra");
-        palabra = leer.next();
+        palabra = leer.nextLine();
         palabra.toLowerCase();
-        int p8 = palabra.length();
         
-        if (p8 == 8) {
+        
+        if (palabra.length() == 8) {
             System.out.println("CORRECTO");
         } else {
             System.out.println("INCORRECTO");
