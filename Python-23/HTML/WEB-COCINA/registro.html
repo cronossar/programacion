@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Cocina de Daniel</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/fefd93842b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header style="background-color:Yellow;">
+        <nav>
+            <a style="background-color:rgb(223, 211, 211);" href="index.html">Home</a>
+            <a style="background-color:rgb(223, 211, 211);" href="acerca_de.html">Acerca de</a>
+            <a style="background-color:rgb(223, 211, 211);" href="contacto.html">Contacto</a>
+            <a style="background-color:rgb(223, 211, 211);" href="sucursales.html">Sucursales</a>
+            <a style="background-color:rgb(223, 211, 211);" href="registro.html">Registrese</a>
+        </nav>
+        <h1 style=" text-align: center;">La Cocina de Daniel</h1>
+    </header>
+
+<main>
+<h2>Registrese aquí para que lo podamos contactar</h2>
+<form action="show_data.html" target="blank">
+    <fieldset>
+        <legend>Datos personales</legend>
+
+            <!-- Nombre -->
+                <label for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" placeholder="Escribí tu nombre..." required>
+
+                <!-- Apellido -->
+                <label for="apellido">Apellido: </label>
+                <input type="text" name="apellido" id="apellido" placeholder="Escribí tu apellido..." required>
+                <br><br>
+                <!-- DNI -->
+                <label for="dni">DNI: </label>
+                <input type="number" placeholder="Escribí sin puntos ni espacios" required>
+                
+                <!-- Mail -->
+                <label for="mail">Mail: </label>
+                <input type="email" placeholder="Escribí todo en minúsculas..." required>
+
+                <!-- Fecha de Nacimiento -->
+                <label for="fecnac">Fecha de Nacimiento: </label>
+                <input type="date" min="1900-01-01" max="2030-12-31" required>
+               
+    </fieldset>
+                <br><br>
+    <fieldset>
+        <legend>Datos de Género</legend>
+            
+                    <!-- Interés, Radio para 1 sola opción -->
+                
+                <input type="radio" name="gender" id="1">Hombre
+                <input type="radio" name="gender" id="2">Mujer
+                <input type="radio" name="gender" id="3">Binario
+          
+    </fieldset>
+    <br><br>
+    <fieldset>
+        <legend>Datos Estudios</legend>
+            
+                <input type="checkbox" name="estudio" value="Primarios" > Primarios
+                <input type="checkbox" name="estudio" value="Secundarios" > Secundarios
+                <input type="checkbox" name="estudio" value="Terciarios" > Terciarios
+                <input type="checkbox" name="estudio" value="Universitarios" > Universitarios
+                <input type="checkbox" name="estudio" value="Otro" > Otros
+                <br><br>
+                <input type="submit" value="Enviar">
+                
+    </fieldset>
+    
+    
+</form>
+
+</main>
+
+<footer style="background-color: aquamarine; text-align: center;"        >
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a >
+    <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://pinterest.com" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+    <a href="https://twiter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <br>
+<p style="text-align: center;">Derechos Reservados @-Marzo de 2023</p>
+</footer>
+</body>
+</html>
