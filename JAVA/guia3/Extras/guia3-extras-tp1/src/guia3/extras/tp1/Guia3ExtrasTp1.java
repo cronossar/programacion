@@ -14,8 +14,7 @@ public class Guia3ExtrasTp1 {
         Scanner leer=new Scanner(System.in);
         System.out.println("Ingrese un valor (Entero) de tiempo en minutos");
         int tiempo=leer.nextInt();
-        int aux;
-        aux = tiempo;
+        
         int dias=0;
         int horas=0;
         int minutos=0;
