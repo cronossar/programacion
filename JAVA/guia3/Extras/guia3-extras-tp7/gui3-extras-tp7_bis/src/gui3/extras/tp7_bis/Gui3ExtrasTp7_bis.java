@@ -1,4 +1,4 @@
-package guia3.extras.tp7;
+package gui3.extras.tp7_bis;
 import java.util.Scanner;
 /**
  * Realice un programa que calcule y visualice el valor máximo, el valor
@@ -9,7 +9,7 @@ con el bucle ?do - while?
  * 
  * @author Daniel Buiak Branchesi
  */
-public class Guia3ExtrasTp7 {
+public class Gui3ExtrasTp7_bis {
     public static void main(String[] args) {
         int n = 0;
         int num = 0;
@@ -21,19 +21,20 @@ public class Guia3ExtrasTp7 {
         
         
         Scanner leer = new Scanner(System.in, "ISO8859-1");
-        System.out.println("Calcula y Visualiza el valor máximo, el valor\n"
-                + "mínimo y el promedio de n números");
+        System.out.println("""
+                           Calcula y Visualiza el valor maximo, el valor
+                           minimo y el promedio de n numeros""");
         System.out.println("----------------------------");
         System.out.print("Ingrese la cantidad de numeros con que trabajará: ");
         n = leer.nextInt();
-         
+        
         while(n<2){
                 System.out.println("Ingrese un numero mayor a 1");
                 n=leer.nextInt();
             }
-        
-        while (conta != n) {
-            
+               
+        do {
+
             System.out.println("----------------");
             System.out.println("Ingrese el valor a evaluar: ");
             System.out.print("----------------: ");
@@ -43,7 +44,7 @@ public class Guia3ExtrasTp7 {
             if(conta == 1){;
             mayor = num;
             menor = num;
-            
+
             }else if (num > mayor) {
                 mayor = num;
             
@@ -52,8 +53,8 @@ public class Guia3ExtrasTp7 {
             }
             suma = suma + num;
             promedio = suma / conta;
-            
-        }
+        }while (conta != n);
+        
         System.out.println("----------------------------");   
         System.out.println("mayor "+mayor+" / menor "+menor+" / promedio "+promedio);
         System.out.println("----------------------------");
