@@ -11,33 +11,37 @@ sumarse. Nota: recordar el uso de la sentencia break.
  */
 public class Guia3ExtrasTp8 {
     public static void main(String[] args) {
-        int num=0;
-        int cont=0;
-        int par=0;
-        int impar=0;
-        
-        Scanner leer=new Scanner(System.in);
-        System.out.println("Vamos a leer los numeros enteros que ingreses");
-        num=leer.nextInt();
-        cont = cont+1;
-        
-        while(num<0){
-            
-            if(num %5 == 0){
-            System.out.println("El valor ingresado es multiplo de 5 ");
-            break;
-            }else if(num%2==0){
-             par = par+1;   
-            }else{
-             impar = impar+1;
+        Scanner leer = new Scanner(System.in, "ISO8859-1");
+        int cont = 0;
+        int Pares = 0;
+        int Impares = 0;
+
+        while (true) {
+            System.out.print("Ingrese un número entero: ");
+            int num = leer.nextInt();
+            cont++;
+
+            if (num % 5 == 0) {
+                System.out.println("El número es múltiplo de 5. Paramos de leer.");
+                break;
             }
-            
-                       
+
+            if (num % 2 == 0) {
+                Pares++;
+            } else {
+                Impares++;
+            }
         }
-        System.out.println("Hasta el momento ingresó: "+cont+" numeros");
-        System.out.println("De los numeros ingresados hay "+par+" numeros pares y "+impar+" numeros impares");
-        
+
+        System.out.println("Cantidad de números leídos: " + cont);
+        System.out.println("Cantidad de números pares: " + Pares);
+        System.out.println("Cantidad de números impares: " + Impares);
         
     }
-    
 }
+/*Se leen los números enteros hasta que se lee un múltiplo de cinco 
+En cada iteración del bucle, se incrementa el contador de números 
+leídos y se verifica si el número es par o impar para actualizar los 
+contadores correspondientes. Después de salir del bucle, se muestra 
+la cantidad de números leídos, la cantidad de números pares y la cantidad
+de números impares.*/
