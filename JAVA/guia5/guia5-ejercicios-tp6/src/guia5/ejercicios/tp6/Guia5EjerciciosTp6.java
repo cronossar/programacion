@@ -21,6 +21,7 @@ public class Guia5EjerciciosTp6 {
         // Leer los valores del cuadrado por teclado
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce los valores del cuadrado mágico:");
+        
         for (int i = 0; i < cuadrado.length; i++) {
             for (int j = 0; j < cuadrado[i].length; j++) {
                 int valor = sc.nextInt();
@@ -36,6 +37,7 @@ public class Guia5EjerciciosTp6 {
         boolean esMagico = true;
         int sumaDiagonalPrincipal = 0;
         int sumaDiagonalSecundaria = 0;
+        
         for (int i = 0; i < cuadrado.length; i++) {
             int sumaFila = 0;
             int sumaColumna = 0;

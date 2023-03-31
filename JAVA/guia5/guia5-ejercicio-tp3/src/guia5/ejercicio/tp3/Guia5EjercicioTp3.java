@@ -1,46 +1,71 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
 package guia5.ejercicio.tp3;
-
-import java.util.Random;
-import java.util.Scanner;
 
 /**
  *
- * @author Daniel Buiak Branchesi
+ * @author cronossar1
  */
 public class Guia5EjercicioTp3 {
-    public static void main(String[] args) {
-        // Leer los valores del vector por teclado
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Introduce los valores del vector separados por espacios:");
-        String[] valores = sc.nextLine().split(" ");
 
-        // Contar cu√°ntos n√∫meros tienen cada cantidad de d√≠gitos
-        int[] contadores = new int[3];
-        for (String valor : valores) {
-            int digitos = valor.length();
-            if (digitos <= 5) {
-                contadores[digitos - 1]++;
+    public static void main(String[] args) {
+        int[] numeros = {123, 45, 6, 7890, 12, 34567};
+
+        // Inicializar los contadores para cada categorÌa de dÌgitos
+        int contador1 = 0;
+        int contador2 = 0;
+        int contador3 = 0;
+        int contador4 = 0;
+        int contador5 = 0;
+
+        // Recorrer el vector de enteros y actualizar los contadores
+        for (int numero : numeros) {
+            int cantidadDigitos = contarDigitos(numero);
+            switch (cantidadDigitos) {
+                case 1:
+                    contador1++;
+                    break;
+                case 2:
+                    contador2++;
+                    break;
+                case 3:
+                    contador3++;
+                    break;
+                case 4:
+                    contador4++;
+                    break;
+                case 5:
+                    contador5++;
+                    break;
+                default:
+                    // El n˙mero tiene m·s de 5 dÌgitos, no se cuenta
+                    break;
             }
         }
 
-        // Mostrar el resultado
-        for (int i = 0; i < contadores.length; i++) {
-            System.out.printf("%d d√≠gitos: %d\n", i + 1, contadores[i]);
+        // Imprimir los resultados
+        System.out.println("Cantidad de n˙meros de 1 dÌgito: " + contador1);
+        System.out.println("Cantidad de n˙meros de 2 dÌgitos: " + contador2);
+        System.out.println("Cantidad de n˙meros de 3 dÌgitos: " + contador3);
+        System.out.println("Cantidad de n˙meros de 4 dÌgitos: " + contador4);
+        System.out.println("Cantidad de n˙meros de 5 dÌgitos: " + contador5);
+    }
+
+    // FunciÛn para contar la cantidad de dÌgitos de un n˙mero entero
+    private static int contarDigitos(int numero) {
+        if (numero < 0) {
+            numero = -numero; // Si el n˙mero es negativo, se convierte a positivo
         }
+        if (numero == 0) {
+            return 1; // El n˙mero 0 tiene un solo dÌgito
+        }
+        int cantidad = 0;
+        while (numero > 0) {
+            cantidad++;
+            numero /= 10;
+        }
+        return cantidad;
     }
 }
-
-/*Este programa lee los valores de un vector de enteros por teclado y luego
-cuenta cu√°ntos n√∫meros tienen cada cantidad de d√≠gitos. En este ejemplo se 
-utiliza un vector de tama√±o variable (se leen los valores como una cadena 
-separada por espacios y se convierte a un arreglo de cadenas), pero se puede
-adaptar para trabajar con un vector de tama√±o fijo. El programa recorre cada
-n√∫mero del vector y cuenta cu√°ntos d√≠gitos tiene. Si el n√∫mero tiene 1 a 5 d√≠gitos,
-se incrementa el contador correspondiente. Finalmente, el programa muestra el 
-resultado en consola.*/
-
-            
-
-    
-    
-

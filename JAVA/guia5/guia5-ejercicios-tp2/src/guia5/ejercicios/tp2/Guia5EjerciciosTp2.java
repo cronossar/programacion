@@ -10,40 +10,45 @@ repetido
  */
 public class Guia5EjerciciosTp2 {
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int n, num, repite;
         
-        Scanner leer=new Scanner(System.in);
-        Random r = new Random();
-        int cont=0;
+        repite = 0;
         
-        int[] num = new int [4];
+        System.out.println("Ingresar tamaño del vector:");
+        n = leer.nextInt();
+        int [] vector = new int [n];
         
-               
-        // Asigno valores mediante el For
-        for (int i = 0; i < 20; i++) {
-        num[i] = r.nextInt(20)-1;
-        }
+        System.out.println("Ingresar número a buscar en el vector:");
+        num = leer.nextInt();
+        System.out.println("- - - - - - - - - - - - - - "); 
         
-         //Pido valor a buscar       
-        System.out.println("ingrese numero a buscar en el vector entre 1 y 100");
-        int v = leer.nextInt();
-        
-        //Se muestra
-        for (int i = 0; i < 20; i++) {
-        if(num[i] == v);
-        cont = cont + 1;
-            System.out.println(v+" Se encontro en: "+ num[i] + " y se repitio "+cont+ " veces");
+        for (int i = 0; i < n; i++) {
+            int aleatorio = (int) (Math.random() * 10);
+            vector[i] = aleatorio;
             
+            System.out.println (vector[i]);
+            
+            if (num == vector[i]) {
+                repite++;
+            }
         }
         
+        System.out.println("- - - - - - - - - - - - - - ");  
         
-        
-    // Muestro la matriz
-        /*for (int i = 99; i >= 0; i--) {
-
-        System.out.println("[" + num[i] + "]");
+        for (int i = 0; i < n; i++) {
+            if (num == vector[i]) {
+                System.out.println("Número encontrado en el subíndice " +i);
+            }
         }
-        System.out.println("");*/
-
+        
+        if (repite >= 2) {
+            System.out.println("El número se encuentra repetido.");
+        }else if (repite == 0) {
+            System.out.println("El número no se encontró.");
+        }
+        
+        System.out.println("Se encontró " +repite+ " vez/veces.");
+       
     }
 }
-
