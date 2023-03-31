@@ -1,5 +1,7 @@
 package guia5.extras.tp3;
 
+import java.util.Random;
+
 /**
  *Crear una función rellene un vector con números aleatorios, pasándole
 un arreglo por parámetro. Después haremos otra función o
@@ -15,9 +17,9 @@ public class Guia5ExtrasTp3 {
     }
     
     public static void cargar(int[] arr) {
-        
+        Random r=new Random();
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) (Math.random()*100); //generar números aleatorios del 0 al 99
+            arr[i] = r.nextInt(100); //generar números aleatorios del 0 al 99
         }
     }
     
@@ -27,7 +29,9 @@ public class Guia5ExtrasTp3 {
         }
     }
 }
-*/La forma de sacar un número aleatorio es mediante el método .random()
+
+
+/*La forma de sacar un número aleatorio es mediante el método .random()
 de la clase Math. El método .random() nos ofrece un número entre 0.0 y 1.0.
 Es por ello que tendremos que multiplicar al resultado el número hasta el 
 cual queramos sacar números aleatorios.*/
