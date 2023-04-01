@@ -11,13 +11,14 @@ public class Guia5EjercicioTp4 {
          int [][] matriz = new int [4][4];
         int [][] traspuesta = new int [4][4];
         
+        //Carga Matriz
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 int aleatorio = (int) (Math.random() * 10);
                 matriz[i][j] = aleatorio;
             }
         }
-        
+        //Matriz normal
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 System.out.print(" " +matriz[i][j]);
@@ -26,10 +27,11 @@ public class Guia5EjercicioTp4 {
         }
         
         System.out.println("- - - - - - - - - - -");
-        
+       
+        //matriz traspuesta
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                traspuesta[j][i] = matriz[j][i];
+                traspuesta[i][j] != -matriz[j][i];
             }
         }
         
