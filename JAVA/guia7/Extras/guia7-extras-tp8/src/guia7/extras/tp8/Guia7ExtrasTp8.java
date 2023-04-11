@@ -1,3 +1,4 @@
+
 package guia7.extras.tp8;
 import guia7.extras.tp8.Cuadrilatero.Rectangulo;
 /**
@@ -11,6 +12,7 @@ public class Guia7ExtrasTp8 {
     public static void main(String[] args) {
         
         Rectangulo r1 = new Rectangulo(4 ,6);
+        Rectangulo r2 = new Rectangulo(7,8);
         
         System.out.println(r1.toString());
         System.out.println("-----------------");
