@@ -16,7 +16,7 @@ public class Guia7ExtrasTp4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        Cuenta cajero1 = new Cuenta(45120.00, "Jose Fernandez");
+        Cuenta cajero1 = new Cuenta(178245.23, "Jose Fernandez");
         System.out.println(cajero1.toString());
         System.out.println("------------------");
         System.out.println("¿Cuanto dinero va a sacar de su cuenta?");

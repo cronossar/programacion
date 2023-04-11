@@ -10,24 +10,26 @@ public class Juego {
 
     public void iniciar_juego() {
         Scanner scanner = new Scanner(System.in, "ISO-8859-1");
-        Random random = new Random();
-        int numeroAdivinar = random.nextInt(100) + 1;
+        
 
         int intentosRestantes = 10;
         boolean jugador2Gano = false;
 
         System.out.println("¡Bienvenidos al juego de adivinanza de números!");
-        System.out.println("Jugador 1, elige un número entre 1 y 100:");
-        int numeroElegido = scanner.nextInt();
+        /*System.out.println("Jugador 1, elige un número entre 1 y 100:");*/
+        System.out.println("El jugador 1 (la PC) cargara automaticamente un valor entre 1 y 100 para que adivines");
+        Random random = new Random();
+        int numeroElegido = random.nextInt(100) + 1;
+        /*int numeroElegido = scanner.nextInt();*/
 
         while (intentosRestantes > 0 && !jugador2Gano) {
             System.out.println("Jugador 2, adivina el número (tienes " + intentosRestantes + " intentos restantes):");
             int numeroAdivinado = scanner.nextInt();
 
-            if (numeroAdivinado == numeroAdivinar) {
+            if (numeroAdivinado == numeroElegido) {
                 System.out.println("¡Felicitaciones, adivinaste el número!");
                 jugador2Gano = true;
-            } else if (numeroAdivinado < numeroAdivinar) {
+            } else if (numeroAdivinado < numeroElegido) {
                 System.out.println("El número a adivinar es más alto");
             } else {
                 System.out.println("El número a adivinar es más bajo");
@@ -39,7 +41,7 @@ public class Juego {
         if (jugador2Gano) {
             jugador2++;
         } else {
-            System.out.println("Lo siento, te quedaste sin intentos. El número a adivinar era " + numeroAdivinar);
+            System.out.println("Lo siento, te quedaste sin intentos. El número a adivinar era " + numeroElegido);
             jugador1++;
         }
 

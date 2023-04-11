@@ -15,21 +15,22 @@ public class Cuenta {
 
     //Geter y Setter
     public Double getSaldo() {
-        return saldo;
+        return Saldo;
     }
 
     public String getTitular() {
-        return titular;
+        return Titular;
     }
 
     public void setSaldo(Double saldo) {
-        this.saldo = saldo;
+        this.Saldo = saldo;
     }
 
     public void setTitular(String titular) {
-        this.titular = titular;
+        this.Titular = titular;
     }
 
+   
     public void sacarPlata(double cantidad) {
         if (cantidad > Saldo) {
             System.out.println("No hay suficiente saldo en la cuenta.");
