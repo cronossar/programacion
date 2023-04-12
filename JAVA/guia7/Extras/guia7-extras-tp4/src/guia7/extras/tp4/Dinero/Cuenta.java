@@ -3,14 +3,14 @@ package guia7.extras.tp4.Dinero;
 public class Cuenta {
 
     private Double Saldo;
-    private String Titular;
+    private String titular;
 
     public Cuenta() {
     }
 
     public Cuenta(Double saldoInicial, String titular) {
         this.Saldo = saldoInicial;
-        this.Titular = titular;
+        this.titular = titular;
     }
 
     //Geter y Setter
@@ -19,7 +19,7 @@ public class Cuenta {
     }
 
     public String getTitular() {
-        return Titular;
+        return titular;
     }
 
     public void setSaldo(Double saldo) {
@@ -27,22 +27,22 @@ public class Cuenta {
     }
 
     public void setTitular(String titular) {
-        this.Titular = titular;
+        this.titular = titular;
     }
-
    
     public void sacarPlata(double cantidad) {
+               
         if (cantidad > Saldo) {
             System.out.println("No hay suficiente saldo en la cuenta.");
         } else {
             Saldo -= cantidad;
-            System.out.println("Se ha retirado " + cantidad + " pesos de la cuenta de " + Titular + ".");
+            System.out.println("Se ha retirado " + cantidad + " pesos de la cuenta de " + titular + ".");
         }
         
     }
-
+     
     @Override
     public String toString() {
-        return "Cuenta{" + "Saldo=" + Saldo + ", Titular=" + Titular + '}';
+        return "Cuenta{" + "Saldo=" + Saldo + ", Titular=" + titular + '}';
     }
 }

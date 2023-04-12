@@ -11,6 +11,32 @@ public class Empleado {
         this.edad = edad;
         this.salario = salario;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setSalario(double salario) {
+        this.salario = salario;
+    }
+    
+    //Metodo
     
     public void calcular_aumento() {
         double aumento;
