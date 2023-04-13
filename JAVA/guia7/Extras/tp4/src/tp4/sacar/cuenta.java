@@ -39,7 +39,8 @@ public class cuenta {
            retira = leer.nextInt();
            
             if (retira > this.saldo || this.saldo < 0) {
-                System.out.println("SALDO INSUFICIENTE.");
+                System.out.println("SALDO INSUFICIENTE");
+                System.out.println(" Saldo: "+this.saldo);
                 System.out.print("Ingresar un monto válido: $");
             }
         } while (retira > this.saldo || this.saldo < 0);  
@@ -47,13 +48,13 @@ public class cuenta {
         System.out.println("- - - - - - - - - - - - - -");
         
         System.out.println("Retiraste...");
-        double dosal = this.saldo - retira;
-        System.out.println("$" +retira);
+        this.saldo = this.saldo - retira;
+        System.out.println("$ " +retira);
         
         System.out.println("- - - - - - - - - - - - - -");
         System.out.println("[titular] " +this.titular);
         this.saldo = (int)(Math.random()*(140000-80000+1)+80000);
-        System.out.println("[saldo] " +dosal);
+        System.out.println("[saldo] " +this.saldo);
         System.out.println("- - - - - - - - - - - - - -");
 }
 }

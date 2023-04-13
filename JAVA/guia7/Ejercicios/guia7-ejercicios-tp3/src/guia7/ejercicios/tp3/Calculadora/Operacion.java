@@ -3,7 +3,7 @@ package guia7.ejercicios.tp3.Calculadora;
 import java.util.Scanner;
 
 public class Operacion {
-    //atributos privados numero1 y numero2
+    //Atributos privados numero1 y numero2
     private int numero1;
     private int numero2;
     //Método constructor con todos los atributos pasados por parámetro.

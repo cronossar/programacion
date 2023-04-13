@@ -31,7 +31,9 @@ public class Guia7EjerciciosTp2 {
     c2.crearCircunferencia();
     System.out.println("Área de la circunferencia c2: " + c2.area());
     System.out.println("Perímetro de la circunferencia c2: " + c2.perimetro());
-        System.out.println("----------------------------");
+    System.out.println("----------------------------");
+    
+        
     Circunferencia c3 = new Circunferencia(0.0);
     c3.crearCircunferencia();
     System.out.println("Área de la circunferencia c3: " + c3.area());

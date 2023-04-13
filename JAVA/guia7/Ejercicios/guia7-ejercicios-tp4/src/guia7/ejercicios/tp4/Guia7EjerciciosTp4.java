@@ -28,5 +28,5 @@ public class Guia7EjerciciosTp4 {
         System.out.println("Superficie: " + rectangulo2.calcularSuperficie());
         System.out.println("Perímetro: " + rectangulo2.calcularPerimetro());
         rectangulo2.dibujarRectangulo();
-    }
+    }  
 }
