@@ -62,11 +62,12 @@ public class Pass {
         }
     }
 
-    public void modificarNombre() {
+    public void modificarNombre(String password) {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Ingrese su contraseña:");
-        String pass = sc.nextLine();
+        pass = sc.nextLine();
+        password = pass;
 
         if (pass.equals(password)) {
             System.out.println("Ingrese su nuevo nombre:");
@@ -82,6 +83,7 @@ public class Pass {
 
         System.out.println("Ingrese su contraseña:");
         String pass = sc.nextLine();
+        Object password = null;
 
         if (pass.equals(password)) {
             System.out.println("Ingrese su nuevo DNI:");
@@ -91,5 +93,7 @@ public class Pass {
             System.out.println("Contraseña incorrecta. No se permiten cambios.");
         }
     }
+
+    
     
 }

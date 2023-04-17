@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Guia7extrasExtrasTp3 {
 
     public static void main(String[] args) {
-        Pass u = new Pass("Juan Perez", "12345678");
+        Pass u = new Pass("123456789z", "Carlos", "23456789");
+        
 
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
