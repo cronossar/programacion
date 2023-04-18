@@ -9,9 +9,11 @@ public class Nespresso {
     public static void main(String[] args) {
 
         Scanner leer = new Scanner(System.in);
-
-        Cafetera cafetera = new Cafetera();
+       
         CafeteraServicios servicio = new CafeteraServicios();
+       
+        Cafetera cafetera = new Cafetera();
+        
 
         System.out.println("Cantidad actual: " + cafetera.getCantidadActual());
         System.out.println("Capacidad máxima: " + cafetera.getCapacidadMaxima());
