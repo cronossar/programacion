@@ -4,7 +4,7 @@ package Entidades;
 public class Persona {
     private String nombre;
     private Integer edad;
-    private String sexo;
+    private char sexo;
     
     //Constructor por defecto
 
@@ -35,11 +35,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public String getSexo() {
+    public char getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
     

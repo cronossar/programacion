@@ -8,9 +8,10 @@ public class PersonaServicio {
     Scanner leer = new Scanner(System.in);
     
     //Metodos
-    public void esMayordeEdad(Persona p1){
-        
-        
+    public boolean esMayordeEdad(Persona p1){
+        boolean may;
+        may = p1.getEdad()<= 18;
+        return may;
     }
     
     public Persona crearPersona(){
@@ -25,12 +26,17 @@ public class PersonaServicio {
         System.out.println("Ingrese la edad de la persona");
         p1.setEdad(leer.nextInt());
         System.out.println("Ingrese el sexo: H (hombre), M (mujer), O (otro)");
-        p1.setSexo(leer.next());
+        p1.setSexo(leer.nextLine().charAt(0));
+        //char compsex = p1.getSexo();
+        
+        If (p1.getSexo() != 'O' &&  != 'H' && != 'M') {
+            System.out.println("El sexo ingresado no es valido");
+        }
         System.out.println("##########################");
         return p1;
     } 
     
     public void calcularIMC(){
-        
+        //if(p.get / (p.get * p.get))
     }
 }

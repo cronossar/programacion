@@ -37,4 +37,42 @@ public class Nespresso {
         System.out.println("Cantidad actual de cafe: " + cafetera.getCantidadActual());
         System.out.println("***********************");
     }
+    //Acomodar el menu
+    // menu
+       /* int op;
+        boolean tb = true;
+        do {
+            System.out.println("1.llenar cafetera");
+            System.out.println("2.servir taza");
+            System.out.println("3.vaciar cafetera");
+            System.out.println("4.agregar cafe");
+            System.out.println("5.ver");
+            System.out.println("6.Salir");
+            op = leer.nextInt();
+            switch (op) {
+                case 1:
+                    System.out.println(cs.llenarCafetera(c));
+                    break;
+                case 2:
+                    System.out.println(cs.servirTaza(leer.nextInt(), c));
+                    break;
+                case 3:
+                    System.out.println(cs.vaciarCafetera(c));
+                    break;
+                case 4:
+                    System.out.println(cs.agregarCafe(leer.nextInt(), c));
+                    break;
+                case 5:
+                    System.out.println(cs.ver(c));
+                    break;
+                case 6:
+                    tb = false;
+                    break;
+                default:
+                    System.out.println("escrbibi bien");
+            }
+
+        } while (tb == true);
+    }*/
+    
 }
