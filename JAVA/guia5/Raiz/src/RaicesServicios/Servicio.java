@@ -1,12 +1,12 @@
 
 package RaicesServicios;
 
-import Entidad.Raices;
+import Entidad.Entidad;
 
-public class SRaices {
-    private Raices raices;
+public class Servicio {
+    private Entidad raices;
 
-    public SRaices(Raices raices) {
+    public Servicio(Entidad raices) {
         this.raices = raices;
     }
 

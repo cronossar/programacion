@@ -5,6 +5,7 @@ import Entidad.Nif;
 import java.util.Scanner;
 
 public class NifServicio {
+    // creamos una constante de clase, un atributo común a todos los objetos de esa clase
     private static final char[] LETRAS_NIF = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
 
     public Nif crearNif() {
