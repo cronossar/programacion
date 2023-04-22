@@ -1,44 +1,66 @@
-
 package Servicio;
 
 import Entidades.Persona;
 import java.util.Scanner;
 
 public class PersonaServicio {
-        
-    //Metodos
-    public boolean esMayorDeEdad(Persona persona) {
-        return persona.getEdad() >= 18;
-    }
 
-    public void crearPersona(Persona persona) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Introduce el nombre: ");
-        persona.setNombre(scanner.nextLine());
-        System.out.print("Introduce la edad: ");
-        persona.setEdad(scanner.nextInt());
-        scanner.nextLine();
-        System.out.print("Introduce el sexo (H/M/O): ");
-        char sexo = scanner.nextLine().toUpperCase().charAt(0);
-        while (sexo != 'H' && sexo != 'M' && sexo != 'O') {
-            System.out.print("Sexo no válido, introduce H, M o O: ");
-            sexo = scanner.nextLine().toUpperCase().charAt(0);
-        }
-        persona.setSexo(sexo);
-        System.out.print("Introduce el peso (en kg): ");
-        persona.setPeso(scanner.nextDouble());
-        System.out.print("Introduce la altura (en m): ");
-        persona.setAltura(scanner.nextDouble());
-    }
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
-    public int calcularIMC(Persona persona) {
-        double imc = persona.getPeso() / Math.pow(persona.getAltura(), 2);
-        if (imc < 20) {
-            return -1; // Por debajo del peso ideal
-        } else if (imc >= 20 && imc <= 25) {
-            return 0; // En el peso ideal
+    public boolean esMayorDeEdad(Persona p) {
+        boolean i = true;
+        if (p.getEdad() >= 18) {
+            i = true;
         } else {
-            return 1; // Con sobrepeso
+            i = false;
         }
+        return i;
+
+    }
+
+    public Persona crearPersona(Persona p) {
+        System.out.println("Ingrese su nombre");
+        p.setNombre(leer.next());
+        System.out.println("Ingrese su edad");
+        p.setEdad(leer.nextInt());
+
+        String sexo;
+        boolean tb = false;
+        do {
+            System.out.println("Ingrese el sexo de la persona (H/M/O)");
+            sexo = leer.next();
+            if (sexo.equals("H") || sexo.equals("M") || sexo.equals("O")) {
+                tb = true;
+            } else {
+                System.out.println("Sexo incorrecto, vuelva a intentar");
+            }
+        } while (tb == false);
+        p.setSexo(sexo);
+
+        System.out.println("Ingrese su peso");
+        p.setPeso(leer.nextDouble());
+        System.out.println("Ingrese su altura");
+        p.setAltura(leer.nextDouble());
+
+        return p;
+
+    }
+
+    public double calcularIMC(Persona imc) {
+        double resultado = imc.getPeso() / (imc.getAltura() * imc.getAltura());
+        System.out.println(String.format("%.0f", resultado));
+        int i;
+        if (resultado < 20) {
+            i = -1;
+        } else {
+            if (resultado == 20) {
+                i = 0;
+            } else {
+                i = 1;
+            }
+
+        }
+        return i;
+
     }
 }

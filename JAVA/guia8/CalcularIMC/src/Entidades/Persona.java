@@ -1,15 +1,17 @@
-
 package Entidades;
 
 public class Persona {
-    
+
     private String nombre;
     private int edad;
-    private char sexo;
+    private String sexo;
     private double peso;
     private double altura;
 
-    public Persona(String nombre, int edad, char sexo, double peso, double altura) {
+    public Persona() {
+    }
+
+    public Persona(String nombre, int edad, String sexo, double peso, double altura) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
@@ -33,11 +35,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
@@ -56,16 +58,4 @@ public class Persona {
     public void setAltura(double altura) {
         this.altura = altura;
     }
-
-    @Override
-    public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                ", sexo=" + sexo +
-                ", peso=" + peso +
-                ", altura=" + altura +
-                '}';
-    }
 }
-
