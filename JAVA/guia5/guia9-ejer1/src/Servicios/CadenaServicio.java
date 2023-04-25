@@ -1,7 +1,6 @@
+package Servicios;
 
-package servicios;
-
-import Entidades.Cadena;
+import Entidad.Cadena;
 
 import java.util.Scanner;
 
@@ -18,9 +17,11 @@ public class CadenaServicio {
         int vocales = 0;
         System.out.println("Escriba una frase");
         String frase = scanner.nextLine();
+        cad.setFrase(frase);
         for (int i = 0; i < frase.length(); i++) {
             char letra = frase.charAt(i);
-            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+            if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
+                  letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U' ) {
                 vocales++;
             }
         }
@@ -29,12 +30,19 @@ public class CadenaServicio {
 
     public void invertirFrase(Cadena cad) {
         String frase = cad.getFrase();
-        StringBuilder builder = new StringBuilder(frase);
-        builder.reverse();
-        System.out.println("La frase invertida es: " + builder.toString());
+        String resultado = "";
+        for (int i = frase.length() - 1; i >= 0; i--) {
+        resultado += frase.charAt(i);
     }
+    //return resultado;
+    System.out.println("La frase invertida es: " + resultado);
+}
+        
+    
 
-    public void vecesRepetido(Cadena cad, String letra) {
+    public void vecesRepetido(Cadena cad) {
+        System.out.println("Ingrese una letra para buscar en la frase");
+        String letra = scanner.next();
         String frase = cad.getFrase();
         int repeticiones = 0;
         for (int i = 0; i < frase.length(); i++) {
@@ -42,33 +50,43 @@ public class CadenaServicio {
                 repeticiones++;
             }
         }
-        System.out.println("El car·cter '" + letra + "' se repite " + repeticiones + " veces.");
+        System.out.println("El car√°cter '" + letra + "' se repite " + repeticiones + " veces.");
     }
 
-    public void compararLongitud(Cadena cad, String frase) {
+    public void compararLongitud(Cadena cad) {
+        
+        System.out.println("Ingrese una nueva frase para comparar");
+        String frase = scanner.nextLine();
         int longitud1 = cad.getLongitud();
         int longitud2 = frase.length();
+        
         if (longitud1 > longitud2) {
-            System.out.println("La primera frase es m·s larga.");
+            System.out.println("La primera frase es m√°s larga.");
         } else if (longitud1 < longitud2) {
-            System.out.println("La segunda frase es m·s larga.");
+            System.out.println("La segunda frase es m√°s larga.");
         } else {
             System.out.println("Ambas frases tienen la misma longitud.");
         }
     }
 
-    public void unirFrases(Cadena cad, String frase) {
-        String nuevaFrase = cad.getFrase() + " " + frase;
-        System.out.println("La frase resultante es: " + nuevaFrase);
+    public void unirFrases(Cadena cad) {
+        System.out.println("Ingrese una nueva frase para unirla a la anterior");
+        String frase3 = scanner.nextLine();
+        
+        System.out.println("La frase resultante es: " + cad.getFrase() + " " + frase3);
     }
 
     public void reemplazar(Cadena cad, String letra, char reemplazo) {
+        System.out.println("Escriba una letra");
+        letra = scanner.nextLine();
         String frase = cad.getFrase();
         String nuevaFrase = frase.replace(letra.charAt(0), reemplazo);
         System.out.println("La frase resultante es: " + nuevaFrase);
     }
 
     public boolean contiene(Cadena cad, String letra) {
+        System.out.println("Escriba una letra");
+        letra = scanner.nextLine();
         String frase = cad.getFrase();
         return frase.contains(letra);
       

@@ -11,8 +11,7 @@ public class Main {
         
         Cadena cad1 = new Cadena();
         
-        cad1.setFrase("la casa del fantasma");
-        //String letra = "A"
+        
         f1.mostrarVocales(cad1);
         System.out.println("--------------------");
         f1.invertirFrase(cad1);
