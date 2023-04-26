@@ -91,9 +91,10 @@ public class CadenaServicio {
         System.out.println("La frase resultante es: " + cad.getFrase().replace( 'a' , cambio));
     }
 
-    public boolean contiene(Cadena cad, String letra) {
-        System.out.println("Escriba una letra");
-        letra = scanner.nextLine();
+    public boolean contiene(Cadena cad) {
+        System.out.println("Escriba una letra para ver si está contenida en la frase");
+        String letra = scanner.next();
+        
         String frase = cad.getFrase();
         return frase.contains(letra);
       
