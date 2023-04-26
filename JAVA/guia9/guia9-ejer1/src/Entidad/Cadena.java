@@ -1,5 +1,4 @@
-
-package Entidades;
+package Entidad;
 
 public class Cadena {
     
