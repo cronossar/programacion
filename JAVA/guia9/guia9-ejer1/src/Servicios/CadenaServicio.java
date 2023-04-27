@@ -12,6 +12,7 @@ public class CadenaServicio {
         this.scanner = new Scanner(System.in);
         
     }
+<<<<<<< HEAD
     
     public void crearFrase(Cadena cad){
         System.out.println("Escriba una frase");
@@ -24,6 +25,16 @@ public class CadenaServicio {
         
         for (int i = 0; i < cad.getFrase().length(); i++) {
             char letra = cad.getFrase().charAt(i);
+=======
+
+    public void mostrarVocales(Cadena cad) {
+        int vocales = 0;
+        System.out.println("Escriba una frase");
+        String frase = scanner.nextLine();
+        cad.setFrase(frase);
+        for (int i = 0; i < frase.length(); i++) {
+            char letra = frase.charAt(i);
+>>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
             if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
                   letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U' ) {
                 vocales++;
@@ -57,12 +68,21 @@ public class CadenaServicio {
         System.out.println("El carácter '" + letra + "' se repite " + repeticiones + " veces.");
     }
 
+<<<<<<< HEAD
     public void compararLongitud(Cadena cad) {
         
         System.out.println("Ingrese una nueva frase para comparar");
         String fra;
         fra = scanner.nextLine();
         System.out.println(fra);
+=======
+    public void compararLongitud(Cadena cad, String fra) {
+        
+        //System.out.println("Ingrese una nueva frase para comparar");
+        //String fra;
+        //fra = scanner.nextLine();
+        //System.out.println(fra);
+>>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
         int longitud1 = cad.getLongitud();
         int longitud2 = fra.length();
         
@@ -82,6 +102,7 @@ public class CadenaServicio {
         System.out.println("La frase resultante es: " + cad.getFrase() + " " + frase3);
     }
 
+<<<<<<< HEAD
     public void reemplazar(Cadena cad) {
         System.out.println("Vamos a cambiar todas las letras -a- por la que elijas");
         
@@ -89,6 +110,10 @@ public class CadenaServicio {
         char cambio = scanner.next().charAt(0);
         
         System.out.println("La frase resultante es: " + cad.getFrase().replace( 'a' , cambio));
+=======
+    public void reemplazar(Cadena cad, String cambio) {
+        System.out.println("La frase resultante es: " + cad.getFrase().replace("a", cambio));
+>>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
     }
 
     public boolean contiene(Cadena cad, String letra) {
