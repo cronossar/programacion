@@ -15,6 +15,8 @@ public class Main {
         num.devolverMayor(n);
         System.out.println("###############################");
         num.calcularPotencia(n);
+        System.out.println("###############################");
+        num.calcularRaiz(n);
     }
     
 }
