@@ -2,7 +2,7 @@ package guia9.ejer5;
 
 import Entidades.Persona;
 import Servicio.PersonaService;
-
+import java.util.Scanner;
 public class Main {
 //En este ejemplo, creamos un objeto Scanner en el constructor de la clase PersonaService
 //para poder pedir información al usuario a través de la consola. Luego, en el 
@@ -18,16 +18,11 @@ public class Main {
 //El método mostrarPersona() muestra la información de la persona (nombre, fecha de nacimiento
 //y edad) en la consola.
     public static void main(String[] args) {
-        
-        PersonaService p1 = new PersonaService();
-        Persona per1 = new Persona();
-        
-        p1.crearPersona();
-        System.out.println("&&&&&&&&&&&&&");
-        //p1.calcularEdad(fechaNacimiento);
-        p1.mostrarPersona(per1);
-        
-        
-    }
-    
+     PersonaService personaService = new PersonaService();
+    Persona persona = personaService.crearPersona();
+    personaService.mostrarPersona(persona);
+    int edad = personaService.calcularEdad(persona);
+    System.out.println("Edad: " + edad);
+    System.out.println("¿La persona es menor que 18 años? " + personaService.menorQue(persona, 18));
+}
 }

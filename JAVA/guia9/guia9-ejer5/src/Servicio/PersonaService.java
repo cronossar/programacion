@@ -1,56 +1,52 @@
 package Servicio;
 
-import Entidades.Persona;
-import java.time.LocalDate;
-import java.time.Period;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+
+import Entidades.Persona;
 
 public class PersonaService {
-    private Scanner scanner;
-
-    public PersonaService() {
-        this.scanner = new Scanner(System.in);
-    }
+    //private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     public Persona crearPersona() {
-        scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre de la persona: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Ingrese la fecha de nacimiento (dd/mm/yyyy): ");
-        String fechaString = scanner.nextLine();
-        Date fechaNacimiento = convertirFecha(fechaString);
-        return new Persona(nombre, fechaNacimiento);
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Ingrese el nombre de la persona: ");
+    String nombre = scanner.nextLine();
+    System.out.print("Ingrese la fecha de nacimiento de la persona (dd/mm/yyyy): ");
+    String fechaNacimientoStr = scanner.nextLine();
+    Date fechaNacimiento = null;
+    try {
+        fechaNacimiento = new Date(fechaNacimientoStr);
+    } catch (Exception e) {
+        System.out.println("Fecha de nacimiento inválida. La fecha debe estar en el formato dd/mm/yyyy.");
     }
-    
-    public int calcularEdad(Date fechaNacimiento) {
-        LocalDate fechaNac = convertirFechaLocalDate(fechaNacimiento);
-        LocalDate fechaActual = LocalDate.now();
-        Period periodo = Period.between(fechaNac, fechaActual);
-        return periodo.getYears();
+    return new Persona(nombre, fechaNacimiento);
+}
+
+public int calcularEdad(Persona persona) {
+    Date fechaNacimiento = persona.getFechaNacimiento();
+    Calendar calendarNacimiento = Calendar.getInstance();
+    calendarNacimiento.setTime(fechaNacimiento);
+    Calendar calendarActual = Calendar.getInstance();
+    int anios = calendarActual.get(Calendar.YEAR) - calendarNacimiento.get(Calendar.YEAR);
+    if (calendarActual.get(Calendar.MONTH) < calendarNacimiento.get(Calendar.MONTH)) {
+        anios--;
+    } else if (calendarActual.get(Calendar.MONTH) == calendarNacimiento.get(Calendar.MONTH)
+            && calendarActual.get(Calendar.DAY_OF_MONTH) < calendarNacimiento.get(Calendar.DAY_OF_MONTH)) {
+        anios--;
     }
-    
-    public boolean menorQue(Persona persona, int edad) {
-        int edadPersona = calcularEdad(persona.getFechaNacimiento());
-        return edadPersona < edad;
-    }
-    
-    public void mostrarPersona(Persona persona) {
-        int edad = calcularEdad(persona.getFechaNacimiento());
-        System.out.println("Nombre: " + persona.getNombre());
-        System.out.println("Fecha de nacimiento: " + persona.getFechaNacimiento());
-        System.out.println("Edad: " + edad);
-    }
-    
-    private Date convertirFecha(String fechaString) {
-        String[] partes = fechaString.split("/");
-        int dia = Integer.parseInt(partes[0]);
-        int mes = Integer.parseInt(partes[1]) - 1;
-        int anio = Integer.parseInt(partes[2]) - 1900;
-        return new Date(anio, mes, dia);
-    }
-    
-    private LocalDate convertirFechaLocalDate(Date fecha) {
-        return new java.sql.Date(fecha.getTime()).toLocalDate();
-    }
+    return anios;
+}
+
+public boolean menorQue(Persona persona, int edad) {
+    int edadPersona = calcularEdad(persona);
+    return edadPersona < edad;
+}
+
+public void mostrarPersona(Persona persona) {
+    System.out.println("Nombre: " + persona.getNombre());
+    System.out.println("Fecha de nacimiento: " + persona.getFechaNacimiento());
+}
 }
