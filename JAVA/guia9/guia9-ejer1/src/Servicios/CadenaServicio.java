@@ -14,8 +14,11 @@ public class CadenaServicio {
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
     
     public void crearFrase(Cadena cad){
         System.out.println("Escriba una frase");
@@ -29,6 +32,7 @@ public class CadenaServicio {
         for (int i = 0; i < cad.getFrase().length(); i++) {
             char letra = cad.getFrase().charAt(i);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     public void mostrarVocales(Cadena cad) {
@@ -41,6 +45,8 @@ public class CadenaServicio {
 >>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
             if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' ||
                   letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U' ) {
                 vocales++;
@@ -76,14 +82,18 @@ public class CadenaServicio {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
     public void compararLongitud(Cadena cad) {
         
         System.out.println("Ingrese una nueva frase para comparar");
         String fra;
         fra = scanner.nextLine();
         System.out.println(fra);
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     public void compararLongitud(Cadena cad, String fra) {
@@ -95,6 +105,8 @@ public class CadenaServicio {
 >>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
         int longitud1 = cad.getLongitud();
         int longitud2 = fra.length();
         
@@ -116,8 +128,11 @@ public class CadenaServicio {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
     public void reemplazar(Cadena cad) {
         System.out.println("Vamos a cambiar todas las letras -a- por la que elijas");
         
@@ -126,12 +141,15 @@ public class CadenaServicio {
         
         System.out.println("La frase resultante es: " + cad.getFrase().replace( 'a' , cambio));
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     public void reemplazar(Cadena cad, String cambio) {
         System.out.println("La frase resultante es: " + cad.getFrase().replace("a", cambio));
 >>>>>>> f8d28fc13f3794a015e449fb66f8939f7f694470
 =======
 >>>>>>> bcb6d48f0f5e80f9adfac228e594ba0dd4d56243
+=======
+>>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
     }
 
     public boolean contiene(Cadena cad) {
