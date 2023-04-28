@@ -31,4 +31,7 @@ public Date getFechaNacimiento() {
 public void setFechaNacimiento(Date fechaNacimiento) {
     this.fechaNacimiento = fechaNacimiento;
 }
-}
+
+    public Object getF_nac() {
+    }
+    

@@ -1,7 +1,9 @@
 package guia9.ejer5;
 
 import Entidades.Persona;
-import Servicio.PersonaService;
+import Servicio.personaServicio;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 public class Main {
 //En este ejemplo, creamos un objeto Scanner en el constructor de la clase PersonaService
@@ -18,11 +20,29 @@ public class Main {
 //El método mostrarPersona() muestra la información de la persona (nombre, fecha de nacimiento
 //y edad) en la consola.
     public static void main(String[] args) {
-     PersonaService personaService = new PersonaService();
-    Persona persona = personaService.crearPersona();
-    personaService.mostrarPersona(persona);
-    int edad = personaService.calcularEdad(persona);
-    System.out.println("Edad: " + edad);
-    System.out.println("¿La persona es menor que 18 años? " + personaService.menorQue(persona, 18));
-}
+          
+        Scanner read=new Scanner(System.in);
+        personaServicio ps = new personaServicio();
+        System.out.println("Ingrese año de nacimiento");
+        int anio=read.nextInt();
+        System.out.println("Ingrese mes de nacimiento");
+        int mes=read.nextInt();
+        System.out.println("Ingrese día de nacimiento");
+        int dia=read.nextInt();
+        
+        Date fecha= new Date(anio-1900, mes-1, dia);
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        
+        Persona p1= ps.crearPersona("Rodrigo", fecha);
+        
+        System.out.println(sdf.format(p1.getF_nac()));
+        
+        Date fechaActual= new Date();
+        
+        System.out.println(ps.calcularEdad(fechaActual, (Date) p1.getF_nac()));
+        
+        ps.mostrarPersona(p1);
+    }
+    
 }
