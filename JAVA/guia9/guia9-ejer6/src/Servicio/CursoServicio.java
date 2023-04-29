@@ -1,37 +1,42 @@
 package Servicio;
 
 import java.util.Scanner;
-
+import Entidad.Curso;
 
 public class CursoServicio {
     
-    public void cargarAlumnos() {
-        Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
+    
+    public CursoServicio(){
+        this.scanner = new Scanner(System.in);
+    }
+    
+    public void cargarAlumnos(Curso cx) {
+        String[] alumnos = new String[5];
         for (int i = 0; i < 5; i++) {
             System.out.print("Ingrese el nombre del alumno " + (i + 1) + ": ");
-            alumnos[i] = scanner.nextLine();
+            cx.setAlumnos(i) = scanner.nextLine();
         }
     }
 
-    public void crearCurso() {
+    public void crearCurso(Curso cx) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese el nombre del curso: ");
-        nombreCurso = scanner.nextLine();
+        cx.setNombreCurso(scanner.nextLine());
 
         System.out.print("Ingrese la cantidad de horas por día: ");
-        cantidadHorasPorDia = scanner.nextInt();
+        cx.setCantidadHorasPorDia(0);
 
         System.out.print("Ingrese la cantidad de días por semana: ");
-        cantidadDiasPorSemana = scanner.nextInt();
+        cx.setCantidadDiasPorSemana(scanner.nextInt());
 
         System.out.print("Ingrese el turno (mañana o tarde): ");
-        turno = scanner.next();
+        cx.setTurno(scanner.next());
 
         System.out.print("Ingrese el precio por hora: ");
-        precioPorHora = scanner.nextDouble();
-
-        alumnos = new String[5];
+        cx.setPrecioPorHora(0);
+        
         cargarAlumnos();
     }
 

@@ -1,6 +1,7 @@
+
 package Entidad;
 
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class Curso {
     
@@ -9,13 +10,12 @@ public class Curso {
     private int cantidadDiasPorSemana;
     private String turno;
     private double precioPorHora;
-    private String[] alumnos;
-    
-    // Constructor por defecto
+    private String[] alumnos = new String[5];
+
     public Curso() {
-        
+        // Constructor por defecto
     }
-    //Constructor con parametros
+
     public Curso(String nombreCurso, int cantidadHorasPorDia, int cantidadDiasPorSemana, String turno, double precioPorHora, String[] alumnos) {
         this.nombreCurso = nombreCurso;
         this.cantidadHorasPorDia = cantidadHorasPorDia;
@@ -25,6 +25,7 @@ public class Curso {
         this.alumnos = alumnos;
     }
 
+    // Métodos getters y setters
     public String getNombreCurso() {
         return nombreCurso;
     }
@@ -73,15 +74,38 @@ public class Curso {
         this.alumnos = alumnos;
     }
 
-//    public void cargarAlumnos() {
-//        
-//        for (int i = 0; i < 5; i++) {
-//            System.out.print("Ingrese el nombre del alumno " + (i+1) + ": ");
-//            this.alumnos[i] = scanner.nextLine();
-//        }
-//    }
-//
-//    public double calcularGananciaSemanal() {
-//        return this.cantidadHorasPorDia * this.precioPorHora * this.alumnos.length * this.cantidadDiasPorSemana;
-//    }
+    // Método para cargar los nombres de los alumnos
+    public void cargarAlumnos() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese los nombres de los 5 alumnos:");
+        for (int i = 0; i < alumnos.length; i++) {
+            System.out.print("Alumno " + (i+1) + ": ");
+            alumnos[i] = sc.nextLine();
+        }
+    }
+
+    // Método para crear un curso
+    public void crearCurso() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Ingrese el nombre del curso: ");
+        nombreCurso = sc.nextLine();
+        System.out.print("Ingrese la cantidad de horas por día: ");
+        cantidadHorasPorDia = sc.nextInt();
+        System.out.print("Ingrese la cantidad de días por semana: ");
+        cantidadDiasPorSemana = sc.nextInt();
+        System.out.print("Ingrese el turno (mañana o tarde): ");
+        turno = sc.next();
+        System.out.print("Ingrese el precio por hora: ");
+        precioPorHora = sc.nextDouble();
+
+        // Cargamos los nombres de los alumnos
+        cargarAlumnos();
+    }
+
+    // Método para calcular la ganancia semanal
+    public double calcularGananciaSemanal() {
+        double gananciaSemanal = cantidadHorasPorDia * precioPorHora * cantidadDiasPorSemana * alumnos.length;
+        return gananciaSemanal;
+    }
 }
+
