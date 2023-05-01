@@ -1,6 +1,5 @@
 package Entidad;
 
-import java.util.Arrays;
 
 public class Curso {
     
@@ -72,16 +71,6 @@ public class Curso {
     public void setAlumnos(String[] alumnos) {
         this.alumnos = alumnos;
     }
-
-//    public void cargarAlumnos() {
-//        
-//        for (int i = 0; i < 5; i++) {
-//            System.out.print("Ingrese el nombre del alumno " + (i+1) + ": ");
-//            this.alumnos[i] = scanner.nextLine();
-//        }
-//    }
-//
-//    public double calcularGananciaSemanal() {
-//        return this.cantidadHorasPorDia * this.precioPorHora * this.alumnos.length * this.cantidadDiasPorSemana;
-//    }
 }
+
+   
