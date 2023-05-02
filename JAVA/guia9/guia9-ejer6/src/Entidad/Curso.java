@@ -6,22 +6,20 @@ public class Curso {
     private String nombreCurso;
     private int cantidadHorasPorDia;
     private int cantidadDiasPorSemana;
-    private String turno;
+    private char turno;
     private double precioPorHora;
-    private String[] alumnos;
-    
-    // Constructor por defecto
-    public Curso() {
-        
-    }
-    //Constructor con parametros
-    public Curso(String nombreCurso, int cantidadHorasPorDia, int cantidadDiasPorSemana, String turno, double precioPorHora, String[] alumnos) {
+    private String[] alumnos = new String[5];
+
+    public Curso(String nombreCurso, int cantidadHorasPorDia, int cantidadDiasPorSemana, char turno, double precioPorHora,String[]alumnos) {
         this.nombreCurso = nombreCurso;
         this.cantidadHorasPorDia = cantidadHorasPorDia;
         this.cantidadDiasPorSemana = cantidadDiasPorSemana;
         this.turno = turno;
         this.precioPorHora = precioPorHora;
-        this.alumnos = alumnos;
+        this.alumnos=alumnos;
+    }
+
+    public Curso() {
     }
 
     public String getNombreCurso() {
@@ -48,11 +46,11 @@ public class Curso {
         this.cantidadDiasPorSemana = cantidadDiasPorSemana;
     }
 
-    public String getTurno() {
+    public char getTurno() {
         return turno;
     }
 
-    public void setTurno(String turno) {
+    public void setTurno(char turno) {
         this.turno = turno;
     }
 
@@ -71,6 +69,14 @@ public class Curso {
     public void setAlumnos(String[] alumnos) {
         this.alumnos = alumnos;
     }
-}
 
-   
+    @Override
+    public String toString() {
+        return "Curso{" + "nombreCurso=" + nombreCurso + ", cantidadHorasPorDia=" + cantidadHorasPorDia + ", cantidadDiasPorSemana=" + cantidadDiasPorSemana + ", turno=" + turno + ", precioPorHora=" + precioPorHora + ", alumnos=" + alumnos + '}';
+    }
+
+    
+    
+    
+
+}
