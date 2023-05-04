@@ -1,37 +1,83 @@
 
 package Entidad;
+import java.util.Scanner;
 
 public class Ahorcado {
-   
-    private String[] palabra;
+    private char[] palabra;
     private boolean[] encontradas;
     private int intentosMaximos;
-    private int intentosActuales;
+    private int intentosRestantes;
 
-    public Ahorcado(String palabra, int intentosMaximos) {
-        this.palabra = palabra.split("");
+    public void crearJuego(String palabra, int intentosMaximos) {
+        this.palabra = palabra.toCharArray();
         this.encontradas = new boolean[palabra.length()];
         this.intentosMaximos = intentosMaximos;
-        this.intentosActuales = intentosMaximos;
+        this.intentosRestantes = intentosMaximos;
     }
 
-    public String[] getPalabra() {
-        return palabra;
+    public void longitud() {
+        System.out.println("Longitud de la palabra: " + palabra.length);
     }
 
-    public boolean[] getEncontradas() {
-        return encontradas;
+    public boolean buscar(char letra) {
+        boolean encontrado = false;
+        for (int i = 0; i < palabra.length; i++) {
+            if (palabra[i] == letra) {
+                encontradas[i] = true;
+                encontrado = true;
+            }
+        }
+        if (!encontrado) {
+            intentosRestantes--;
+        }
+        return encontrado;
     }
 
-    public int getIntentosMaximos() {
-        return intentosMaximos;
+    public void encontradas(char letra) {
+        int encontradas = 0;
+        int faltantes = 0;
+        for (int i = 0; i < palabra.length; i++) {
+            if (this.encontradas[i]) {
+                encontradas++;
+            } else {
+                faltantes++;
+            }
+        }
+        System.out.println("Número de letras (encontradas, faltantes): (" + encontradas + "," + faltantes + ")");
     }
 
-    public int getIntentosActuales() {
-        return intentosActuales;
+    public void intentos() {
+        System.out.println("Número de oportunidades restantes: " + intentosRestantes);
     }
 
-    public void setIntentosActuales(int intentosActuales) {
-        this.intentosActuales = intentosActuales;
+    public boolean juego() {
+        Scanner scanner = new Scanner(System.in);
+        while (intentosRestantes > 0) {
+            System.out.println("Ingrese una letra:");
+            char letra = scanner.nextLine().charAt(0);
+            boolean encontrado = buscar(letra);
+            if (encontrado) {
+                System.out.println("Mensaje: La letra pertenece a la palabra");
+            } else {
+                System.out.println("Mensaje: La letra no pertenece a la palabra");
+            }
+            encontradas(letra);
+            intentos();
+            if (ganado()) {
+                System.out.println("¡Felicitaciones, has ganado!");
+                return true;
+            }
+        }
+        System.out.println("¡Has perdido! La palabra era: " + new String(palabra));
+        return false;
+    }
+
+    private boolean ganado() {
+        for (int i = 0; i < encontradas.length; i++) {
+            if (!encontradas[i]) {
+                return false;
+            }
+        }
+        return true;
     }
 }

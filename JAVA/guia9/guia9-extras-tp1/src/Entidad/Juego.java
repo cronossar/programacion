@@ -7,7 +7,7 @@ public class Juego {
 
         public Juego() {
             this.meses = new String[]{"enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"};
-            this.mesSecreto = meses[(int) (Math.random() * 12) + 1];
+            this.mesSecreto = meses[(int)(Math.random()*12)+1];
             System.out.println(mesSecreto);
 
         }
