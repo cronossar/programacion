@@ -9,7 +9,7 @@ public class Main {
         JuegoServicio js = new JuegoServicio();
         
         Juego j = new Juego();
-        j.setMesSecreto(meses[(int) 9]);
+        j.getMesSecreto();
         js.adivinar(j);
 
     }

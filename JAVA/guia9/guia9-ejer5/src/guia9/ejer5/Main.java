@@ -1,15 +1,11 @@
 package guia9.ejer5;
 
 import Entidades.Persona;
-<<<<<<< HEAD
 import Servicio.PersonaService;
-
-=======
-import Servicio.personaServicio;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
->>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
+
 public class Main {
 //En este ejemplo, creamos un objeto Scanner en el constructor de la clase PersonaService
 //para poder pedir información al usuario a través de la consola. Luego, en el 
@@ -25,24 +21,17 @@ public class Main {
 //El método mostrarPersona() muestra la información de la persona (nombre, fecha de nacimiento
 //y edad) en la consola.
     public static void main(String[] args) {
-<<<<<<< HEAD
-        
-        PersonaService p1 = new PersonaService();
-        Persona per1 = new Persona();
-        
-        p1.crearPersona();
-        System.out.println("&&&&&&&&&&&&&");
-        //p1.calcularEdad(fechaNacimiento);
-        p1.mostrarPersona(per1);
-        
-        
-    }
-    
-}
-=======
-          
+ 
+//        PersonaService p1 = new PersonaService();
+//        Persona per1 = new Persona();
+//        
+//        p1.crearPersona();
+//        System.out.println("&&&&&&&&&&&&&");
+//        p1.calcularEdad(fechaNacimiento);
+//        p1.mostrarPersona(per1);
         Scanner read=new Scanner(System.in);
-        personaServicio ps = new personaServicio();
+        PersonaService ps = new PersonaService();
+        
         System.out.println("Ingrese año de nacimiento");
         int anio=read.nextInt();
         System.out.println("Ingrese mes de nacimiento");
@@ -50,20 +39,24 @@ public class Main {
         System.out.println("Ingrese día de nacimiento");
         int dia=read.nextInt();
         
-        Date fecha= new Date(anio-1900, mes-1, dia);
+        Date fecha = new Date(anio-1900, mes-1, dia);
         
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         
-        Persona p1= ps.crearPersona("Rodrigo", fecha);
+        Persona p1 = ps.crearPersona();
         
-        System.out.println(sdf.format(p1.getF_nac()));
+        System.out.println(sdf.format(p1.fechaNacimiento()));
         
         Date fechaActual= new Date();
         
-        System.out.println(ps.calcularEdad(fechaActual, (Date) p1.getF_nac()));
+        System.out.println(ps.calcularEdad(fechaActual), (Date) p1.getFechaNacimiento());
         
         ps.mostrarPersona(p1);
     }
+ }
     
-}
->>>>>>> c2149cb1fa6564c78dd90533d0b7d49268879112
+
+
+        
+
+
