@@ -25,7 +25,7 @@ public class Guia10Practica {
         int cont = 0;
         for(Integer cadena : numerosA){
             cont++;
-//            numerosA.remove(Integer.valueOf(33));//borra el objeto
+
         System.out.print("{ "+cont+" } "+cadena+ " , ");
         }
         System.out.println("");
@@ -52,7 +52,7 @@ public class Guia10Practica {
         numerosB.add(o);
         System.out.println("CONJUNTOS - Fueron cargados");
         System.out.println(numerosB);
-        numerosB.remove(45);
+        numerosB.remove(q);
         System.out.println("Fue removido el objeto 45");
         System.out.println(numerosB);
         
