@@ -8,33 +8,42 @@ import java.util.HashSet;
 public class Guia10Practica {
 
     public static void main(String[] args) {
+        
         // LISTAS
         ArrayList<Integer> numerosA = new ArrayList();
         int x = 20;
         int z = 10;
         int c = 25;
         int v = 33;
-        int n = 45;
+        int n = 25;
         numerosA.add(x);
         numerosA.add(z);
         numerosA.add(c);
         numerosA.add(v);
         numerosA.add(n);
         System.out.println("ARRAYLIST - Fueron cargados");
-        System.out.println(numerosA);
+        int cont = 0;
+        for(Integer cadena : numerosA){
+            cont++;
+
+        System.out.print("{ "+cont+" } "+cadena+ " , ");
+        }
+        System.out.println("");
+        System.out.println("#############");
         numerosA.remove(1);//borra el dato del subindice 1
         System.out.println("Fue removido el dato del indice 1");
         System.out.println(numerosA);
-//        numerosA.remove(33);//borra el objeto
-//        System.out.println(numerosA);
-        
+        System.out.println("Removemos el objeto o valor");
+        numerosA.remove(Integer.valueOf(45));//borra el objeto
+        System.out.println(numerosA);
+        System.out.println("#############");
         //CONJUNTOS
         HashSet<Integer> numerosB = new HashSet();
         Integer y = 30;
         Integer q = 45;
         Integer w = 789;
         Integer r = 124;
-        Integer o = 987;
+        Integer o = 45;
         
         numerosB.add(y);
         numerosB.add(q);
@@ -43,10 +52,10 @@ public class Guia10Practica {
         numerosB.add(o);
         System.out.println("CONJUNTOS - Fueron cargados");
         System.out.println(numerosB);
-        numerosB.remove(45);
+        numerosB.remove(q);
         System.out.println("Fue removido el objeto 45");
         System.out.println(numerosB);
-        
+        System.out.println("#############");
         //MAPAS
         HashMap<Integer, String> alumnos = new HashMap();
         
