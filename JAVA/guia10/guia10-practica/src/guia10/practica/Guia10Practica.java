@@ -71,6 +71,9 @@ public class Guia10Practica {
         System.out.println("Fue removido el dni2 de Hugo");
         alumnos.remove(45786233);
         System.out.println(alumnos);
+        
+        
+        
     }
     
 }
