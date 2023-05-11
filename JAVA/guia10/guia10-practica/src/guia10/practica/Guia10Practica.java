@@ -36,7 +36,7 @@ public class Guia10Practica {
         System.out.println("Removemos el objeto o valor");
         numerosA.remove(Integer.valueOf(45));//borra el objeto
         System.out.println(numerosA);
-        
+        System.out.println("#############");
         //CONJUNTOS
         HashSet<Integer> numerosB = new HashSet();
         Integer y = 30;
@@ -55,7 +55,7 @@ public class Guia10Practica {
         numerosB.remove(q);
         System.out.println("Fue removido el objeto 45");
         System.out.println(numerosB);
-        
+        System.out.println("#############");
         //MAPAS
         HashMap<Integer, String> alumnos = new HashMap();
         

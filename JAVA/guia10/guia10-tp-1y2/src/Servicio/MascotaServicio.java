@@ -25,7 +25,7 @@ public class MascotaServicio {
             System.out.print("¿Quieres introducir otro perro? (s/n): ");
             String opcion = scanner.nextLine();
 
-            if (opcion.equals("n")) {
+            if (opcion.equals("n")|opcion.equals("N")) {
                 salir = true;
             }
         }
