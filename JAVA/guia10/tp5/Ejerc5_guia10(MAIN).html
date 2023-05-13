@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Ejerc5_guia10.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.literal {color: #0000e6}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.comment {color: #969696}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\Guia_10\src\Main\Ejerc5_guia10.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span>
+<span class="comment"> * To change this template file, choose Tools | Templates</span>
+<span class="comment"> * and open the template in the editor.</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Main;
+<span class="literal">import</span> Entidades.Paises;
+<span class="literal">import</span> Servicios.PaisesServicio;
+<span class="literal">import</span> java.util.ArrayList;
+
+
+<span class="literal">import</span> java.util.HashSet;
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">Ejerc5_guia10</span> {
+
+    <span class="comment">/**</span>
+<span class="comment">     * </span><span class="ST0">@param</span> args <span class="comment">the</span> <span class="comment">command</span> <span class="comment">line</span> <span class="comment">arguments</span>
+     <span class="comment">*/</span>
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+        PaisesServicio ps= <span class="literal">new</span> PaisesServicio();
+        HashSet&lt;Paises&gt; conj_paises= <span class="literal">new</span> HashSet&lt;&gt;();
+        ArrayList&lt;Paises&gt; pais_lista;
+        
+        <span class="comment">//Creamos los paises ESTAN EN UN CONJUNTO</span>
+        ps.crearPais(conj_paises);
+        <span class="comment">//mostramos los paises</span>
+        ps.mostrarPaises(conj_paises);
+        <span class="comment">//transformamos nuestro conjunto a lista:</span>
+        
+        <span class="comment">//pais_lista= ps.transformarConjunto(conj_paises);</span>
+
+        <span class="comment">//ps.ordenarListaAlfabeticamente(pais_lista);</span>
+        
+        pais_lista=ps.ordenarAlfaXPais(conj_paises);
+        
+        
+        
+    }
+    
+    
+    
+}
+
+</pre></body>
+</html>

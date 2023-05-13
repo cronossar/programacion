@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Paises.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.string {color: #ce7b00}
+.literal {color: #0000e6}
+.comment {color: #969696}
+.ST2 {color: #009900}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">C:\Users\Boddy-g\Documents\NetBeansProjects\Guia_10\src\Entidades\Paises.java</td></tr></table>
+<pre>
+<span class="comment">/*</span>
+<span class="comment"> * To change this license header, choose License Headers in Project Properties.</span>
+<span class="comment"> * To change this template file, choose Tools | Templates</span>
+<span class="comment"> * and open the template in the editor.</span>
+<span class="comment"> */</span>
+<span class="literal">package</span> Entidades;
+
+
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">Boddy</span><span class="comment">-</span><span class="comment">g</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">Paises</span> {
+    <span class="literal">private</span> String <span class="ST2">nomb_pais</span>;
+    <span class="literal">private</span> <span class="literal">double</span> <span class="ST2">cant_hab</span>;
+
+    <span class="literal">public</span> <span class="ST1">Paises</span>() {
+    }
+
+    <span class="literal">public</span> <span class="ST1">Paises</span>(String nomb_pais, Integer cant_hab) {
+        <span class="literal">this</span>.<span class="ST2">nomb_pais</span> = nomb_pais;
+        <span class="literal">this</span>.<span class="ST2">cant_hab</span> = cant_hab;
+    }
+
+    <span class="literal">public</span> <span class="literal">double</span> <span class="ST1">getCant_hab</span>() {
+        <span class="literal">return</span> <span class="ST2">cant_hab</span>;
+    }
+
+    <span class="literal">public</span> <span class="literal">void</span> <span class="ST1">setCant_hab</span>(Integer cant_hab) {
+        <span class="literal">this</span>.<span class="ST2">cant_hab</span> = cant_hab;
+    }
+
+
+
+    <span class="literal">public</span> String <span class="ST1">getNomb_pais</span>() {
+        <span class="literal">return</span> <span class="ST2">nomb_pais</span>;
+    }
+
+    <span class="literal">public</span> <span class="literal">void</span> <span class="ST1">setNomb_pais</span>(String nomb_pais) {
+        <span class="literal">this</span>.<span class="ST2">nomb_pais</span> = nomb_pais;
+    }
+
+    @Override
+    <span class="literal">public</span> String <span class="ST1">toString</span>() {
+        <span class="literal">return</span> <span class="string">&quot;</span><span class="string">Paises{</span><span class="string">&quot;</span> + <span class="string">&quot;</span><span class="string">nomb_pais=</span><span class="string">&quot;</span> + <span class="ST2">nomb_pais</span> + <span class="string">&quot;</span><span class="string">, cant_hab=</span><span class="string">&quot;</span> + <span class="ST2">cant_hab</span> + <span class="string">&#39;</span><span class="string">}</span><span class="string">&#39;</span>;
+    }
+
+    
+    
+    
+    
+    
+}
+
+</pre></body>
+</html>
