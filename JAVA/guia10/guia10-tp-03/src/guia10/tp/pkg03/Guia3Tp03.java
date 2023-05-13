@@ -1,5 +1,5 @@
 
-package guia3.tp.pkg03;
+package guia10.tp.pkg03;
 
 import Servicio.AlumnoServicio;
 import java.util.Scanner;
