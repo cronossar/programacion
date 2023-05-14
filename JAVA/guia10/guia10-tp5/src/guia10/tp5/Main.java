@@ -18,16 +18,23 @@ public class Main {
         
         //Creamos los paises ESTAN EN UN CONJUNTO
         ps.crearPais(conj_paises);
+        System.out.println("%%%%%%%%%%%%%%%%%%%");
+        
         //mostramos los paises
         ps.mostrarPaises(conj_paises);
+        System.out.println("%%%%%%%%%%%%%%%%%%%");
+        
         //transformamos nuestro conjunto a lista:
-        
         //pais_lista= ps.transformarConjunto(conj_paises);
-
-        //ps.ordenarListaAlfabeticamente(pais_lista);
         
+        //ps.ordenarListaAlfabeticamente(pais_lista);
         pais_lista=ps.ordenarAlfaXPais(conj_paises);
-       
+        System.out.println("%%%%%%%%%%%%%%%%%%%");
+        System.out.println("Ingrese un pais para eliminar de la lista");
+        ps.buscarEliminar(conj_paises);
+        System.out.println("%%%%%%%%%%%%%%%%%%%");
+        System.out.println("La lista resultante es. ");
+        ps.mostrarPaises(conj_paises);
     }
    
 }
