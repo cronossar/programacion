@@ -2,7 +2,9 @@
 package Servicio;
 
 import Entidad.Pelicula;
+import Utilidades.Comparadores;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class PeliculaServicio {
@@ -20,7 +22,7 @@ public class PeliculaServicio {
             aux.setDirector(read.nextLine());
             read.delimiter();
             System.out.println("Ingrese la duracion de la pelicula en horas");
-            aux.setDuracion(read.nextDouble());
+            aux.setDuracion(read.nextInt());
             read.delimiter();
             peli.add(aux);
 
@@ -36,11 +38,11 @@ public class PeliculaServicio {
             System.out.println(p.toString());
         }
     //Mostrar en pantalla todas las películas con una duración mayor a 1 hora
-    //public void mostrarMayorHora (ArrayList<Pelicula> peli){
-        
-    }
     
-    
-   
-    
+     
+          
+      } 
 }
+    
+    
+

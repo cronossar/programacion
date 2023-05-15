@@ -7,12 +7,12 @@ public class Pelicula {
     
     private String titulo;
     private String director;
-    private double duracion;
+    private Integer duracion;
 
     public Pelicula() {
     }
 
-    public Pelicula(String titulo, String director, double duracion) {
+    public Pelicula(String titulo, String director, Integer duracion) {
         this.titulo = titulo;
         this.director = director;
         this.duracion = duracion;
@@ -34,11 +34,11 @@ public class Pelicula {
         this.director = director;
     }
 
-    public double getDuracion() {
+    public Integer getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(double duracion) {
+    public void setDuracion(Integer duracion) {
         this.duracion = duracion;
     }
 

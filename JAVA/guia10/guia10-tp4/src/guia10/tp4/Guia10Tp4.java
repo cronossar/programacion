@@ -13,8 +13,8 @@ public class Guia10Tp4 {
         PeliculaServicio ps= new PeliculaServicio();
         ArrayList<Pelicula> conj_pelicula= new ArrayList<>();
         //ArrayList<Pelicula> pelicula_lista;
-        Pelicula p1 = new Pelicula("La Casa Embrujada", "RCraig Soton", 2.5);
-        Pelicula p2 = new Pelicula("Rapidos y Furiosos", "Luis Sheldon", 1.4);
+        Pelicula p1 = new Pelicula("La Casa Embrujada", "RCraig Soton", 2);
+        Pelicula p2 = new Pelicula("Rapidos y Furiosos", "Luis Sheldon", 1);
         Pelicula p3 = new Pelicula("El Silencio de los Inocentes", "Marcos Allanbourn", 1);
         Pelicula p4 = new Pelicula("Los Intocables", "Allan Masters", 3);
         conj_pelicula.add(p1);
@@ -28,7 +28,7 @@ public class Guia10Tp4 {
         System.out.println("#####################################");
         //Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en
         //pantalla
-                
+              
                 
                 
         //Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en
