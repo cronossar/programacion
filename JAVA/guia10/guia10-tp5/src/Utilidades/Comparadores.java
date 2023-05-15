@@ -1,16 +1,18 @@
 
 package Utilidades;
 
-import Entidad.Paises;
+import Entidad.Pelicula;
 import java.util.Comparator;
+import java.util.ArrayList;
 
 public class Comparadores {
     
-    public static Comparator <Paises> ordenarAlfaXPais = new Comparator<Paises>() {
+    public static Comparator<Pelicula> ordenarMayorTiempo = new Comparator<Pelicula>() {
         @Override
-        public int compare(Paises o1, Paises o2) {
-            return o1.getNomb_pais(). compareTo(o2.getNomb_pais());
+        public int compare(Pelicula o1, Pelicula o2) {
+            
+            return o2.getDuracion().compareTo(o1.getDuracion());
+            
         }
     };
-        
 }
