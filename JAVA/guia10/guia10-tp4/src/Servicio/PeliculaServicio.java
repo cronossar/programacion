@@ -38,10 +38,10 @@ public class PeliculaServicio {
             System.out.println(p.toString());
         }
     //Mostrar en pantalla todas las películas con una duración mayor a 1 hora
-    
-     
-          
-      } 
+    //public void mostrarMayorT (ArrayList<Pelicula> peli){
+        
+    }
+      
 }
     
     

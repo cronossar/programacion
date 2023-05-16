@@ -4,6 +4,7 @@ package guia10.tp4;
 import Entidad.Pelicula;
 import Servicio.PeliculaServicio;
 import java.util.ArrayList;
+import java.util.Collection;
 
 
 public class Guia10Tp4 {
@@ -28,7 +29,7 @@ public class Guia10Tp4 {
         System.out.println("#####################################");
         //Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en
         //pantalla
-              
+             
                 
                 
         //Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en

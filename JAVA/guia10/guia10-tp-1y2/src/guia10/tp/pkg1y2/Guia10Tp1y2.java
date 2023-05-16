@@ -2,10 +2,6 @@
 package guia10.tp.pkg1y2;
 
 import Servicio.MascotaServicio;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.Scanner;
 
 public class Guia10Tp1y2 {
 
