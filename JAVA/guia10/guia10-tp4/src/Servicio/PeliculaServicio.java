@@ -40,14 +40,24 @@ public class PeliculaServicio {
 }
       //Mostrar en pantalla todas las películas con una duración mayor a 1 hora
     public void mostrarMayorT (ArrayList<Pelicula> peli){
-        Collections.sort(peli, Utilidades.Comparadores.mostrarMayorTiempo);
+        Collections.sort(peli, Utilidades.Comparadores.ordenarDuracionAscendente);
         for (Pelicula pelicula : peli) {
             System.out.println(pelicula);
         }
     
     } 
     public void mostrarMenorT(ArrayList<Pelicula> peli){
-       peli.sort(Utilidades.Comparadores.mostrarMenorTiempo);
+       peli.sort(Utilidades.Comparadores.ordenarDuracionDescendente);
+       mostrarPeliculas(peli);
+    }
+    
+    public void ordenapTitulo(ArrayList<Pelicula> peli){
+       peli.sort(Utilidades.Comparadores.ordenarAlfaXTitulo);
+       mostrarPeliculas(peli);
+    }
+    
+    public void ordenarDirector(ArrayList<Pelicula> peli){
+       peli.sort(Utilidades.Comparadores.ordenarAlfaXTitulo);
        mostrarPeliculas(peli);
     }
 }

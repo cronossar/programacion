@@ -18,13 +18,15 @@ public class PaisesServicio {
             Paises aux = new Paises();
             System.out.println("Ingrese el nombre del País");
             aux.setNombre(read.nextLine());
+           
             System.out.println("Ingrese la cantidad de habitantes");
             aux.setCant_hab(read.nextLine());
-            read.nextLine();
+            
             paises.add(aux);
 
             System.out.println("Desea agregar otro País? (s/n)");
             sal = read.nextLine();
+            
 
         } while (sal.equalsIgnoreCase("s"));
 
@@ -36,7 +38,8 @@ public class PaisesServicio {
         }
     }
 
-    //Pasar a lista el conjunto
+    //Recorrer lista para mostrar
+    
     public void mostrarPaises2(ArrayList<Paises> paises) {
         for (Paises v2 : paises) {
             System.out.println(v2.toString());
@@ -49,7 +52,19 @@ public class PaisesServicio {
         mostrarPaises2(listaPaises);
         return listaPaises;
     }
-
+    public ArrayList<Paises> ordenararrAlfaXPais(HashSet<Paises> paises) {
+        ArrayList<Paises> listaPaises = new ArrayList(paises);
+        listaPaises.sort(Utilidades.Comparadores.ordenarDuracionDescendente);
+        mostrarPaises2(listaPaises);
+        return listaPaises;
+    }
+    public ArrayList<Paises> ordenarabaAlfaXPais(HashSet<Paises> paises) {
+        ArrayList<Paises> listaPaises = new ArrayList(paises);
+        listaPaises.sort(Utilidades.Comparadores.ordenarDuracionDescendente);
+        mostrarPaises2(listaPaises);
+        return listaPaises;
+    }
+    
     public void buscarEliminar(HashSet<Paises> paisEliminar) {
         // Uso el iterador, porque si uso FOREACH da error
         Iterator<Paises> it = paisEliminar.iterator();
