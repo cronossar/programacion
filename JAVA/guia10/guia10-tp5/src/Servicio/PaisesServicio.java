@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
-import static java.util.Spliterators.iterator;
+
 
 public class PaisesServicio {
 
@@ -17,9 +17,9 @@ public class PaisesServicio {
         do {
             Paises aux = new Paises();
             System.out.println("Ingrese el nombre del País");
-            aux.setNomb_pais(read.nextLine());
+            aux.setNombre(read.nextLine());
             System.out.println("Ingrese la cantidad de habitantes");
-            aux.setCant_hab(read.nextInt());
+            aux.setCant_hab(read.nextLine());
             read.nextLine();
             paises.add(aux);
 
@@ -45,7 +45,7 @@ public class PaisesServicio {
 
     public ArrayList<Paises> ordenarAlfaXPais(HashSet<Paises> paises) {
         ArrayList<Paises> listaPaises = new ArrayList(paises);
-        listaPaises.sort(Comparadores.ordenarAlfaXPais);
+        listaPaises.sort(Utilidades.Comparadores.ordenarDuracionDescendente);
         mostrarPaises2(listaPaises);
         return listaPaises;
     }
@@ -54,7 +54,7 @@ public class PaisesServicio {
         // Uso el iterador, porque si uso FOREACH da error
         Iterator<Paises> it = paisEliminar.iterator();
         while (it.hasNext()) {
-            if (it.next().getNomb_pais().equals(read.nextLine())) { // Si se cumple la condicion de encontrar "Ese apellido elegido,lo elimina)
+            if (it.next().getNombre().equals(read.nextLine())) { // Si se cumple la condicion de encontrar "Ese apellido elegido,lo elimina)
                 it.remove();
                 System.out.println("El país ha sido eliminado.");
                 break;

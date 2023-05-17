@@ -11,7 +11,7 @@ public class MascotaServicio {
 
     public MascotaServicio() {
         perros = new ArrayList<>();
-        scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);   
     }
 
     public void ejecutar() {

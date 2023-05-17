@@ -1,7 +1,5 @@
 
 package Entidad;
-import Utilidades.Comparadores;
-import java.util.Comparator;
 
 public class Pelicula {
     

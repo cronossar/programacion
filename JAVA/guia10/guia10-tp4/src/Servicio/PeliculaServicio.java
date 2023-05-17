@@ -2,9 +2,8 @@
 package Servicio;
 
 import Entidad.Pelicula;
-import Utilidades.Comparadores;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class PeliculaServicio {
@@ -37,12 +36,24 @@ public class PeliculaServicio {
         for (Pelicula p : peli) {
             System.out.println(p.toString());
         }
-    //Mostrar en pantalla todas las películas con una duración mayor a 1 hora
-    //public void mostrarMayorT (ArrayList<Pelicula> peli){
-        
-    }
-      
+    
 }
+      //Mostrar en pantalla todas las películas con una duración mayor a 1 hora
+    public void mostrarMayorT (ArrayList<Pelicula> peli){
+        Collections.sort(peli, Utilidades.Comparadores.mostrarMayorTiempo);
+        for (Pelicula pelicula : peli) {
+            System.out.println(pelicula);
+        }
+    
+    } 
+    public void mostrarMenorT(ArrayList<Pelicula> peli){
+       peli.sort(Utilidades.Comparadores.mostrarMenorTiempo);
+       mostrarPeliculas(peli);
+    }
+}
+    
+      
+
     
     
 
