@@ -3,23 +3,23 @@ package Entidad;
 
 public class Mercaderia {
     
-    private String producto;
+    private String productos;
     private Double precio;
 
     public Mercaderia() {
     }
 
     public Mercaderia(String producto, Double precio) {
-        this.producto = producto;
+        this.productos = producto;
         this.precio = precio;
     }
 
     public String getProducto() {
-        return producto;
+        return productos;
     }
 
     public void setProducto(String producto) {
-        this.producto = producto;
+        this.productos = productos;
     }
 
     public Double getPrecio() {
@@ -32,7 +32,7 @@ public class Mercaderia {
 
     @Override
     public String toString() {
-        return "Mercaderia{" + "producto=" + producto + ", precio=" + precio + '}';
+        return "Mercaderia{" + "productos=" + productos + ", precio=" + precio + '}';
     }
     
     

@@ -1,7 +1,6 @@
 package Servicio;
 
 import Entidad.Paises;
-import Utilidades.Comparadores;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -45,7 +44,7 @@ public class PaisesServicio {
             System.out.println(v2.toString());
         }
     }
-
+    //COMPARADORES
     public ArrayList<Paises> ordenarAlfaXPais(HashSet<Paises> paises) {
         ArrayList<Paises> listaPaises = new ArrayList(paises);
         listaPaises.sort(Utilidades.Comparadores.ordenarDuracionDescendente);

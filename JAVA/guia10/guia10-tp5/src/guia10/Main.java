@@ -18,9 +18,8 @@ public class Main {
         //Se crea arralist auxiliar para cargar la conversion de hashset a lista
         //Se convierte el conjunto a lista
         ArrayList<Paises> pais_lista = new ArrayList();
-        
         //Creamos los paises ESTAN EN UN CONJUNTO
-        ps.crearPais(conj_paises);
+        //ps.crearPais(conj_paises);
         System.out.println("%%%%%%%%%%%%%%%%%%%");
         
         //mostramos los paises

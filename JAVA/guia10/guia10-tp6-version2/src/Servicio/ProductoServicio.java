@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class MercaderiaServicio {
+public class ProductoServicio {
     
     private HashMap<String, Double> productos;
     private Scanner scanner;
 
-    public MercaderiaServicio() {
+    public ProductoServicio() {
         this.productos = new HashMap<>();
         this.scanner = new Scanner(System.in);
     }

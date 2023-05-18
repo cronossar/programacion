@@ -1,17 +1,17 @@
 
-package guia10.tp6;
+package guia10.tp6.version2;
 
-import Servicio.MercaderiaServicio;
+import Servicio.ProductoServicio;
 import java.util.Scanner;
 
-public class Guia10Tp6 {
+public class Guia10Tp6Version2 {
 
     public static void main(String[] args) {
         
-        MercaderiaServicio servicio = new MercaderiaServicio();
-        Scanner scanner = new Scanner(System.in);
-        
-        boolean salir = false;
+    ProductoServicio producto = new ProductoServicio();
+    Scanner scanner = new Scanner(System.in);
+    
+    boolean salir = false;
         int opcion;
 
         while (!salir) {
@@ -21,32 +21,33 @@ public class Guia10Tp6 {
             System.out.println("3. Eliminar un producto");
             System.out.println("4. Mostrar productos");
             System.out.println("5. Salir");
-            System.out.print("Ingrese una opciÃ³n: ");
+            System.out.print("Ingrese una opción: ");
             opcion = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcion) {
                 case 1:
-                    servicio.introducirProducto();
+                    producto.introducirProducto();
                     break;
                 case 2:
-                    servicio.modificarPrecioProducto();
+                    producto.modificarPrecioProducto();
                     break;
                 case 3:
-                    servicio.eliminarProducto();
+                    producto.eliminarProducto();
                     break;
                 case 4:
-                    servicio.mostrarProductos();
+                    producto.mostrarProductos();
                     break;
                 case 5:
                     salir = true;
                     break;
                 default:
-                    System.out.println("OpciÃ³n invÃ¡lida. Intente nuevamente.");
+                    System.out.println("Opción inválida. Intente nuevamente.");
                     break;
             }
         }
 
-        System.out.println("Â¡Hasta luego!");
+        System.out.println("¡Hasta luego!");
     }
+ 
 }
