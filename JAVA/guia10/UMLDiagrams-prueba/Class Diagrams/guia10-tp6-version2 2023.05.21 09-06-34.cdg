@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="guia10-tp6-version2">
+  <ClassDiagramComponents>
+    <Class name="Guia10Tp6Version2" package="guia10.tp6.version2" visibility="public" xPosition="31.0" yPosition="46.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ProductoServicio" package="Servicio" visibility="public" xPosition="332.0" yPosition="182.0">
+      <Fields>
+        <Field name="productos" type="HashMap&lt;String, Double&gt;" visibility="private"/>
+        <Field name="scanner" type="Scanner" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="introducirProducto" returnType="void" visibility="public"/>
+        <Method name="modificarPrecioProducto" returnType="void" visibility="public"/>
+        <Method name="eliminarProducto" returnType="void" visibility="public"/>
+        <Method name="mostrarProductos" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
