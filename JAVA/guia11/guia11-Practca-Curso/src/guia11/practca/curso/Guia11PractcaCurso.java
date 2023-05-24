@@ -3,8 +3,7 @@ package guia11.practca.curso;
 
 import Entidades.Curso;
 import Entidades.Profesor;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Guia11PractcaCurso {
     //UNO A UNO Por cada objeto tenemos una relación con un solo objeto.

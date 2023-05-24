@@ -1,14 +1,20 @@
 
 package Entidades;
 
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Profesor {
     
     private String nombre;
     private String apellido;
+    
+    private List <Curso> curso; 
 
     public Profesor() {
     }
-
+    
     public Profesor(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;

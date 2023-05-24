@@ -1,6 +1,9 @@
 
 package Entidades;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Curso {
     
     private int curso;
@@ -18,8 +21,8 @@ public class Curso {
     public void setProfesor(Profesor p) {
         this.profesor = p;
     }
-
     
+    // Scanner leer = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
 }
     
     
