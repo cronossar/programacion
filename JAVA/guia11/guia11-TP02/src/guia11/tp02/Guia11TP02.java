@@ -4,18 +4,18 @@
  */
 package guia11.tp02;
 
-import revolverDeAgua.RevolverDeAgua;
-
 public class Guia11TP02 {
 
     public static void main(String[] args) {
         
-        RevolverDeAgua r1 = new RevolverDeAgua();
+        Juego juego = new Juego(3);
         
-        r1.llenarRevolver();
+        while( !juego.finJuego() ){
+            juego.ronda();            
+            //juego.rondaV2();
+        }
         
-        
-        System.out.println(r1.mojar());  
+        System.out.println("El juego ha terminado");
         
     }
     

@@ -4,7 +4,7 @@ package jugador;
 import revolverdeagua.RevolverDeAgua;
 
 public class Jugador {
-    private final int id;
+    private int id;
     private String nombre;
     private boolean mojado = false;
 

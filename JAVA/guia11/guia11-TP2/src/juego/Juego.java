@@ -1,4 +1,3 @@
-
 package juego;
 
 import java.util.ArrayList;
@@ -7,20 +6,18 @@ import jugador.Jugador;
 import revolverdeagua.RevolverDeAgua;
 
 public class Juego {
-    
 
- ArrayList<Jugador> jugadores = new ArrayList();
+    ArrayList<Jugador> jugadores = new ArrayList();
     RevolverDeAgua r = new RevolverDeAgua();
-    
-    public void llenarJuego(){
+
+    public void llenarJuego() {
         Scanner leer = new Scanner(System.in);
-        
+
         System.out.println("---BIENVENIDO A PISTOLA LOCA---");
         System.out.println("Ingrese la cantidad de Jugadores MAX=6");
-        int cantJugadores = leer.nextInt();    
-       
-        
-        for (int i = 1; i <= cantJugadores ; i++) {
+        int cantJugadores = leer.nextInt();
+
+        for (int i = 1; i <= cantJugadores; i++) {
             Jugador n = new Jugador(i);
             System.out.println("Ingrese el nombre del Jugador :");
             n.setNombre(leer.next());
@@ -28,25 +25,24 @@ public class Juego {
         }
         r.llenarRevolver();
     }
-    
-    public void ronda(){
+
+    public void ronda() {
         boolean alguienMojado = false;
         System.out.println("---NUEVA RONDA---");
         for (Jugador jugador : jugadores) {
-           jugador.disparo(r);
-           System.out.println(jugador);
-           if (jugador.getMojado()){
-               alguienMojado = true;
-               break;
-           }     
+            jugador.disparo(r);
+            System.out.println(jugador);
+            if (jugador.getMojado()) {
+                alguienMojado = true;
+                break;
+            }
         }
         if (!alguienMojado) {
             System.out.println("¡Nadie se ha mojado! Siguiente ronda...");
             ronda();
         } else {
             System.out.println("¡Alguien se ha mojado!");
-            
+
         }
     }
 }
-
