@@ -19,8 +19,8 @@ public class Juego {
 
         for (int i = 1; i <= cantJugadores; i++) {
             Jugador n = new Jugador(i);
-            System.out.println("Ingrese el nombre del Jugador :");
-            n.setNombre(leer.next());
+//            System.out.println("Ingrese el nombre del Jugador :");
+//            n.setNombre(leer.next());
             jugadores.add(n);
         }
         r.llenarRevolver();
