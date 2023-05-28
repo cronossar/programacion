@@ -4,17 +4,19 @@ package guia11.tp2.v2;
 import java.util.ArrayList;
 import juego.Juego;
 import jugador.Jugador;
-import revolverDeAgua.RevolverDeAgua;
+import revolver.Revolver;
 
 public class Guia11TP2V2 {
 
     public static void main(String[] args) {
         
         ArrayList<Jugador> jugadores = new ArrayList<>();
-        RevolverDeAgua revolver = new RevolverDeAgua();
+        Revolver revolver = new Revolver();
 
         // Agregar jugadores (máximo 6 jugadores, por defecto 6 si el número no está en el rango)
-        int numeroJugadores = 4; // Puedes modificar este número según tus necesidades
+        // Tambien se puede poner otro valor
+        
+        int numeroJugadores = 6; 
 
         if (numeroJugadores < 1 || numeroJugadores > 6) {
             numeroJugadores = 6;

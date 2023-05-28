@@ -3,14 +3,14 @@ package juego;
 
 import java.util.ArrayList;
 import jugador.Jugador;
-import revolverDeAgua.RevolverDeAgua;
+import revolver.Revolver;
 
 public class Juego {
     
    private ArrayList<Jugador> jugadores;
-   private RevolverDeAgua revolver;
+   private Revolver revolver;
 
-    public void llenarJuego(ArrayList<Jugador> jugadores, RevolverDeAgua revolver) {
+    public void llenarJuego(ArrayList<Jugador> jugadores, Revolver revolver) {
         this.jugadores = jugadores;
         this.revolver = revolver;
     }

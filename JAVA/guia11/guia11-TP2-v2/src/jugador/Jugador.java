@@ -1,7 +1,7 @@
 
 package jugador;
 
-import revolverDeAgua.RevolverDeAgua;
+import revolver.Revolver;
 
 public class Jugador {
     private int id;
@@ -14,7 +14,7 @@ public class Jugador {
         this.mojado = false;
     }
 
-    public boolean disparo(RevolverDeAgua revolver) {
+    public boolean disparo(Revolver revolver) {
         if (revolver.mojar()) {
             mojado = true;
             return true;
