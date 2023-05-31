@@ -19,7 +19,7 @@ public class Guia11Tp01Extras {
         personaServicio per1 = new personaServicio();
 
         boolean salir = true;
-
+// <editor-fold defaultstate="collapsed" desc="Your Fold Comment">
         //Crear tantos perros como quieras
         do {
             Perro guau1 = p1.crearperro();
@@ -33,6 +33,7 @@ public class Guia11Tp01Extras {
         System.out.println("%%%%%%%%%%%%%%%%%%%");
         
         boolean salir1 = true;
+// </editor-fold>
         //Crear tantas personas como quieras
         do {
             Persona person1 = per1.crearpersona();
