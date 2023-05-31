@@ -31,6 +31,7 @@ public class Guia11Tp01Extras {
         } while (salir);
 
         System.out.println("%%%%%%%%%%%%%%%%%%%");
+        
         boolean salir1 = true;
         //Crear tantas personas como quieras
         do {
@@ -41,11 +42,14 @@ public class Guia11Tp01Extras {
                 salir1 = false;
             }
         } while (salir1);
+        
         System.out.println("Lista de animales");
         System.out.println(muchos_guau);
         System.out.println("Lista de personas");
         System.out.println(muchas_perso);
+        
         System.out.println("%%%%%%%%%%");
+        
         for (Persona persona : muchas_perso) {
             if (muchos_guau.isEmpty()) {
                 System.out.println("No hay guauces para adoptar");
