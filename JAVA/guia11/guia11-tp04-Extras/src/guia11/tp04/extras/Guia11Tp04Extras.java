@@ -3,29 +3,27 @@ package guia11.tp04.extras;
 import entidades.Alumno;
 import java.util.List;
 import servicio.Simulador;
+import entidades.Voto;
 
 public class Guia11Tp04Extras {
 
     public static void main(String[] args) {
 
         Simulador simulador = new Simulador();
-        
-        List<Alumno> alumnos = simulador.generarListadoAlumnos(20);
-        List<Integer> dnis = simulador.generarListadoDnis(20, 10000000, 99999999);
-        
-        simulador.asignarDatosAlumnos(alumnos, dnis);
-        
+
+        simulador.generarNombres();
+        simulador.generarApellidos();
+        simulador.generarAlumnos(20);
+
         System.out.println("Listado de alumnos:");
-        simulador.imprimirListadoAlumnos(alumnos);
-        
-        simulador.votacion(alumnos);
-        
+        simulador.imprimirListadoAlumnos();
+
+        simulador.realizarVotacion();
+
         System.out.println("Resultados de la votación:");
-        simulador.mostrarResultados(alumnos);
-        
-        simulador.contarVotos(alumnos);
-        
-        System.out.println("Facilitadores y facilitadores suplentes:");
-        simulador.mostrarFacilitadores(alumnos);
+        simulador.mostrarResultadosVotacion();
+
+        System.out.println("Recuento de votos:");
+        simulador.realizarRecuentoVotos();
     }
 }

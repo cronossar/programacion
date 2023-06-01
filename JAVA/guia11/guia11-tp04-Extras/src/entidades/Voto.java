@@ -1,32 +1,27 @@
 package entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Voto {
 
-    private Alumno alumnoVotante;
+    private Alumno alumnoQueVota;
     private List<Alumno> alumnosVotados;
-    
-    public Voto(Alumno alumnoVotante, List<Alumno> alumnosVotados) {
-        this.alumnoVotante = alumnoVotante;
-        this.alumnosVotados = alumnosVotados;
+
+    public Voto(Alumno alumnoQueVota) {
+        this.alumnoQueVota = alumnoQueVota;
+        this.alumnosVotados = new ArrayList<>();
     }
 
-    public Alumno getAlumnoVotante() {
-        return alumnoVotante;
-    }
-
-    public void setAlumnoVotante(Alumno alumnoVotante) {
-        this.alumnoVotante = alumnoVotante;
+    public Alumno getAlumnoQueVota() {
+        return alumnoQueVota;
     }
 
     public List<Alumno> getAlumnosVotados() {
         return alumnosVotados;
     }
 
-    public void setAlumnosVotados(List<Alumno> alumnosVotados) {
-        this.alumnosVotados = alumnosVotados;
+    public void agregarVoto(Alumno alumnoVotado) {
+        alumnosVotados.add(alumnoVotado);
     }
-    
-    
 }

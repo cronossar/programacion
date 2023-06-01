@@ -3,12 +3,12 @@ package entidades;
 public class Alumno {
 
     private String nombreCompleto;
-    private int dni;
+    private int DNI;
     private int cantidadVotos;
-    
-    public Alumno(String nombreCompleto, int dni) {
+
+    public Alumno(String nombreCompleto, int DNI) {
         this.nombreCompleto = nombreCompleto;
-        this.dni = dni;
+        this.DNI = DNI;
         this.cantidadVotos = 0;
     }
 
@@ -16,29 +16,24 @@ public class Alumno {
         return nombreCompleto;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
-    public int getDni() {
-        return dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
+    public int getDNI() {
+        return DNI;
     }
 
     public int getCantidadVotos() {
         return cantidadVotos;
     }
 
-    public void setCantidadVotos(int cantidadVotos) {
-        this.cantidadVotos = cantidadVotos;
-    }
-    
-    
-    
     public void incrementarVotos() {
         cantidadVotos++;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "nombreCompleto='" + nombreCompleto + '\'' +
+                ", DNI=" + DNI +
+                ", cantidadVotos=" + cantidadVotos +
+                '}';
     }
 }

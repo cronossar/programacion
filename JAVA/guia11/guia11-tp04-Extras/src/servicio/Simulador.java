@@ -2,6 +2,7 @@ package servicio;
 
 import entidades.Alumno;
 import entidades.Voto;
+import static java.lang.Math.random;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -12,148 +13,130 @@ import java.util.Random;
 
 public class Simulador {
 
+    public List<String> generarNombres(int cantidad) {
+    Random random = new Random();
+    private List<String> nombres;
+    private List<String> apellidos;
     private List<Alumno> alumnos;
-    private List<Integer> dnis;
-    
+    private HashSet<Integer> dnis;
+
     public Simulador() {
+        //random = new Random();
+        nombres = new ArrayList<>();
+        apellidos = new ArrayList<>();
         alumnos = new ArrayList<>();
-        dnis = new ArrayList<>();
+        dnis = new HashSet<>();
     }
-    
-    public List<Alumno> generarListadoAlumnos(int cantidadAlumnos) {
-        List<String> nombres = Arrays.asList("Juan", "Maria", "Pedro", "Laura", "Carlos", "Ana");
-        List<String> apellidos = Arrays.asList("Gomez", "Lopez", "Rodriguez", "Fernandez", "Perez", "Torres");
-        List<String> combinacionesNombres = generarCombinacionesAleatorias(nombres, cantidadAlumnos);
-        List<String> combinacionesApellidos = generarCombinacionesAleatorias(apellidos, cantidadAlumnos);
-        
+
+    public void generarNombres() {
+        nombres.add("Juan");
+        nombres.add("María");
+        nombres.add("Luis");
+        nombres.add("Ana");
+        nombres.add("Pedro");
+        // Agregar más nombres según sea necesario
+    }
+
+    public void generarApellidos() {
+        apellidos.add("Gómez");
+        apellidos.add("Pérez");
+        apellidos.add("López");
+        apellidos.add("Fernández");
+        apellidos.add("González");
+        // Agregar más apellidos según sea necesario
+    }
+
+    public String generarNombreAleatorio() {
+        int indiceNombre = random.nextInt(nombres.size());
+        int indiceApellido = random.nextInt(apellidos.size());
+        return nombres.get(indiceNombre) + " " + apellidos.get(indiceApellido);
+    }
+
+    public int generarDNI() {
+        int dni;
+        do {
+            dni = random.nextInt(1000000000);
+        } while (dnis.contains(dni));
+        dnis.add(dni);
+        return dni;
+    }
+
+    public void generarAlumnos(int cantidadAlumnos) {
         for (int i = 0; i < cantidadAlumnos; i++) {
-            String nombreCompleto = combinacionesNombres.get(i) + " " + combinacionesApellidos.get(i);
-            Alumno alumno = new Alumno(nombreCompleto, 0);
+            String nombreCompleto = generarNombreAleatorio();
+            int dni = generarDNI();
+            Alumno alumno = new Alumno(nombreCompleto, dni);
             alumnos.add(alumno);
         }
-        
-        return alumnos;
     }
-    
-    private List<String> generarCombinacionesAleatorias(List<String> elementos, int cantidad) {
-        List<String> combinaciones = new ArrayList<>();
-        Random random = new Random();
-        
-        for (int i = 0; i < cantidad; i++) {
-            int index = random.nextInt(elementos.size());
-            combinaciones.add(elementos.get(index));
-        }
-        
-        return combinaciones;
-    }
-    
-    public List<Integer> generarListadoDnis(int cantidadDnis, int rangoMin, int rangoMax) {
-        List<Integer> dnis = new ArrayList<>();
-        Random random = new Random();
-        
-        for (int i = 0; i < cantidadDnis; i++) {
-            int dni = random.nextInt(rangoMax - rangoMin + 1) + rangoMin;
-            dnis.add(dni);
-        }
-        
-        return dnis;
-    }
-    
-    public void asignarDatosAlumnos(List<Alumno> alumnos, List<Integer> dnis) {
-        int cantidadAlumnos = alumnos.size();
-        int cantidadDnis = dnis.size();
-        
-        for (int i = 0; i < cantidadAlumnos; i++) {
-            String nombreCompleto = alumnos.get(i).getNombreCompleto();
-            int dni = dnis.get(i % cantidadDnis);
-            alumnos.get(i).setDni(dni);
-        }
-    }
-    
-    public void imprimirListadoAlumnos(List<Alumno> alumnos) {
+
+    public void imprimirListadoAlumnos() {
         for (Alumno alumno : alumnos) {
-            System.out.println("Nombre completo: " + alumno.getNombreCompleto());
-            System.out.println("DNI: " + alumno.getDni());
-            System.out.println("Cantidad de votos: " + alumno.getCantidadVotos());
-            System.out.println("-----------------------");
+            System.out.println(alumno);
         }
     }
-    
-    public void votacion(List<Alumno> alumnos) {
-        Random random = new Random();
-        HashSet<Alumno> alumnosVotados = new HashSet<>();
-        
+
+    public void realizarVotacion() {
+        HashSet<Alumno> votados = new HashSet<>();
+
         for (Alumno alumno : alumnos) {
-            Voto voto = generarVotoAleatorio(alumno, alumnos, alumnosVotados, random);
+            Voto voto = new Voto(alumno);
+
+            while (voto.getAlumnosVotados().size() < 3) {
+                int indiceAlumnoVotado = random.nextInt(alumnos.size());
+                Alumno alumnoVotado = alumnos.get(indiceAlumnoVotado);
+
+                if (!alumno.equals(alumnoVotado) && !voto.getAlumnosVotados().contains(alumnoVotado)) {
+                    voto.agregarVoto(alumnoVotado);
+                    votados.add(alumnoVotado);
+                }
+            }
+
             alumno.incrementarVotos();
-            
-            System.out.println("Alumno que vota: " + voto.getAlumnoVotante().getNombreCompleto());
-            System.out.println("Alumnos votados:");
-            for (Alumno votado : voto.getAlumnosVotados()) {
-                System.out.println("- " + votado.getNombreCompleto());
-            }
-            System.out.println("-----------------------");
         }
     }
-    
-    public Voto generarVotoAleatorio(Alumno alumnoVotante, List<Alumno> alumnos, HashSet<Alumno> alumnosVotados, Random random) {
-        List<Alumno> alumnosVotadoss = new ArrayList<>();
-        alumnosVotadoss.add(alumnoVotante); // El alumno no puede votarse a sí mismo
-        
-        while (alumnosVotados.size() < 4) {
-            int index = random.nextInt(alumnos.size());
-            Alumno alumnoVotado = alumnos.get(index);
-            if (!alumnosVotados.contains(alumnoVotado)) {
-                alumnosVotados.add(alumnoVotado);
-            }
-        }
-        
-        return new Voto(alumnoVotante, alumnosVotadoss);
-    }
-    
-    public void mostrarResultados(List<Alumno> alumnos) {
+
+    public void mostrarResultadosVotacion() {
         for (Alumno alumno : alumnos) {
             System.out.println("Alumno: " + alumno.getNombreCompleto());
             System.out.println("Cantidad de votos: " + alumno.getCantidadVotos());
             System.out.println("Votos recibidos:");
-            for (Voto voto : votos) {
-                if (voto.getAlumnosVotados().contains(alumno)) {
-                    System.out.println("- Votado por: " + voto.getAlumnoVotante().getNombreCompleto());
-                }
+
+            for (Voto voto : obtenerVotosRecibidos(alumno)) {
+                System.out.println("- " + voto.getAlumnoQueVota().getNombreCompleto());
             }
-            System.out.println("-----------------------");
+
+            System.out.println();
         }
     }
-    
-    public void contarVotos(List<Alumno> alumnos) {
-        for (Alumno alumno : alumnos) {
-            for (Voto voto : votos) {
+
+    public List<Voto> obtenerVotosRecibidos(Alumno alumno) {
+        List<Voto> votosRecibidos = new ArrayList<>();
+
+        for (Alumno votante : alumnos) {
+            for (Voto voto : votante.getVotos()) {
                 if (voto.getAlumnosVotados().contains(alumno)) {
-                    alumno.incrementarVotos();
+                    votosRecibidos.add(voto);
                 }
             }
         }
+
+        return votosRecibidos;
     }
-    
-    public void mostrarFacilitadores(List<Alumno> alumnos) {
-        Collections.sort(alumnos, new Comparator<Alumno>() {
-            public int compare(Alumno a1, Alumno a2) {
-                return a2.getCantidadVotos() - a1.getCantidadVotos();
-            }
-        });
-        
-        System.out.println("Facilitadores:");
-        for (int i = 0; i < 5; i++) {
-            Alumno facilitador = alumnos.get(i);
-            System.out.println((i + 1) + ". " + facilitador.getNombreCompleto() + " - Votos: " + facilitador.getCantidadVotos());
+
+    public void realizarRecuentoVotos() {
+        alumnos.sort((a1, a2) -> Integer.compare(a2.getCantidadVotos(), a1.getCantidadVotos()));
+        List<Alumno> facilitadores = alumnos.subList(0, 5);
+        List<Alumno> facilitadoresSuplentes = alumnos.subList(5, 10);
+
+        System.out.println("Facilitadores elegidos:");
+        for (int i = 0; i < facilitadores.size(); i++) {
+            System.out.println((i + 1) + ". " + facilitadores.get(i).getNombreCompleto());
         }
-        
-        System.out.println("-----------------------");
-        
+
         System.out.println("Facilitadores suplentes:");
-        for (int i = 5; i < 10; i++) {
-            Alumno facilitadorSuplente = alumnos.get(i);
-            System.out.println((i + 1) + ". " + facilitadorSuplente.getNombreCompleto() + " - Votos: " + facilitadorSuplente.getCantidadVotos());
+        for (int i = 0; i < facilitadoresSuplentes.size(); i++) {
+            System.out.println((i + 1) + ". " + facilitadoresSuplentes.get(i).getNombreCompleto());
         }
     }
 }
