@@ -36,4 +36,6 @@ public class Alumno {
                 ", cantidadVotos=" + cantidadVotos +
                 '}';
     }
+
+    
 }

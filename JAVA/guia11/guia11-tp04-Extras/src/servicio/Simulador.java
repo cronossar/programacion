@@ -2,26 +2,22 @@ package servicio;
 
 import entidades.Alumno;
 import entidades.Voto;
-import static java.lang.Math.random;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 
+
 public class Simulador {
 
-    public List<String> generarNombres(int cantidad) {
-    Random random = new Random();
+    private Random random;
     private List<String> nombres;
     private List<String> apellidos;
     private List<Alumno> alumnos;
     private HashSet<Integer> dnis;
 
     public Simulador() {
-        //random = new Random();
+        random = new Random();
         nombres = new ArrayList<>();
         apellidos = new ArrayList<>();
         alumnos = new ArrayList<>();
