@@ -1,13 +1,16 @@
 package entidades;
 
-import java.util.List;
+import java.util.HashSet;
 
 public class Voto {
 
     private Alumno alumno;
-    private List<Alumno> votados;
+    private HashSet<Alumno> votados;
 
-    public Voto(Alumno alumno, List<Alumno> votados) {
+    public Voto() {
+    }
+
+    public Voto(Alumno alumno, HashSet<Alumno> votados) {
         this.alumno = alumno;
         this.votados = votados;
     }
@@ -20,17 +23,11 @@ public class Voto {
         this.alumno = alumno;
     }
 
-    public List<Alumno> getVotados() {
+    public HashSet<Alumno> getVotados() {
         return votados;
     }
 
-    public void setVotados(List<Alumno> votados) {
+    public void setVotados(HashSet<Alumno> votados) {
         this.votados = votados;
     }
-
-    @Override
-    public String toString() {
-        return "Voto{" + "alumno=" + alumno + ", votados=" + votados + '}';
-    }
-
 }

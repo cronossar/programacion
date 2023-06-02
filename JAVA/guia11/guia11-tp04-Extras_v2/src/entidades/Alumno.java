@@ -2,30 +2,42 @@ package entidades;
 
 public class Alumno {
 
-    private String nombreCompleto;
-    private int DNI;
+    /**
+     * Agregar votos que hizo el alumno
+     */
+    
+    private int dni;
     private int cantidadVotos;
+    private String nombreCompleto;
+    private Voto votos;
 
-    public Alumno(String nombreCompleto, int DNI) {
+    //<-------------------------------------------------------->
+    
+    public Voto getVotos() {
+        return votos;
+    }
+
+    public void setVotos(Voto votos) {
+        this.votos = votos;
+    }
+    
+    //<-------------------------------------------------------->
+
+    public Alumno() {
+    }
+
+    public Alumno(int dni, int cantidadVotos, String nombreCompleto) {
+        this.dni = dni;
+        this.cantidadVotos = cantidadVotos;
         this.nombreCompleto = nombreCompleto;
-        this.DNI = DNI;
-        this.cantidadVotos = 0;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public int getDni() {
+        return dni;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
-    public int getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(int DNI) {
-        this.DNI = DNI;
+    public void setDni(int dni) {
+        this.dni = dni;
     }
 
     public int getCantidadVotos() {
@@ -36,13 +48,16 @@ public class Alumno {
         this.cantidadVotos = cantidadVotos;
     }
 
-    public void incrementarVotos() {
-        cantidadVotos++;
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
     @Override
     public String toString() {
-        return "Alumno{" + "nombreCompleto=" + nombreCompleto + ", DNI=" + DNI + ", cantidadVotos=" + cantidadVotos + '}';
+        return "Alumnos{" + "dni=" + dni + ", cantidadVotos=" + cantidadVotos + ", nombreCompleto=" + nombreCompleto + ", votos=" + votos + '}';
     }
-
 }
