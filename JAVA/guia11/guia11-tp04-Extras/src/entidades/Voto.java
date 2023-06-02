@@ -5,23 +5,19 @@ import java.util.List;
 
 public class Voto {
 
-    private Alumno alumnoQueVota;
-    private List<Alumno> alumnosVotados;
+    private Alumno alumno;
+    private List<Alumno> votados;
 
-    public Voto(Alumno alumnoQueVota) {
-        this.alumnoQueVota = alumnoQueVota;
-        this.alumnosVotados = new ArrayList<>();
+    public Voto(Alumno alumno, List<Alumno> votados) {
+        this.alumno = alumno;
+        this.votados = votados;
     }
 
-    public Alumno getAlumnoQueVota() {
-        return alumnoQueVota;
+    public Alumno getAlumno() {
+        return alumno;
     }
 
-    public List<Alumno> getAlumnosVotados() {
-        return alumnosVotados;
-    }
-
-    public void agregarVoto(Alumno alumnoVotado) {
-        alumnosVotados.add(alumnoVotado);
+    public List<Alumno> getVotados() {
+        return votados;
     }
 }

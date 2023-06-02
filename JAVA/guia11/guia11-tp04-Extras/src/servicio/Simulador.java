@@ -3,6 +3,8 @@ package servicio;
 import entidades.Alumno;
 import entidades.Voto;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
@@ -10,129 +12,121 @@ import java.util.Random;
 
 public class Simulador {
 
-    private Random random;
+    
     private List<String> nombres;
     private List<String> apellidos;
+    private List<Integer> dnis;
     private List<Alumno> alumnos;
-    private HashSet<Integer> dnis;
 
     public Simulador() {
-        random = new Random();
-        nombres = new ArrayList<>();
-        apellidos = new ArrayList<>();
+        nombres = Arrays.asList("Juan", "María", "Pedro", "Ana", "Luis", "Laura", "Carlos", "Sofía", "Miguel", "Lucía");
+        apellidos = Arrays.asList("García", "Rodríguez", "López", "Fernández", "Martínez", "Pérez", "Gómez", "Sánchez", "Romero", "Torres");
+        dnis = generarDNI(10_000_000, 90_000_000);
         alumnos = new ArrayList<>();
-        dnis = new HashSet<>();
     }
 
-    public void generarNombres() {
-        nombres.add("Juan");
-        nombres.add("María");
-        nombres.add("Luis");
-        nombres.add("Ana");
-        nombres.add("Pedro");
-        // Agregar más nombres según sea necesario
+    public List<String> generarNombres(int cantidad) {
+        List<String> nombresGenerados = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < cantidad; i++) {
+            String nombre = nombres.get(random.nextInt(nombres.size()));
+            String apellido = apellidos.get(random.nextInt(apellidos.size()));
+            nombresGenerados.add(nombre + " " + apellido);
+        }
+
+        return nombresGenerados;
     }
 
-    public void generarApellidos() {
-        apellidos.add("Gómez");
-        apellidos.add("Pérez");
-        apellidos.add("López");
-        apellidos.add("Fernández");
-        apellidos.add("González");
-        // Agregar más apellidos según sea necesario
+    public List<Integer> generarDNI(int min, int max) {
+        List<Integer> dnisGenerados = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 3; i++) {
+            int dni = random.nextInt(max - min) + min;
+            dnisGenerados.add(dni);
+        }
+
+        return dnisGenerados;
     }
 
-    public String generarNombreAleatorio() {
-        int indiceNombre = random.nextInt(nombres.size());
-        int indiceApellido = random.nextInt(apellidos.size());
-        return nombres.get(indiceNombre) + " " + apellidos.get(indiceApellido);
-    }
+    public void generarAlumnos(int cantidad) {
+        List<String> nombresGenerados = generarNombres(cantidad);
+        List<Integer> dnisGenerados = generarDNI(10_000_000, 90_000_000);
+        HashSet<Integer> dnisSet = new HashSet<>(dnisGenerados);
 
-    public int generarDNI() {
-        int dni;
-        do {
-            dni = random.nextInt(1000000000);
-        } while (dnis.contains(dni));
-        dnis.add(dni);
-        return dni;
-    }
-
-    public void generarAlumnos(int cantidadAlumnos) {
-        for (int i = 0; i < cantidadAlumnos; i++) {
-            String nombreCompleto = generarNombreAleatorio();
-            int dni = generarDNI();
+        for (int i = 0; i < cantidad; i++) {
+            String nombreCompleto = nombresGenerados.get(i);
+            int dni = dnisGenerados.get(i);
             Alumno alumno = new Alumno(nombreCompleto, dni);
             alumnos.add(alumno);
+            dnisSet.remove(dni);
+        }
+
+        for (int i = 0; i < cantidad; i++) {
+            if (alumnos.get(i).getDNI() == 0) {
+                int dni = dnisSet.iterator().next();
+                alumnos.get(i).setDNI(dni);
+                dnisSet.remove(dni);
+            }
         }
     }
 
-    public void imprimirListadoAlumnos() {
+    public void imprimirAlumnos() {
         for (Alumno alumno : alumnos) {
-            System.out.println(alumno);
+            System.out.println("Nombre completo: " + alumno.getNombreCompleto() +
+                    ", DNI: " + alumno.getDNI() +
+                    ", Votos: " + alumno.getCantidadVotos());
         }
     }
 
-    public void realizarVotacion() {
-        HashSet<Alumno> votados = new HashSet<>();
+    public void votacion() {
+        Random random = new Random();
+        HashSet<Alumno> votadosSet = new HashSet<>();
 
         for (Alumno alumno : alumnos) {
-            Voto voto = new Voto(alumno);
-
-            while (voto.getAlumnosVotados().size() < 3) {
-                int indiceAlumnoVotado = random.nextInt(alumnos.size());
-                Alumno alumnoVotado = alumnos.get(indiceAlumnoVotado);
-
-                if (!alumno.equals(alumnoVotado) && !voto.getAlumnosVotados().contains(alumnoVotado)) {
-                    voto.agregarVoto(alumnoVotado);
-                    votados.add(alumnoVotado);
+            List<Alumno> votados = new ArrayList<>();
+            while (votados.size() < 4) {
+                int index = random.nextInt(alumnos.size());
+                Alumno votado = alumnos.get(index);
+                if (alumno != votado && !votadosSet.contains(votado)) {
+                    votados.add(votado);
+                    votadosSet.add(votado);
                 }
             }
-
             alumno.incrementarVotos();
-        }
-    }
-
-    public void mostrarResultadosVotacion() {
-        for (Alumno alumno : alumnos) {
-            System.out.println("Alumno: " + alumno.getNombreCompleto());
-            System.out.println("Cantidad de votos: " + alumno.getCantidadVotos());
-            System.out.println("Votos recibidos:");
-
-            for (Voto voto : obtenerVotosRecibidos(alumno)) {
-                System.out.println("- " + voto.getAlumnoQueVota().getNombreCompleto());
+            Voto voto = new Voto(alumno, votados);
+            System.out.println("Alumno: " + voto.getAlumno().getNombreCompleto());
+            System.out.println("Votados: ");
+            for (Alumno votado : voto.getVotados()) {
+                System.out.println("- " + votado.getNombreCompleto());
             }
-
             System.out.println();
         }
     }
 
-    public List<Voto> obtenerVotosRecibidos(Alumno alumno) {
-        List<Voto> votosRecibidos = new ArrayList<>();
+    public void recuentoVotos() {
+        alumnos.sort(Comparator.comparingInt(Alumno::getCantidadVotos).reversed());
 
-        for (Alumno votante : alumnos) {
-            for (Voto voto : votante.getVotos()) {
-                if (voto.getAlumnosVotados().contains(alumno)) {
-                    votosRecibidos.add(voto);
-                }
-            }
+        List<Alumno> facilitadores = new ArrayList<>();
+        List<Alumno> facilitadoresSuplentes = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            facilitadores.add(alumnos.get(i));
+            facilitadoresSuplentes.add(alumnos.get(i + 5));
         }
 
-        return votosRecibidos;
-    }
-
-    public void realizarRecuentoVotos() {
-        alumnos.sort((a1, a2) -> Integer.compare(a2.getCantidadVotos(), a1.getCantidadVotos()));
-        List<Alumno> facilitadores = alumnos.subList(0, 5);
-        List<Alumno> facilitadoresSuplentes = alumnos.subList(5, 10);
-
-        System.out.println("Facilitadores elegidos:");
-        for (int i = 0; i < facilitadores.size(); i++) {
-            System.out.println((i + 1) + ". " + facilitadores.get(i).getNombreCompleto());
+        System.out.println("Facilitadores:");
+        for (Alumno facilitador : facilitadores) {
+            System.out.println("- " + facilitador.getNombreCompleto() + ", Votos: " + facilitador.getCantidadVotos());
         }
 
-        System.out.println("Facilitadores suplentes:");
-        for (int i = 0; i < facilitadoresSuplentes.size(); i++) {
-            System.out.println((i + 1) + ". " + facilitadoresSuplentes.get(i).getNombreCompleto());
+        System.out.println("\nFacilitadores Suplentes:");
+        for (Alumno suplente : facilitadoresSuplentes) {
+            System.out.println("- " + suplente.getNombreCompleto() + ", Votos: " + suplente.getCantidadVotos());
         }
     }
 }
+
+        
+ 

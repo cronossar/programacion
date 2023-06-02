@@ -24,18 +24,20 @@ public class Alumno {
         return cantidadVotos;
     }
 
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public void setDNI(int DNI) {
+        this.DNI = DNI;
+    }
+
+    public void setCantidadVotos(int cantidadVotos) {
+        this.cantidadVotos = cantidadVotos;
+    }
+    
+
     public void incrementarVotos() {
         cantidadVotos++;
     }
-
-    @Override
-    public String toString() {
-        return "Alumno{" +
-                "nombreCompleto='" + nombreCompleto + '\'' +
-                ", DNI=" + DNI +
-                ", cantidadVotos=" + cantidadVotos +
-                '}';
-    }
-
-    
 }
