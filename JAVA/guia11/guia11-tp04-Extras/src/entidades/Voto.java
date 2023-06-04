@@ -1,6 +1,5 @@
 package entidades;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Voto {
@@ -17,7 +16,22 @@ public class Voto {
         return alumno;
     }
 
+    public void setAlumno(Alumno alumno) {
+        this.alumno = alumno;
+    }
+
     public List<Alumno> getVotados() {
         return votados;
     }
+
+    public void setVotados(List<Alumno> votados) {
+        this.votados = votados;
+    }
+
+    @Override
+    public String toString() {
+        return "Voto{" + "alumno=" + alumno + ", votados=" + votados + '}';
+    }
+
+    
 }
