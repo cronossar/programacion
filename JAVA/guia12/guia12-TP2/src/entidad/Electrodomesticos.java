@@ -53,10 +53,10 @@ Scanner sc = new Scanner(System.in);
 
     public void crearElectrodomestico() {
         
-        precio = 1000.00;
+        this.precio = 1000.00;
         System.out.println("Los colores disponibles son: NEGRO - GRIS - ROJO - AZUL - BLANCO");
         System.out.println("Ingrese el color deseado");
-        color = sc.next().toUpperCase();
+        this.color = sc.next().toUpperCase();
         comprobarColor(color);
         System.out.println("Las opciones de consumo energetico son: A - B - C - D - E");
         System.out.println("Ingrese la letra de tipo consumo energetico");
@@ -64,58 +64,61 @@ Scanner sc = new Scanner(System.in);
         consE(C);
         System.out.println("");
         System.out.println("Ingrese el peso del electrodomestico");
-        peso = sc.nextInt();
+        this.peso = sc.nextInt();
+        sc.nextLine();
     }
 
     public void consE(char C) {
         if (C == 'A' || C == 'B' || C == 'C' || C == 'D' || C == 'E') {
-            setConsE(C);
+            this.consE = C;
         } else {
-            setConsE('F');
+            this.consE='F';
         }
     }
 
     public void comprobarColor(String color) {
-        if (color == "NEGRO" || color == "GRIS" || color == "ROJO" || color == "AZUL") {
-            setColor(color);
+        if (color.equalsIgnoreCase("") || color.equalsIgnoreCase("GRIS") || color.equalsIgnoreCase("ROJO") ||
+            color.equalsIgnoreCase("AZUL")) {
+            this.color=color;
         } else {
-            setColor("BLANCO");
+            this.color="BLANCO";
         }
     }
 
     public void precioFinal() {
-        switch (consE) {
+        switch (this.consE) {
             case 'A':
-                precio += 1000.00;
+                this.precio += 1000.00;
                 break;
             case 'B':
-                precio += 800.00;
+                this.precio += 800.00;
                 break;
             case 'C':
-                precio += 600.00;
+                this.precio += 600.00;
                 break;
             case 'D':
-                precio += 500.00;
+                this.precio += 500.00;
                 break;
             case 'E':
-                precio += 300.00;
+                this.precio += 300.00;
                 break;
             default:
-                precio += 100.00;
+                this.precio += 100.00;
         }
         if (peso > 0 && peso <= 19) {
-            precio += 100.00;
+            this.precio += 100.00;
         }
         if (peso >= 20 && peso <= 49) {
-            precio += 500.00;
+            this.precio += 500.00;
         }
         if (peso >= 50 && peso <= 79) {
-            precio += 800.00;
+            this.precio += 800.00;
         }
         if (peso > 80) {
-            precio += 1000.00;
+            this.precio += 1000.00;
         }
-        System.out.println("Mostrar precio ahora como quedo "+precio);
-    }
+//        System.out.println("Hasta el momento el precio del producto es:  "+this.precio);
+        }
 
 }
+

@@ -51,7 +51,7 @@ public class Televisor extends Electrodomesticos{
     @Override
     public void precioFinal(){
         if (resolucion > 40) {
-            precio = precio * .30;
+            precio = precio * .30 + precio;
         }
         if (TDT = true) {
             precio += 500;

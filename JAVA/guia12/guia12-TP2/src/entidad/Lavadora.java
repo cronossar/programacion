@@ -8,10 +8,6 @@ public class Lavadora extends Electrodomesticos{
     public Lavadora() {
     }
 
-    public Lavadora(int carga) {
-        this.carga = carga;
-    }
-
     public Lavadora(int carga, double precio, String color, char consE, int peso) {
         super(precio, color, consE, peso);
         this.carga = carga;
@@ -26,11 +22,20 @@ public class Lavadora extends Electrodomesticos{
     }
     
     public void crearLavadora(){
-        
-        System.out.println("Ingrese los datos de la lavadora");
-        crearElectrodomestico();
+        super.crearElectrodomestico();
         System.out.println("¿Que capacidad de carga tiene esta lavadora?");
         carga = sc.nextInt();
+        sc.nextLine();
+    }    
+    @Override
+    public void precioFinal(){
+        super.precioFinal();
+        if (carga > 30) {
+            this.precio += 500;
+        }
+        
+        System.out.println("El precio final de la Lavadora es: "+this.precio);
     }
     
 }
+
