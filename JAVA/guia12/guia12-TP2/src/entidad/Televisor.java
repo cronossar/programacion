@@ -50,7 +50,14 @@ public class Televisor extends Electrodomesticos{
         }
     @Override
     public void precioFinal(){
-        
+        if (resolucion > 40) {
+            precio = precio * .30;
+        }
+        if (TDT = true) {
+            precio += 500;
+        }
+        System.out.println("El precio final del televisor es: "+precio);
+  
     }
     
     }
