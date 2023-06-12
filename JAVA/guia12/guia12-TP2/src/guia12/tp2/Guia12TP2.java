@@ -21,10 +21,10 @@ public class Guia12TP2 {
         l1.precioFinal();
         System.out.println("%%%%%%%%%%%%%%");
         
-//        Televisor t1 = new Televisor();
-//        System.out.println("Cargue los datos del televisor");
-//        t1.crearTelevisor();
-//        t1.precioFinal();
+        Televisor t1 = new Televisor();
+        System.out.println("Cargue los datos del televisor");
+        t1.crearTelevisor();
+        t1.precioFinal();
 
     }
 

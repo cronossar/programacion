@@ -14,7 +14,7 @@ public class Televisor extends Electrodomesticos{
         this.TDT = TDT;
     }
 
-    public Televisor(int resolucion, boolean TDT, double precio, String color, char consE, int peso) {
+    public Televisor(int resolucion, boolean TDT, double precio, String color, char consE, Integer peso) {
         super(precio, color, consE, peso);
         this.resolucion = resolucion;
         this.TDT = TDT;
@@ -59,8 +59,13 @@ public class Televisor extends Electrodomesticos{
         if (this.TDT = true) {
             this.precio += 500;
         }
-        System.out.println("El precio final del televisor es: "+this.precio);
+        //System.out.println("El precio final del televisor es: "+this.precio);
   
+    }
+
+    @Override
+    public String toString() {
+        return "Televisor{" + "precio=" + this.precio+ '}';
     }
     
     }

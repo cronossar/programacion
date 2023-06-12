@@ -3,16 +3,18 @@ package entidad;
 import java.util.Scanner;
 
 public class Electrodomesticos {
+    
 Scanner sc = new Scanner(System.in);
+
     protected double precio;
     protected String color;
     protected char consE;
-    protected int peso;
+    protected Integer peso;
 
     public Electrodomesticos() {
     }
 
-    public Electrodomesticos(double precio, String color, char consE, int peso) {
+    public Electrodomesticos(double precio, String color, char consE, Integer peso) {
         this.precio = precio;
         this.color = color;
         this.consE = consE;
@@ -43,11 +45,11 @@ Scanner sc = new Scanner(System.in);
         this.consE = consE;
     }
 
-    public int getPeso() {
+    public Integer getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(Integer peso) {
         this.peso = peso;
     }
 
@@ -119,7 +121,13 @@ Scanner sc = new Scanner(System.in);
             this.precio += 1000.00;
         }
 //        System.out.println("Hasta el momento el precio del producto es:  "+this.precio);
+
         }
+
+    @Override
+    public String toString() {
+        return "Electrodomesticos{" + "sc=" + sc + ", precio=" + precio + ", color=" + color + ", consE=" + consE + ", peso=" + peso + '}';
+    }
 
 }
 

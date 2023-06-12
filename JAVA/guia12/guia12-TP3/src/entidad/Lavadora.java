@@ -8,7 +8,7 @@ public class Lavadora extends Electrodomesticos{
     public Lavadora() {
     }
 
-    public Lavadora(int carga, double precio, String color, char consE, int peso) {
+    public Lavadora(int carga, double precio, String color, char consE, Integer peso) {
         super(precio, color, consE, peso);
         this.carga = carga;
     }
@@ -35,7 +35,13 @@ public class Lavadora extends Electrodomesticos{
             this.precio += 500;
         }
         
-        System.out.println("El precio final de la Lavadora es: "+this.precio);
+        //System.out.println("El precio final de la Lavadora es: "+this.precio);
+        
+    }
+
+    @Override
+    public String toString() {
+        return "Lavadora{" + "precio=" + this.precio + '}';
     }
     
 }
