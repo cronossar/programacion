@@ -4,17 +4,17 @@ package entidades;
 public class Polideportivo extends Edificio {
     
     private String nombre;
-    private char tipoInstalacion;
+    private String tipoInstalacion;
 
     public Polideportivo() {
     }
 
-    public Polideportivo(String nombre, char tipoInstalacion) {
+    public Polideportivo(String nombre, String tipoInstalacion) {
         this.nombre = nombre;
         this.tipoInstalacion = tipoInstalacion;
     }
 
-    public Polideportivo(String nombre, char tipoInstalacion, double ancho, double alto, double largo) {
+    public Polideportivo(String nombre, String tipoInstalacion, double ancho, double alto, double largo) {
         super(ancho, alto, largo);
         this.nombre = nombre;
         this.tipoInstalacion = tipoInstalacion;
@@ -28,11 +28,11 @@ public class Polideportivo extends Edificio {
         this.nombre = nombre;
     }
 
-    public char getTipoInstalacion() {
+    public String getTipoInstalacion() {
         return tipoInstalacion;
     }
 
-    public void setTipoInstalacion(char tipoInstalacion) {
+    public void setTipoInstalacion(String tipoInstalacion) {
         this.tipoInstalacion = tipoInstalacion;
     }
 
