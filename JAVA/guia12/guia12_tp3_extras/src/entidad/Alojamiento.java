@@ -49,5 +49,8 @@ public class Alojamiento {
         this.gerente = gerente;
     }
 
-    
+    @Override
+    public String toString() {
+        return "Alojamiento{" + "nombre=" + nombre + ", direccion=" + direccion + ", localidad=" + localidad + ", gerente=" + gerente + '}';
+    }
 }

@@ -2,17 +2,11 @@
 package entidad;
 
 public class Camping extends Alojamiento {
-    private int capacidadMaximaCarpas;
-    private int cantidadBanos;
-    private boolean tieneRestaurante;
+    protected int capacidadMaximaCarpas;
+    protected int cantidadBanos;
+    protected boolean tieneRestaurante;
 
     public Camping() {
-    }
-
-    public Camping(int capacidadMaximaCarpas, int cantidadBanos, boolean tieneRestaurante) {
-        this.capacidadMaximaCarpas = capacidadMaximaCarpas;
-        this.cantidadBanos = cantidadBanos;
-        this.tieneRestaurante = tieneRestaurante;
     }
 
     public Camping(int capacidadMaximaCarpas, int cantidadBanos, boolean tieneRestaurante, String nombre, String direccion, String localidad, String gerente) {
@@ -22,6 +16,7 @@ public class Camping extends Alojamiento {
         this.tieneRestaurante = tieneRestaurante;
     }
 
+    
     public int getCapacidadMaximaCarpas() {
         return capacidadMaximaCarpas;
     }
@@ -46,6 +41,10 @@ public class Camping extends Alojamiento {
         this.tieneRestaurante = tieneRestaurante;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "Camping{" + "capacidadMaximaCarpas=" + capacidadMaximaCarpas + ", cantidadBanos=" + cantidadBanos + ", tieneRestaurante=" + tieneRestaurante + '}';
+    }
+
+        
 }

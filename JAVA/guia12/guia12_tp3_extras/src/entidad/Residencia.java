@@ -2,17 +2,11 @@
 package entidad;
 
 public class Residencia extends Alojamiento{
-    private int cantidadHabitaciones;
-    private boolean descuentosGremios;
-    private boolean tieneCampoDeportivo;
+    protected int cantidadHabitaciones;
+    protected boolean descuentosGremios;
+    protected boolean tieneCampoDeportivo;
 
     public Residencia() {
-    }
-
-    public Residencia(int cantidadHabitaciones, boolean descuentosGremios, boolean tieneCampoDeportivo) {
-        this.cantidadHabitaciones = cantidadHabitaciones;
-        this.descuentosGremios = descuentosGremios;
-        this.tieneCampoDeportivo = tieneCampoDeportivo;
     }
 
     public Residencia(int cantidadHabitaciones, boolean descuentosGremios, boolean tieneCampoDeportivo, String nombre, String direccion, String localidad, String gerente) {
@@ -22,6 +16,7 @@ public class Residencia extends Alojamiento{
         this.tieneCampoDeportivo = tieneCampoDeportivo;
     }
 
+    
     public int getCantidadHabitaciones() {
         return cantidadHabitaciones;
     }
@@ -46,6 +41,10 @@ public class Residencia extends Alojamiento{
         this.tieneCampoDeportivo = tieneCampoDeportivo;
     }
 
-    
-    
+    @Override
+    public String toString() {
+        return "Residencia{" + "cantidadHabitaciones=" + cantidadHabitaciones + ", descuentosGremios=" + descuentosGremios + ", tieneCampoDeportivo=" + tieneCampoDeportivo + '}';
+    }
+
+        
 }

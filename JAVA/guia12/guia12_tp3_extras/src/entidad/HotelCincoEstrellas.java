@@ -1,88 +1,101 @@
 
 package entidad;
 
-public class HotelCincoEstrellas extends Hotel {
+import java.util.Scanner;
+
+public class HotelCincoEstrellas extends HotelCuatroEstrellas {
     
-    private String gimnasio;
-    private String nombreRestaurante;
-    private int capacidadRestaurante;
-    private int cantidadSalonesConferencia;
-    private int cantidadSuites;
-    private int cantidadLimosinas;
+    private Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    
+    private int cantSalonesConf;
+    private int cantSuites;
+    private int cantLimosinas;
 
-//    public HotelCincoEstrellas() {
-//    }
-
-    public HotelCincoEstrellas(String gimnasio, String nombreRestaurante, int capacidadRestaurante, int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimosinas, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones) {
-        super(cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones);
-        this.gimnasio = gimnasio;
-        this.nombreRestaurante = nombreRestaurante;
-        this.capacidadRestaurante = capacidadRestaurante;
-        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
-        this.cantidadSuites = cantidadSuites;
-        this.cantidadLimosinas = cantidadLimosinas;
+    public HotelCincoEstrellas() {
     }
 
-    public HotelCincoEstrellas(String gimnasio, String nombreRestaurante, int capacidadRestaurante, int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimosinas, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, String nombre, String direccion, String localidad, String gerente) {
-        super(cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones, nombre, direccion, localidad, gerente);
-        this.gimnasio = gimnasio;
-        this.nombreRestaurante = nombreRestaurante;
-        this.capacidadRestaurante = capacidadRestaurante;
-        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
-        this.cantidadSuites = cantidadSuites;
-        this.cantidadLimosinas = cantidadLimosinas;
+    public HotelCincoEstrellas(int cantSalonesConf, int cantSuites, int cantLimosinas, String gimnasio, String nombreRestaurante, int capRestaurante, int cantHabitaciones, int nroCamas, int cantPisos, double precioHabitaciones, String nombre, String direccion, String localidad, String gerente) {
+        super(gimnasio, nombreRestaurante, capRestaurante, cantHabitaciones, nroCamas, cantPisos, precioHabitaciones, nombre, direccion, localidad, gerente);
+        this.cantSalonesConf = cantSalonesConf;
+        this.cantSuites = cantSuites;
+        this.cantLimosinas = cantLimosinas;
+    }
+
+
+    public int getCantSalonesConf() {
+        return cantSalonesConf;
+    }
+
+    public void setCantSalonesConf(int cantSalonesConf) {
+        this.cantSalonesConf = cantSalonesConf;
+    }
+
+    public int getCantSuites() {
+        return cantSuites;
+    }
+
+    public void setCantSuites(int cantSuites) {
+        this.cantSuites = cantSuites;
+    }
+
+    public int getCantLimosinas() {
+        return cantLimosinas;
+    }
+
+    public void setCantLimosinas(int cantLimosinas) {
+        this.cantLimosinas = cantLimosinas;
+    }
+
+    @Override
+    public String toString() {
+        return "HotelCincoE{" + "cantSalonesConf=" + cantSalonesConf + ", cantSuites=" + cantSuites + ", cantLimosinas=" + cantLimosinas + super.toString()+ '}';
     }
     //Metodos
     
+    public void crearHotel5() {
+        
+        System.out.println("Hotel 5 Estrellas");
+        
+        System.out.println("Nombre:");
+        this.setNombre(leer.next());
+        System.out.println("Direccion:");
+        this.setDireccion(leer.next());
+        System.out.println("Localidad:");
+        this.setLocalidad(leer.next());
+        System.out.println("Nombre del Gerente:");
+        this.setGerente(leer.next());
+
+        System.out.println("Cantidad de Habitaciones:");
+        this.setCantHabitaciones(leer.nextInt());
+        System.out.println("Numero de camas:");
+        this.setNroCamas(leer.nextInt());
+        System.out.println("Cantidad de pisos:");
+        this.setCantPisos(leer.nextInt());
+
+        System.out.println("Tiene gimnasio? (A/B)");
+        this.setGimnasio(leer.next());
+        System.out.println("Ingrese el nombre del Restaurante:");
+        this.setNombreRestaurante(leer.next());
+        System.out.println("Ingrese la capacidad del Restaurante");
+        this.setCapRestaurante(leer.nextInt());
+        
+
+        System.out.println("Ingrese la cantitad de Salones de Conferencias:");
+        this.setCantSalonesConf(leer.nextInt());
+        System.out.println("Ingrese la cantidad de Suites:");
+        this.setCantSuites(leer.nextInt());
+        System.out.println("Ingrese la cantidad de Limosinas:");
+        this.setCantLimosinas(leer.nextInt());
+       
+    }
+
     
-    //Fin Metodos
-    public String getGimnasio() {
-        return gimnasio;
+    @Override
+    public void calcularPrecio() {
+        super.calcularPrecio();
+        super.setPrecioHabitaciones(super.getPrecioHabitaciones() + (cantLimosinas * 15));
+        //System.out.println("Valor Final 5 estrellas: "+precioHabitaciones);
     }
-
-    public void setGimnasio(String gimnasio) {
-        this.gimnasio = gimnasio;
-    }
-
-    public String getNombreRestaurante() {
-        return nombreRestaurante;
-    }
-
-    public void setNombreRestaurante(String nombreRestaurante) {
-        this.nombreRestaurante = nombreRestaurante;
-    }
-
-    public int getCapacidadRestaurante() {
-        return capacidadRestaurante;
-    }
-
-    public void setCapacidadRestaurante(int capacidadRestaurante) {
-        this.capacidadRestaurante = capacidadRestaurante;
-    }
-
-    public int getCantidadSalonesConferencia() {
-        return cantidadSalonesConferencia;
-    }
-
-    public void setCantidadSalonesConferencia(int cantidadSalonesConferencia) {
-        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
-    }
-
-    public int getCantidadSuites() {
-        return cantidadSuites;
-    }
-
-    public void setCantidadSuites(int cantidadSuites) {
-        this.cantidadSuites = cantidadSuites;
-    }
-
-    public int getCantidadLimosinas() {
-        return cantidadLimosinas;
-    }
-
-    public void setCantidadLimosinas(int cantidadLimosinas) {
-        this.cantidadLimosinas = cantidadLimosinas;
-    }
-
+    
     
 }
