@@ -10,53 +10,79 @@ public class HotelCincoEstrellas extends Hotel {
     private int cantidadSuites;
     private int cantidadLimosinas;
 
-    public HotelCincoEstrellas(String nombre, String direccion, String localidad, String gerente,
-                               int cantidadHabitaciones, int numeroCamas, int cantidadPisos,
-                               String gimnasio, String nombreRestaurante, int capacidadRestaurante,
-                               int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimosinas) {
-        super(nombre, direccion, localidad, gerente, cantidadHabitaciones, numeroCamas, cantidadPisos);
+//    public HotelCincoEstrellas() {
+//    }
+
+    public HotelCincoEstrellas(String gimnasio, String nombreRestaurante, int capacidadRestaurante, int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimosinas, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones) {
+        super(cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones);
         this.gimnasio = gimnasio;
         this.nombreRestaurante = nombreRestaurante;
         this.capacidadRestaurante = capacidadRestaurante;
         this.cantidadSalonesConferencia = cantidadSalonesConferencia;
         this.cantidadSuites = cantidadSuites;
         this.cantidadLimosinas = cantidadLimosinas;
-        this.getPrecioHabitaciones();
     }
 
-    @Override
-     public double calcularPrecioHabitaciones() {
-        double precio = super.calcularPrecioHabitaciones();
-        precio += calcularValorAgregadoRestaurante();
-        precio += calcularValorAgregadoGimnasio();
-        precio += calcularValorAgregadoLimosinas();
-        return precio;
+    public HotelCincoEstrellas(String gimnasio, String nombreRestaurante, int capacidadRestaurante, int cantidadSalonesConferencia, int cantidadSuites, int cantidadLimosinas, int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, String nombre, String direccion, String localidad, String gerente) {
+        super(cantidadHabitaciones, numeroCamas, cantidadPisos, precioHabitaciones, nombre, direccion, localidad, gerente);
+        this.gimnasio = gimnasio;
+        this.nombreRestaurante = nombreRestaurante;
+        this.capacidadRestaurante = capacidadRestaurante;
+        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
+        this.cantidadSuites = cantidadSuites;
+        this.cantidadLimosinas = cantidadLimosinas;
+    }
+    //Metodos
+    
+    
+    //Fin Metodos
+    public String getGimnasio() {
+        return gimnasio;
     }
 
-    private double calcularValorAgregadoRestaurante() {
-        double valor = 0;
-        if (capacidadRestaurante < 30) {
-            valor = 10;
-        } else if (capacidadRestaurante >= 30 && capacidadRestaurante <= 50) {
-            valor = 30;
-        } else {
-            valor = 50;
-        }
-        return valor;
+    public void setGimnasio(String gimnasio) {
+        this.gimnasio = gimnasio;
     }
 
-    private double calcularValorAgregadoGimnasio() {
-        double valor = 0;
-        if (gimnasio.equals("A")) {
-            valor = 50;
-        } else if (gimnasio.equals("B")) {
-            valor = 30;
-        }
-        return valor;
+    public String getNombreRestaurante() {
+        return nombreRestaurante;
     }
 
-    private double calcularValorAgregadoLimosinas() {
-        double valor = 15 * cantidadLimosinas;
-        return valor;
+    public void setNombreRestaurante(String nombreRestaurante) {
+        this.nombreRestaurante = nombreRestaurante;
     }
+
+    public int getCapacidadRestaurante() {
+        return capacidadRestaurante;
+    }
+
+    public void setCapacidadRestaurante(int capacidadRestaurante) {
+        this.capacidadRestaurante = capacidadRestaurante;
+    }
+
+    public int getCantidadSalonesConferencia() {
+        return cantidadSalonesConferencia;
+    }
+
+    public void setCantidadSalonesConferencia(int cantidadSalonesConferencia) {
+        this.cantidadSalonesConferencia = cantidadSalonesConferencia;
+    }
+
+    public int getCantidadSuites() {
+        return cantidadSuites;
+    }
+
+    public void setCantidadSuites(int cantidadSuites) {
+        this.cantidadSuites = cantidadSuites;
+    }
+
+    public int getCantidadLimosinas() {
+        return cantidadLimosinas;
+    }
+
+    public void setCantidadLimosinas(int cantidadLimosinas) {
+        this.cantidadLimosinas = cantidadLimosinas;
+    }
+
+    
 }

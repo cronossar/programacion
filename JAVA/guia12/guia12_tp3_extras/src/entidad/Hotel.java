@@ -3,38 +3,65 @@ package entidad;
 
 public class Hotel extends Alojamiento {
     
-    private int cantidadHabitaciones;
-    private int numeroCamas;
-    private int cantidadPisos;
-    private double precioHabitaciones;
+    protected int cantidadHabitaciones;
+    protected int numeroCamas;
+    protected int cantidadPisos;
+    protected double precioHabitaciones;
 
-    public Hotel(String nombre, String direccion, String localidad, String gerente,
-                 int cantidadHabitaciones, int numeroCamas, int cantidadPisos) {
+    public Hotel(int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones) {
+        this.cantidadHabitaciones = cantidadHabitaciones;
+        this.numeroCamas = numeroCamas;
+        this.cantidadPisos = cantidadPisos;
+        this.precioHabitaciones = precioHabitaciones;
+    }
+
+    public Hotel(int cantidadHabitaciones, int numeroCamas, int cantidadPisos, double precioHabitaciones, String nombre, String direccion, String localidad, String gerente) {
         super(nombre, direccion, localidad, gerente);
         this.cantidadHabitaciones = cantidadHabitaciones;
         this.numeroCamas = numeroCamas;
         this.cantidadPisos = cantidadPisos;
-        this.precioHabitaciones = calcularPrecioHabitaciones();
+        this.precioHabitaciones = precioHabitaciones;
     }
-
+    //Metodos
+    
+    
+    public void calcularPrecio(){
+        int capacidadHotel = this.cantidadHabitaciones * this.numeroCamas * this.cantidadPisos;
+        this.setPrecioHabitaciones(capacidadHotel+50);
+    }
+    
+    //Fin Metodos
     public int getCantidadHabitaciones() {
         return cantidadHabitaciones;
+    }
+
+    public void setCantidadHabitaciones(int cantidadHabitaciones) {
+        this.cantidadHabitaciones = cantidadHabitaciones;
     }
 
     public int getNumeroCamas() {
         return numeroCamas;
     }
 
+    public void setNumeroCamas(int numeroCamas) {
+        this.numeroCamas = numeroCamas;
+    }
+
     public int getCantidadPisos() {
         return cantidadPisos;
+    }
+
+    public void setCantidadPisos(int cantidadPisos) {
+        this.cantidadPisos = cantidadPisos;
     }
 
     public double getPrecioHabitaciones() {
         return precioHabitaciones;
     }
 
-    public double calcularPrecioHabitaciones() {
-        double precio = 50 + (1 * cantidadHabitaciones);
-        return precio;
+    public void setPrecioHabitaciones(double precioHabitaciones) {
+        this.precioHabitaciones = precioHabitaciones;
     }
+
+    
 }

@@ -1,11 +1,14 @@
 package entidad;
 
-public abstract class Alojamiento {
+public class Alojamiento {
 
-    private String nombre;
-    private String direccion;
-    private String localidad;
-    private String gerente;
+    protected String nombre;
+    protected String direccion;
+    protected String localidad;
+    protected String gerente;
+
+    public Alojamiento() {
+    }
 
     public Alojamiento(String nombre, String direccion, String localidad, String gerente) {
         this.nombre = nombre;
@@ -18,15 +21,33 @@ public abstract class Alojamiento {
         return nombre;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getDireccion() {
         return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getLocalidad() {
         return localidad;
     }
 
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
     public String getGerente() {
         return gerente;
     }
+
+    public void setGerente(String gerente) {
+        this.gerente = gerente;
+    }
+
+    
 }
