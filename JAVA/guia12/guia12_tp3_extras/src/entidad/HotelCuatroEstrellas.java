@@ -48,7 +48,7 @@ public class HotelCuatroEstrellas extends Hotel {
 
     @Override
     public String toString() {
-        return "HotelCuatroE{" + "gimnasio=" + gimnasio + ", nombreRestaurante=" + nombreRestaurante + ", capRestaurante=" + capRestaurante + super.toString() + '}';
+        return "HotelCuatroE{" + "gimnasio=" + gimnasio + ", nombreRestaurante=" + nombreRestaurante + "\n, capRestaurante=" + capRestaurante + super.toString() + '}';
     }
     
     //Metodos

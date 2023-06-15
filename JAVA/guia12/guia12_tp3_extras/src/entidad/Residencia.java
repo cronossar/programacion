@@ -1,50 +1,51 @@
 
 package entidad;
 
-public class Residencia extends Alojamiento{
-    protected int cantidadHabitaciones;
-    protected boolean descuentosGremios;
-    protected boolean tieneCampoDeportivo;
+public class Residencia extends ExtraHotelero{
+    private int cantHabitaciones;
+    private boolean descuentos;
+    private boolean campoDep;
 
     public Residencia() {
     }
 
-    public Residencia(int cantidadHabitaciones, boolean descuentosGremios, boolean tieneCampoDeportivo, String nombre, String direccion, String localidad, String gerente) {
-        super(nombre, direccion, localidad, gerente);
-        this.cantidadHabitaciones = cantidadHabitaciones;
-        this.descuentosGremios = descuentosGremios;
-        this.tieneCampoDeportivo = tieneCampoDeportivo;
+    public Residencia(int cantHabitaciones, boolean descuentos, boolean campoDep, boolean privado, int mtsCuadrados, String nombre, String direccion, String localidad, String gerente) {
+        super(privado, mtsCuadrados, nombre, direccion, localidad, gerente);
+        this.cantHabitaciones = cantHabitaciones;
+        this.descuentos = descuentos;
+        this.campoDep = campoDep;
     }
 
-    
-    public int getCantidadHabitaciones() {
-        return cantidadHabitaciones;
+    public int getCantHabitaciones() {
+        return cantHabitaciones;
     }
 
-    public void setCantidadHabitaciones(int cantidadHabitaciones) {
-        this.cantidadHabitaciones = cantidadHabitaciones;
+    public void setCantHabitaciones(int cantHabitaciones) {
+        this.cantHabitaciones = cantHabitaciones;
     }
 
-    public boolean isDescuentosGremios() {
-        return descuentosGremios;
+    public boolean isDescuentos() {
+        return descuentos;
     }
 
-    public void setDescuentosGremios(boolean descuentosGremios) {
-        this.descuentosGremios = descuentosGremios;
+    public void setDescuentos(boolean descuentos) {
+        this.descuentos = descuentos;
     }
 
-    public boolean isTieneCampoDeportivo() {
-        return tieneCampoDeportivo;
+    public boolean isCampoDep() {
+        return campoDep;
     }
 
-    public void setTieneCampoDeportivo(boolean tieneCampoDeportivo) {
-        this.tieneCampoDeportivo = tieneCampoDeportivo;
+    public void setCampoDep(boolean campoDep) {
+        this.campoDep = campoDep;
     }
 
     @Override
     public String toString() {
-        return "Residencia{" + "cantidadHabitaciones=" + cantidadHabitaciones + ", descuentosGremios=" + descuentosGremios + ", tieneCampoDeportivo=" + tieneCampoDeportivo + '}';
+        return "Residencia{" + "cantHabitaciones=" + cantHabitaciones + ", descuentos=" + descuentos + "\n, campoDep=" + campoDep +" , "+super.toString()+ '}';
     }
 
-        
+    
+    
+    
 }
