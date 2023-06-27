@@ -1,0 +1,15 @@
+CANAL YOUTUBE
+https://www.youtube.com/@SinRuedaTecnologica
+
+CONECTAR JAVA Y MYSQL
+https://www.youtube.com/watch?v=ESY_pEvT9TY
+https://www.youtube.com/watch?v=ZZbwgwxDToY
+
+SISTEMA DE ESTACIONAMIENTO
+https://github.com/FrankSVP/parkingSystemJava
+
+PUNTO DE VENTA EN JAVA
+https://www.youtube.com/watch?v=x5LViFQT1oo
+
+¿Cómo hacer un CRUD(Guardar, Mostrar, Modificar y Eliminar) con Java y MySQL?
+https://www.youtube.com/watch?v=6_ncKPDvKEg&list=PL_TEBfP-qqqg2Bs9uhMmd52Zg_ZATytdl
