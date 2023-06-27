@@ -1,12 +1,12 @@
 package entidad;
 
-import java.util.Scanner;
+
 
 public class HotelCuatroEstrellas extends Hotel {
     
    private java.util.Scanner leer = new java.util.Scanner(System.in).useDelimiter("\n");
        
-     protected String gimnasio;
+    protected String gimnasio;
     protected String nombreRestaurante;
     protected int capRestaurante;
 
@@ -48,7 +48,7 @@ public class HotelCuatroEstrellas extends Hotel {
 
     @Override
     public String toString() {
-        return "HotelCuatroE{" + "gimnasio=" + gimnasio + ", nombreRestaurante=" + nombreRestaurante + ", capRestaurante=" + capRestaurante + super.toString() + '}';
+        return "HotelCuatroEstrellas{" + "gimnasio=" + gimnasio + ", nombreRestaurante=" + nombreRestaurante + ", capRestaurante=" + capRestaurante + super.toString() + '}';
     }
     
     //Metodos
@@ -103,9 +103,4 @@ public class HotelCuatroEstrellas extends Hotel {
         //System.out.println("Valor Final 4 Estrellas: "+precioHabitaciones);
     }
 
-    private static class Scanner {
-
-        public Scanner() {
-        }
     }
-}

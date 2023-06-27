@@ -1,4 +1,3 @@
-
 package guia12_tp3_extras;
 
 import entidad.Alojamiento;
@@ -10,29 +9,28 @@ import entidad.Residencia;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
-
-
-
+import entidad.ordenarPrecio;
 public class Guia12_tp3_extras {
 
     public static void main(String[] args) {
-        
+
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         HotelCuatroEstrellas H4ES = new HotelCuatroEstrellas();
         HotelCincoEstrellas H5ES = new HotelCincoEstrellas();
-        ArrayList<Alojamiento> listaAlojamientos = new ArrayList();
+        List<Alojamiento> listaAlojamientos = new ArrayList();
 
         HotelCincoEstrellas H5E1 = new HotelCincoEstrellas(1, 3, 2,
                 "A", "DANY RESTO", 20, 5, 2,
-                3, 0, "HOTEL DANY", "CALLE DANY", "MISIONES", "DANY B");
+                3, 0.0, "HOTEL DANY", "CALLE DANY", "MISIONES", "DANY B");
 
         HotelCincoEstrellas H5E2 = new HotelCincoEstrellas(2, 1, 1,
                 "B", "JUAN RESTO", 60, 3, 3,
-                3, 0, "HOTEL JUAN", "CALLE JUAN", "LOMAS DE ZAMORA", "JUAN P");
+                3, 0.0, "HOTEL JUAN", "CALLE JUAN", "LOMAS DE ZAMORA", "JUAN P");
 
         HotelCuatroEstrellas H4E1 = new HotelCuatroEstrellas("A", "JORGE RESTO", 40, 5, 2,
-                2, 0, "HOTEL JORGE", "CALLE JORGE", "SAN MARTIN", "JORGE S");
+                2, 0.0, "HOTEL JORGE", "CALLE JORGE", "SAN MARTIN", "JORGE S");
 
         listaAlojamientos.add(H5E1);
         listaAlojamientos.add(H5E2);
@@ -70,8 +68,9 @@ public class Guia12_tp3_extras {
                     }
                     break;
                 case 2:
-                        listaAlojamientos.sort();
-                        
+                    Collections.sort(listaAlojamientos());
+                    
+
                     break;
                 case 3:
 

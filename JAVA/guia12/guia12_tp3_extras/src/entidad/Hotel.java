@@ -3,7 +3,7 @@ package entidad;
 
 import java.util.Comparator;
 
-public class Hotel extends Alojamiento {
+public abstract class Hotel extends Alojamiento implements Comparator<Hotel>{
     
      protected int cantHabitaciones;
     protected int nroCamas;
@@ -66,14 +66,10 @@ public class Hotel extends Alojamiento {
         
     }
 
-    public static Comparator<Hotel> ordenaPrecio = new Comparator<Hotel>() {
-         @Override
-         public int compare(Hotel o1, Hotel o2) {
-             return o1.getPrecioHabitaciones().compareTo(o2.getPrecioHabitaciones());
-         }
-    };
     
-   
 }
+
+     
+
     
  
