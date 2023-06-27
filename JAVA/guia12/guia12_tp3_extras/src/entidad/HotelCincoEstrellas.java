@@ -48,7 +48,7 @@ public class HotelCincoEstrellas extends HotelCuatroEstrellas {
 
     @Override
     public String toString() {
-        return "HotelCincoE{" + "cantSalonesConf=" + cantSalonesConf + ", cantSuites=" + cantSuites + ", cantLimosinas=" + cantLimosinas + super.toString()+ '}';
+        return "HotelCincoE{" + "cantSalonesConf=" + cantSalonesConf + ", cantSuites=" + cantSuites + "\n, cantLimosinas=" + cantLimosinas + super.toString()+ '}';
     }
     //Metodos
     

@@ -1,50 +1,50 @@
 
 package entidad;
 
-public class Camping extends Alojamiento {
-    protected int capacidadMaximaCarpas;
-    protected int cantidadBanos;
-    protected boolean tieneRestaurante;
+public class Camping extends ExtraHotelero {
+    
+    private int capMaxCarpas;
+    private int cantBañosDisp;
+    private boolean Restaurante;
 
     public Camping() {
     }
 
-    public Camping(int capacidadMaximaCarpas, int cantidadBanos, boolean tieneRestaurante, String nombre, String direccion, String localidad, String gerente) {
-        super(nombre, direccion, localidad, gerente);
-        this.capacidadMaximaCarpas = capacidadMaximaCarpas;
-        this.cantidadBanos = cantidadBanos;
-        this.tieneRestaurante = tieneRestaurante;
+    public Camping(int capMaxCarpas, int cantBañosDisp, boolean Restaurante, boolean privado, int mtsCuadrados, String nombre, String direccion, String localidad, String gerente) {
+        super(privado, mtsCuadrados, nombre, direccion, localidad, gerente);
+        this.capMaxCarpas = capMaxCarpas;
+        this.cantBañosDisp = cantBañosDisp;
+        this.Restaurante = Restaurante;
     }
 
-    
-    public int getCapacidadMaximaCarpas() {
-        return capacidadMaximaCarpas;
+    public int getCapMaxCarpas() {
+        return capMaxCarpas;
     }
 
-    public void setCapacidadMaximaCarpas(int capacidadMaximaCarpas) {
-        this.capacidadMaximaCarpas = capacidadMaximaCarpas;
+    public void setCapMaxCarpas(int capMaxCarpas) {
+        this.capMaxCarpas = capMaxCarpas;
     }
 
-    public int getCantidadBanos() {
-        return cantidadBanos;
+    public int getCantBañosDisp() {
+        return cantBañosDisp;
     }
 
-    public void setCantidadBanos(int cantidadBanos) {
-        this.cantidadBanos = cantidadBanos;
+    public void setCantBañosDisp(int cantBañosDisp) {
+        this.cantBañosDisp = cantBañosDisp;
     }
 
-    public boolean isTieneRestaurante() {
-        return tieneRestaurante;
+    public boolean isRestaurante() {
+        return Restaurante;
     }
 
-    public void setTieneRestaurante(boolean tieneRestaurante) {
-        this.tieneRestaurante = tieneRestaurante;
+    public void setRestaurante(boolean Restaurante) {
+        this.Restaurante = Restaurante;
     }
 
     @Override
     public String toString() {
-        return "Camping{" + "capacidadMaximaCarpas=" + capacidadMaximaCarpas + ", cantidadBanos=" + cantidadBanos + ", tieneRestaurante=" + tieneRestaurante + '}';
+        return "Camping{" + "capMaxCarpas=" + capMaxCarpas + ", cantBa\u00f1osDisp=" + cantBañosDisp + "\n, Restaurante=" + Restaurante + " , "+super.toString()+'}';
     }
-
-        
+    
+    
 }

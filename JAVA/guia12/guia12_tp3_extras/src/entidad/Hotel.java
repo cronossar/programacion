@@ -56,7 +56,7 @@ public abstract class Hotel extends Alojamiento implements Comparator<Hotel>{
 
     @Override
     public String toString() {
-        return "Hotel{" + "cantHabitaciones=" + cantHabitaciones + ", nroCamas=" + nroCamas + ", cantPisos=" + cantPisos + ", precioHabitaciones=" + precioHabitaciones + super.toString()+ '}';
+        return "Hotel{" + "cantHabitaciones=" + cantHabitaciones + ", nroCamas=" + nroCamas + "\n, cantPisos=" + cantPisos + ", precioHabitaciones=" + precioHabitaciones + super.toString()+ '}';
     }
     
     public void calcularPrecio(){
