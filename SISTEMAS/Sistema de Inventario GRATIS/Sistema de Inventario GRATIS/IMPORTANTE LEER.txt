@@ -1,0 +1,16 @@
+CREDENCIALES DE ACCESO AL SISTEMA
+
+* USUARIO: Programador
+* CONTRASEÑA: 12345
+
+=====================================================
+
+USUARIO DE LA BASE DE DATOS
+
+* USUARIO: root
+* CONTRASEÑA: 
+
+=====================================================
+
+Si al ejecutar el programa te muestra un error en la conexión con la base de datos, reemplaza la librería
+mysql-connector del proyecto, por la que se encuentra en la carpeta "Extra".
