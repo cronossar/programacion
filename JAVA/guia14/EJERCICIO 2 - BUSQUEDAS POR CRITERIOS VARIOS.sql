@@ -44,50 +44,84 @@ select nombre from producto where nombre LIKE '%Portátil%';
 -- Consultas Multitabla 
 /*1. Devuelve una lista con el código del producto, nombre del producto, código del fabricante
 y nombre del fabricante, de todos los productos de la base de datos.*/
-
+select p.codigo, p.nombre, p.codigo_fabricante, f.nombre FROM producto p, fabricante f;
 /*2. Devuelve una lista con el nombre del producto, precio y nombre de fabricante de todos
 los productos de la base de datos. Ordene el resultado por el nombre del fabricante, por
 orden alfabético.*/
-
+select p.nombre, p.precio, f.nombre FROM producto p, fabricante f order by f.nombre ASC;
 /*3. Devuelve el nombre del producto, su precio y el nombre de su fabricante, del producto
 más barato. */
-
+select p.nombre, p.precio, f.nombre FROM producto p JOIN fabricante f ON f.codigo = p.codigo_fabricante order by precio asc limit 1; 
 /*4. Devuelve una lista de todos los productos del fabricante Lenovo.*/
-
+select f.nombre , p.nombre from producto p inner join fabricante f on f.codigo=p.codigo_fabricante where f.nombre like 'Lenovo';
 /*5. Devuelve una lista de todos los productos del fabricante Crucial que tengan un precio
 mayor que $200.*/
-
+select f.nombre , p.nombre from producto p inner join fabricante f on f.codigo=p.codigo_fabricante where f.nombre like 'Crucial' and precio > 200 ;
 /*6. Devuelve un listado con todos los productos de los fabricantes Asus, Hewlett-Packard.
 Utilizando el operador IN.*/
 
-/*7. Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos
-los productos que tengan un precio mayor o igual a $180. Ordene el resultado en primer
-lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden
-ascendente) */
+/*
+-- 7. Devuelve un listado con el nombre de producto, precio y nombre de fabricante, de todos 
+los productos que tengan un precio mayor o igual a $180. Ordene el resultado en primer 
+lugar por el precio (en orden descendente) y en segundo lugar por el nombre (en orden 
+ascendente)
+*/
 
--- Consultas Multitabla 
+select p.nombre, precio, f.nombre from producto p join fabricante f on f.codigo = p.codigo_fabricante where precio > 180 order by precio desc, p.nombre asc;
 
-/*Resuelva todas las consultas utilizando las cláusulas LEFT JOIN y RIGHT JOIN.
-1. Devuelve un listado de todos los fabricantes que existen en la base de datos, junto con los
-productos que tiene cada uno de ellos. El listado deberá mostrar también aquellos
-fabricantes que no tienen productos asociados.*/
+/*
+1. Devuelve un listado de todos los fabricantes que existen en la base de datos, junto con los 
+productos que tiene cada uno de ellos. El listado deberá mostrar también aquellos 
+fabricantes que no tienen productos asociados.
+*/
 
-/*2. Devuelve un listado donde sólo aparezcan aquellos fabricantes que no tienen ningún
-producto asociado.
-Subconsultas (En la cláusula WHERE)
-Con operadores básicos de comparación
-1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER JOIN).
-2. Devuelve todos los datos de los productos que tienen el mismo precio que el producto
-más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).
-3. Lista el nombre del producto más caro del fabricante Lenovo.
-4. Lista todos los productos del fabricante Asus que tienen un precio superior al precio
-medio de todos sus productos.*/
+SELECT f.nombre, p.nombre from fabricante f left join producto p on f.codigo = p.codigo_fabricante;
 
-/*Subconsultas con IN y NOT IN
-1. Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando IN o
-NOT IN).
-2. Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando
-IN o NOT IN).
-Subconsultas (En la cláusula HAVING)
-1. Devuelve un listado con todos los nombres de los fabricantes que tienen el mismo número
-de productos que el fabricante Lenovo. */
+-- 2. Devuelve un listado donde sólo aparezcan aquellos fabricantes que no tienen ningún 
+-- producto asociado
+
+select f.codigo, f.nombre from fabricante f left join producto p on p.codigo_fabricante = f.codigo where p.codigo_fabricante is null;
+
+
+/*
+-- Subconsultas (En la cláusula WHERE)
+-- Con operadores básicos de comparación
+-- 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER JOIN).
+*/
+
+SELECT * FROM producto WHERE codigo_fabricante = ( SELECT codigo FROM fabricante WHERE nombre LIKE '%Lenovo%');
+
+-- 2. Devuelve todos los datos de los productos que tienen el mismo precio que el producto 
+-- más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).
+
+select * from producto where precio > ( SELECT MAX(precio) FROM producto WHERE codigo_fabricante = ( SELECT codigo FROM fabricante WHERE nombre LIKE '%Lenovo%'));
+
+-- 3. Lista el nombre del producto más caro del fabricante Lenovo.
+-- forma a
+select * from producto where precio = ( SELECT MAX(precio) FROM producto WHERE codigo_fabricante = ( SELECT codigo FROM fabricante WHERE nombre LIKE '%Lenovo%'));
+-- forma b
+SELECT nombre, precio FROM producto WHERE codigo_fabricante = ( SELECT codigo FROM fabricante WHERE nombre LIKE '%Lenovo%') ORDER BY precio DESC LIMIT 1;
+
+-- 4. Lista todos los productos del fabricante Asus que tienen un precio superior al precio 
+-- medio de todos sus productos
+
+SELECT p.* FROM producto AS p INNER JOIN fabricante AS f ON p.codigo_fabricante = f.codigo WHERE f.nombre = 'Asus' AND p.precio > (SELECT AVG(precio) FROM producto WHERE codigo_fabricante = f.codigo);
+
+-- Subconsultas con IN y NOT IN
+
+-- 1. Devuelve los nombres de los fabricantes que tienen productos asociados. (Utilizando IN o 
+-- NOT IN)
+
+SELECT nombre FROM fabricante WHERE codigo IN (SELECT DISTINCT codigo_fabricante FROM producto);
+
+-- 2. Devuelve los nombres de los fabricantes que no tienen productos asociados. (Utilizando 
+-- IN o NOT IN).
+
+select nombre from fabricante where codigo not in ( select distinct codigo_fabricante from producto);
+
+-- Subconsultas (En la cláusula HAVING)
+
+-- 1. Devuelve un listado con todos los nombres de los fabricantes que tienen el mismo número 
+-- de productos que el fabricante Lenovo
+
+SELECT f.nombre, count(p.codigo) as numero_productos FROM fabricante f INNER JOIN producto p ON f.codigo = p.codigo_fabricante GROUP BY f.nombre HAVING COUNT(DISTINCT p.codigo) = (SELECT COUNT(*) FROM producto WHERE codigo_fabricante = (SELECT codigo FROM fabricante WHERE nombre = 'Lenovo'));
