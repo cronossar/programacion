@@ -38,7 +38,7 @@ Conexión
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ferreteria?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
     </properties>
   </persistence-unit>
 </persistence>
