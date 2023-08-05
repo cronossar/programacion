@@ -1,0 +1,8 @@
+body {
+    background-image: url("https://www.cinemascomics.com/wp-content/uploads/2020/10/mentores-spider-man.jpg");
+}
+.imagen{
+  display: flex;
+  justify-content: center;
+}
+

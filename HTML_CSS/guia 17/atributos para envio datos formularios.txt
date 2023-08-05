@@ -1,0 +1,5 @@
+/formularios
+<form atributos>  </form> 
+<form method="post"> y "get" en general siempre es POST
+<form action="ruta del metodo que va a manejar la info" >/ 2da op enviar x email
+<form enctype="multipart/form-data"> o "text/plain" / indica la forma en la que viaja la info
