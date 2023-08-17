@@ -47,9 +47,28 @@ operaciones aritméticas básicas (suma, resta, multiplicación y división) con
 numéricos enteros. El usuario, además, debe especificar la operación con el primer
 carácter de la operación que desea realizar: ‘S' o ‘s’ para la suma, ‘R’ o ‘r’ para la resta, ‘M’
 o ‘m’ para la multiplicación y ‘D’ o ‘d’ para la división*/
+/*function calculadora(){
+alert("HOLA, ESTA ES UNA CALCULADORA SENCILLA");
 
+var valor1 = parseInt(prompt("Ingrese un valor"));
+var valor2 = parseInt(prompt("Ingrese otro valor"));
 
+prompt("Ingresa la primera letra de la operación a realizar")
 
+switch (expr) {
+    case 'SUMA':
+      alert(El resultado de la SUMA es: ${valor1 + valor2});
+      break;
+    case 'RESTA':
+    case 'MULTIPLICACION':
+      
+      break;
+    case 'DIVIDIR':
+      break
+    default:
+    
+  }
+}*/
 
 //ejercicio6
 /*Realizar un programa que, dado un número entero, visualice en pantalla si es par o impar.
@@ -70,7 +89,7 @@ En caso de que el valor ingresado sea 0, se debe mostrar “el número no es par
 /*Escriba un programa en el cual se ingrese un valor límite positivo, y a continuación
 solicite números al usuario hasta que la suma de los números introducidos supere el
 límite inicial*/
-/*function num_limite(){
+function num_limite(){
   var limite = parseInt(prompt("Ingrese un numero entero positivo de REFERENCIA"));
   var cont = 0;
   do {
@@ -79,7 +98,7 @@ límite inicial*/
   } while (cont <= limite);
 
   alert("Yata")
-}*/
+}
 
 //ejercicio8
 /*Escribir un programa que lea números enteros hasta teclear 0 (cero). Al finalizar el
@@ -134,26 +153,38 @@ alert("Promedio:"+ promedio);
 /*Realizar un programa que pida una frase y el programa deberá mostrar la frase con un
 espacio entre cada letra. La frase se mostrara así: H o l a. Nota: recordar el
 funcionamiento de la función Substring().*/
+function frase(){
+// Solicitar al usuario que ingrese una frase
+var frase = prompt("Por favor, ingresa una frase:");
 
+// Inicializar una cadena vacía para almacenar la frase con espacios entre cada letra
+var fraseConEspacios = "";
 
+// Recorrer cada letra en la frase ingresada por el usuario
+for (var i = 0; i < frase.length; i++) {
+    // Agregar la letra actual a la cadena con un espacio después de ella
+    fraseConEspacios += frase.substring(i, i+1) + " ";
+}
 
+// Mostrar la frase con espacios entre cada letra
+console.log(fraseConEspacios);
+alert(fraseConEspacios);
+}
 
 //ejercicio10
 /*Escribir una función flecha que reciba una palabra y la devuelva al revés. */
+function ejer10(){
+  var palabra=prompt("ingrese una palabra");
+  var palfinal="";
+  for (let index = palabra.length; index >= 0 ; index--) {
+    var l= palabra.substring(index,index-1);
+    palfinal = palfinal + l;
+      
+  }
+    alert(palfinal);
+}
 
 
 
 
 
-/*switch (expr) {
-    case 'Naranjas':
-      console.log('El kilogramo de naranjas cuesta $0.59.');
-      break;
-    case 'Mangos':
-    case 'Papayas':
-      console.log('El kilogramo de mangos y papayas cuesta $2.79.');
-      break;
-    default:
-      console.log('Lo lamentamos, por el momento no disponemos de ' + expr +
-  '.');
-  } */
