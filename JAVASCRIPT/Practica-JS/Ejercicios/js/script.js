@@ -1,4 +1,4 @@
-/*ejercicio 1
+ejercicio 1
 function saludo1(){
     var tiempo = prompt("¿Cómo esta el día de hoy?")
     alert("El día está " + tiempo);
@@ -13,9 +13,9 @@ function calc_area(){
     alert("Con el radio dado, calculare el perímetro");
     let peri = (2*pi) * radio;
     alert ("Para el radio dado, el perímetro del circulo es :" + peri);
-}*/
+};
 //ejercicio 3
-/*function edad(){
+function edad(){
   const mayor="21";
   alert("Ingresa tu edad y te dire si eres mayor de edad");
   var edad = prompt("Ingresa un valor para la edad");
@@ -23,14 +23,14 @@ function calc_area(){
   if (edad >= mayor) {alert("Eres mayor de edad");
 } else {alert("No tienes la edad suficiente"); 
 }
-}*/
+};
 
 //ejercicio4
 /*Realiza un programa que sólo permita introducir los caracteres ‘S’ y ‘N’. Si el usuario
 ingresa alguno de esos dos caracteres se deberá de imprimir un mensaje por pantalla
 que diga “CORRECTO”, en caso contrario, se deberá imprimir “INCORRECTO”. */
 
-/*function veriletra(){
+function veriletra(){
     var letra = prompt("Ingrese una letra, pero solo puede ser : S ó N");
     letra = letra.toUpperCase();
     if (letra == "S" || letra == "N" ) {
@@ -39,7 +39,7 @@ que diga “CORRECTO”, en caso contrario, se deberá imprimir “INCORRECTO”
       alert("INCORRECTO");
       
     }
-}*/
+};
 
 //ejercicio5
 /*Construir un programa que simule un menú de opciones para realizar las cuatro
@@ -47,7 +47,7 @@ operaciones aritméticas básicas (suma, resta, multiplicación y división) con
 numéricos enteros. El usuario, además, debe especificar la operación con el primer
 carácter de la operación que desea realizar: ‘S' o ‘s’ para la suma, ‘R’ o ‘r’ para la resta, ‘M’
 o ‘m’ para la multiplicación y ‘D’ o ‘d’ para la división*/
-/*function calculadora(){
+function calculadora(){
 alert("HOLA, ESTA ES UNA CALCULADORA SENCILLA");
 
 var valor1 = parseInt(prompt("Ingrese un valor"));
@@ -68,12 +68,12 @@ switch (expr) {
     default:
     
   }
-}*/
+};
 
 //ejercicio6
 /*Realizar un programa que, dado un número entero, visualice en pantalla si es par o impar.
 En caso de que el valor ingresado sea 0, se debe mostrar “el número no es par ni impar”*/
-/*function par_impar(){
+function par_impar(){
   var num = prompt("Ingresa un numero entero");
     
   if (num == 0) {
@@ -83,7 +83,7 @@ En caso de que el valor ingresado sea 0, se debe mostrar “el número no es par
   }else{
     alert("El numero ingresado es IMPAR");
   }
-}*/
+};
 
 //ejercicio7
 /*Escriba un programa en el cual se ingrese un valor límite positivo, y a continuación
@@ -98,7 +98,7 @@ function num_limite(){
   } while (cont <= limite);
 
   alert("Yata")
-}
+};
 
 //ejercicio8
 /*Escribir un programa que lea números enteros hasta teclear 0 (cero). Al finalizar el
@@ -169,11 +169,11 @@ for (var i = 0; i < frase.length; i++) {
 // Mostrar la frase con espacios entre cada letra
 console.log(fraseConEspacios);
 alert(fraseConEspacios);
-}
+};
 
 //ejercicio10
 /*Escribir una función flecha que reciba una palabra y la devuelva al revés. */
-function ejer10(){
+function reves(){
   var palabra=prompt("ingrese una palabra");
   var palfinal="";
   for (let index = palabra.length; index >= 0 ; index--) {
@@ -182,7 +182,7 @@ function ejer10(){
       
   }
     alert(palfinal);
-}
+};
 
 
 
