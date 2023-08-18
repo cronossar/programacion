@@ -1,8 +1,8 @@
-ejercicio 1
+//ejercicio 1
 function saludo1(){
     var tiempo = prompt("¿Cómo esta el día de hoy?")
     alert("El día está " + tiempo);
-};
+}
 //ejercicio 2
 function calc_area(){
     var radio = prompt("Ingresa un valor para el radio de la circunferencia");
@@ -13,7 +13,7 @@ function calc_area(){
     alert("Con el radio dado, calculare el perímetro");
     let peri = (2*pi) * radio;
     alert ("Para el radio dado, el perímetro del circulo es :" + peri);
-};
+}
 //ejercicio 3
 function edad(){
   const mayor="21";
@@ -23,7 +23,7 @@ function edad(){
   if (edad >= mayor) {alert("Eres mayor de edad");
 } else {alert("No tienes la edad suficiente"); 
 }
-};
+}
 
 //ejercicio4
 /*Realiza un programa que sólo permita introducir los caracteres ‘S’ y ‘N’. Si el usuario
@@ -39,7 +39,7 @@ function veriletra(){
       alert("INCORRECTO");
       
     }
-};
+}
 
 //ejercicio5
 /*Construir un programa que simule un menú de opciones para realizar las cuatro
@@ -47,7 +47,7 @@ operaciones aritméticas básicas (suma, resta, multiplicación y división) con
 numéricos enteros. El usuario, además, debe especificar la operación con el primer
 carácter de la operación que desea realizar: ‘S' o ‘s’ para la suma, ‘R’ o ‘r’ para la resta, ‘M’
 o ‘m’ para la multiplicación y ‘D’ o ‘d’ para la división*/
-function calculadora(){
+/*function calculadora(){
 alert("HOLA, ESTA ES UNA CALCULADORA SENCILLA");
 
 var valor1 = parseInt(prompt("Ingrese un valor"));
@@ -63,12 +63,12 @@ switch (expr) {
     case 'MULTIPLICACION':
       
       break;
-    case 'DIVIDIR':
+    case 'DIVIDIR';
       break
-    default:
+    default;
     
   }
-};
+}*/
 
 //ejercicio6
 /*Realizar un programa que, dado un número entero, visualice en pantalla si es par o impar.
@@ -83,7 +83,7 @@ function par_impar(){
   }else{
     alert("El numero ingresado es IMPAR");
   }
-};
+}
 
 //ejercicio7
 /*Escriba un programa en el cual se ingrese un valor límite positivo, y a continuación
@@ -98,7 +98,7 @@ function num_limite(){
   } while (cont <= limite);
 
   alert("Yata")
-};
+}
 
 //ejercicio8
 /*Escribir un programa que lea números enteros hasta teclear 0 (cero). Al finalizar el
@@ -153,6 +153,7 @@ alert("Promedio:"+ promedio);
 /*Realizar un programa que pida una frase y el programa deberá mostrar la frase con un
 espacio entre cada letra. La frase se mostrara así: H o l a. Nota: recordar el
 funcionamiento de la función Substring().*/
+
 function frase(){
 // Solicitar al usuario que ingrese una frase
 var frase = prompt("Por favor, ingresa una frase:");
@@ -169,10 +170,11 @@ for (var i = 0; i < frase.length; i++) {
 // Mostrar la frase con espacios entre cada letra
 console.log(fraseConEspacios);
 alert(fraseConEspacios);
-};
+}
 
 //ejercicio10
 /*Escribir una función flecha que reciba una palabra y la devuelva al revés. */
+
 function reves(){
   var palabra=prompt("ingrese una palabra");
   var palfinal="";
@@ -182,8 +184,41 @@ function reves(){
       
   }
     alert(palfinal);
-};
+}
 
+//ejercicio11
+/*Escribir una función que reciba un String y devuelva la palabra más larga.
+String Ejemplo: “Guia de JavaScript”
+Resultado esperado : “JavaScript”*/
+
+function split(){
+let frase = prompt("Ingresa una frase:");
+  const palabras = frase.split(' ');
+  let palabraLarga = '';
+
+  for (let i = 0; i < palabras.length; i++) {
+    if (palabras[i].length > palabraLarga.length) {
+      palabraLarga = palabras[i];
+    }
+  }
+
+alert(palabraLarga);
+}
+
+//ejercicio12
+/*Escribir una función flecha de JavaScript que reciba un argumento y retorne el tipo de
+dato.*/
+function dato(){
+  let valor = true;
+  const obtenerTipoDeDato = (valor) => {
+    return typeof valor;
+  };
+  
+  // Ejemplos de uso
+  alert(typeof(valor)); 
+  
+
+}
 
 
 
