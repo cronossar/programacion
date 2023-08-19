@@ -147,6 +147,7 @@ const promedio = suma / cantidadNumeros;
 alert("Máximo:"+ maximo);
 alert("Mínimo:"+ minimo);
 alert("Promedio:"+ promedio);
+
 //################################################################# */ 
 
 //ejercicio9
@@ -215,11 +216,80 @@ function dato(){
   };
   
   // Ejemplos de uso
-  alert(typeof(valor)); 
-  
+  alert(typeof(valor));
+}
+
+//ejercicio13
+/*Crear un objeto persona, con las propiedades nombre, edad, sexo ('H' hombre, 'M' mujer,
+'O' otro), peso y altura. A continuación, muestre las propiedades del objeto JavaScript.*/
+
+/* var persona = new Object();
+
+persona.nombre = 'Paula';
+persona.edad = 40;
+persona.sexo = 'M';
+persona.peso = 60;
+persona.altura = 1.63;
+
+var persona1 = {
+nombre: 'Dani',
+edad: 40,
+sexo: 'M',
+peso: 70,
+altura: 1.75
 
 }
 
+function persona2 (nombre,edad,sexo,peso,altura){
+
+    this.nombre = nombre;
+    this.edad = edad;
+    this.sexo = sexo;
+    this.peso = peso;
+    this.altura = altura;
+
+}
+
+var pPersona1 = new persona2 ('Juan',42,'M',68,1.73);
+
+console.log(pPersona1);
+console.log(persona);
+alert(`${pPersona1.nombre}, ${pPersona1.edad}`); */
+
+
+
+//ejercicio14
+/*Crear un objeto libro que contenga las siguientes propiedades: ISBN, Título, Autor,
+Número de páginas. Crear un método para cargar un libro pidiendo los datos al usuario
+y luego informar mediante otro método el número de ISBN, el título, el autor del libro y el
+numero de páginas*/
+
+function biblio(){
+
+function Libro(ISBN, Titulo, Autor, NumeroDePaginas) {
+
+  this.ISBN = ISBN;
+  this.Titulo = Titulo;
+  this.Autor = Autor;
+  this.NumeroDePaginas = NumeroDePaginas;
+
+}
+
+
+var Libro1 = new Libro();
+
+Libro1.ISBN = prompt("Ingrese el ISBN");
+Libro1.Titulo = prompt("Ingrese el titulo");
+Libro1.Autor = prompt("Ingrese el Auto");
+Libro1.NumeroDePaginas = prompt("Ingrese el numero de paginas");
+
+alert(`El isbn es: ${Libro1.ISBN} 
+el titulo es: ${Libro1.Titulo} 
+el Autor ${Libro1.Autor} 
+el numero de paginas es ${Libro1.NumeroDePaginas}`);
+
+console.log(Libro1);
+}
 
 
 
