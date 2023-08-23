@@ -291,5 +291,55 @@ el numero de paginas es ${Libro1.NumeroDePaginas}`);
 console.log(Libro1);
 }
 
+function areayperi(){
+  
+  // Definir la clase Circulo
+class Circulo {
+  constructor(radio) {
+    this.radio = radio;
+  }
 
+  // Método para calcular el área del círculo
+  calcularArea() {
+    return Math.PI * this.radio * this.radio;
+  }
+
+  // Método para calcular el perímetro del círculo
+  calcularPerimetro() {
+    return 2 * Math.PI * this.radio;
+  }
+}
+
+// Pedir al usuario que ingrese el radio del círculo
+const radioUsuario = parseFloat(prompt("Ingresa el radio del círculo:"));
+
+// Crear una instancia de la clase Circulo
+const circulo = new Circulo(radioUsuario);
+
+// Calcular y mostrar el área y el perímetro del círculo
+const area = circulo.calcularArea();
+const perimetro = circulo.calcularPerimetro();
+
+console.log(`El área del círculo es: ${area.toFixed(2)}`);
+console.log(`El perímetro del círculo es: ${perimetro.toFixed(2)}`);
+}
+
+
+
+
+function resaltar_amarillo(){
+
+  
+    const paragraph = document.getElementById("paragraph");
+    const words = paragraph.textContent.split(" ");
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i].length > 8) {
+            words[i] = `<span class="highlight">${words[i]}</span>`;
+        }
+    }
+
+    paragraph.innerHTML = words.join(" ");
+
+}
 

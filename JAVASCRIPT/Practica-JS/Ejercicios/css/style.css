@@ -13,6 +13,15 @@ p{
     padding-top: auto; 
 }
 
+#paragraph{
+    font-family: Arial;
+    color: darkmagenta;
+    font-size: 1.5em;
+    text-align: justify;
+    flex-direction: column; 
+    padding-top: auto;  
+}
+
 button {
     font-size: 1.5em;
     font-weight: bold;
