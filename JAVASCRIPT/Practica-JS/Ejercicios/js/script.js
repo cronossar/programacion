@@ -330,16 +330,16 @@ console.log(`El perímetro del círculo es: ${perimetro.toFixed(2)}`);
 function resaltar_amarillo(){
 
   
-    const paragraph = document.getElementById("paragraph");
-    const words = paragraph.textContent.split(" ");
+    let pes = document.getElementById("parrafo");
+    let palabras = pes.textContent.split(" ");
 
-    for (let i = 0; i < words.length; i++) {
-        if (words[i].length > 8) {
-            words[i] = `<span class="highlight">${words[i]}</span>`;
+    for (let i = 0; i < palabras.length; i++) {
+        if (palabras[i].length > 8) {
+            palabras[i] = `<span class="highlight">${palabras[i]}</span>`;
         }
     }
 
-    paragraph.innerHTML = words.join(" ");
+    pes.innerHTML = palabras.join(" ");
 
 }
 
