@@ -326,7 +326,7 @@ console.log(`El perímetro del círculo es: ${perimetro.toFixed(2)}`);
 
 
 
-
+//Ejercicio23
 function resaltar_amarillo(){
 
   
@@ -343,3 +343,39 @@ function resaltar_amarillo(){
 
 }
 
+//Ejercicio24
+
+//var formulario= document.getElementById("form");
+
+ function area(){
+    //let radio=formulario.value;
+    let radio=document.getElementById("form").radio.value;
+    let area= Math.PI * radio**2;
+    console.log(area.toFixed(2));
+    document.getElementById("rarea").innerHTML=`El resultado del area es: ${area.toFixed(2)}`;
+   
+ }   
+    
+function perimetro(){
+   
+    //let radio=formulario[0].value;
+    let radio=document.getElementById("form").radio.value;
+    let perimetro= 2 * Math.PI * radio;
+    console.log(perimetro.toFixed(2));
+    document.getElementById("rperimetro").innerHTML=`El resultado del perimetro es: ${perimetro.toFixed(2)}`;
+}
+
+//Ejercicio25
+
+function getFormValores(){
+  event.preventDefault();
+    const nombre = document.getElementById("form1").nombre.value;
+    const apellido = document.getElementById("form1").apellido.value;
+
+    console.log("Nombre:", nombre);
+    console.log("Apellido:", apellido);
+
+    document.getElementById("p").innerHTML = "Nombre: " + nombre + "<br>Apellido: " + apellido;
+    confirm("Seguro que su nombre es: " + nombre + " , " + apellido + " ?");
+
+}
