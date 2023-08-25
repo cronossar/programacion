@@ -290,7 +290,7 @@ el numero de paginas es ${Libro1.NumeroDePaginas}`);
 
 console.log(Libro1);
 }
-
+//ejercicio15
 function areayperi(){
   
   // Definir la clase Circulo
@@ -326,7 +326,7 @@ console.log(`El perímetro del círculo es: ${perimetro.toFixed(2)}`);
 
 
 
-
+//ejercicio23
 function resaltar_amarillo(){
 
   
@@ -337,9 +337,22 @@ function resaltar_amarillo(){
         if (palabras[i].length > 8) {
             palabras[i] = `<span class="highlight">${palabras[i]}</span>`;
         }
-    }
+    } 
 
     pes.innerHTML = palabras.join(" ");
 
+}
+
+//ejercicio24
+function calc_area2(){
+  
+  var radio = prompt("Ingresa un valor para el radio de la circunferencia");
+  var pi = 3.141516;
+  let area = pi * (radio * radio);
+  alert ("Para el radio dado, el área del circulo es :" + area);
+
+  alert("Con el radio dado, calculare el perímetro");
+  let peri = (2*pi) * radio;
+  alert ("Para el radio dado, el perímetro del circulo es :" + peri);
 }
 
