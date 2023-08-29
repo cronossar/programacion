@@ -1,0 +1,44 @@
+table, th, td{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid black;        
+}
+.c{
+text-align: center;
+background-color: #e0dcdc77;
+}
+.f1 th{
+    text-align: left;
+    background-color: rgba(179, 238, 179, 0.918);
+}
+.f2 th{
+    text-align: left;
+    background-color: rgba(179, 238, 179, 0.918);
+}
+.f3 th{
+    text-align: left;
+    background-color: rgba(179, 238, 179, 0.918);
+}
+.f4 th{
+    text-align: left;
+    background-color: rgba(179, 238, 179, 0.918);
+}
+.f1 td{
+    background-color: rgb(235, 241, 140);
+}
+.f3 td{
+    background-color: rgb(235, 241, 140);
+}
+.dolar::before {
+    content: url(https://github.com/EggCooperation/HTML-CSS/blob/master/Ejercicio%2010/imagenes/dolar.png?raw=true);
+}
+.euro::before {
+    content: url(https://github.com/EggCooperation/HTML-CSS/blob/master/Ejercicio%2010/imagenes/euro.png?raw=true);
+}
+.yen::before {
+    content: url(https://github.com/EggCooperation/HTML-CSS/blob/master/Ejercicio%2010/imagenes/yen.png?raw=true);
+}
+.libra::before {
+    content: url(https://github.com/EggCooperation/HTML-CSS/blob/master/Ejercicio%2010/imagenes/libra.png?raw=true);
+}
