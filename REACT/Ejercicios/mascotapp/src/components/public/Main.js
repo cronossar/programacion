@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import RickAndMortyService from `../services/RickAndMorty.service`;
 import Cards from './Cards';
 
 export default class Main extends Component {
@@ -6,10 +7,16 @@ export default class Main extends Component {
     constructor (props){
         super(props);
         console.log("Hola desde el constructor");
+        this.state = { mascotas: []}
     }
   
   componentDidMount(){
     console.log("Hola desde componentDidMount ");
+    RickAndMortyService.getAllCharacters()
+    .then()
+    .catch();
+
+
   }
   
     render() {
