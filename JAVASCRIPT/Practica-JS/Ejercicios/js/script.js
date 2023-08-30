@@ -339,7 +339,7 @@ function resaltar_amarillo(){
 
     for (let i = 0; i < palabras.length; i++) {
         if (palabras[i].length > 8) {
-            palabras[i] = `<span class="highlight">${palabras[i]}</span>`;
+            palabras[i] = `<span className="highlight">${palabras[i]}</span>`;
         }
     } 
 
