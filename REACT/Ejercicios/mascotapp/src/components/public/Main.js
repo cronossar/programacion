@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import RickAndMortyService from `../../services/RickAndMorty.RickAndMortyService`;
+import React, { Component } from 'react';
+import RickAndMortyService from '../../services/RickAndMorty.RickAndMortyService';
 import {Cards} from './Cards';
 
 export default class Main extends Component {
@@ -12,9 +12,9 @@ export default class Main extends Component {
   
   componentDidMount(){
     console.log("Hola desde componentDidMount ");
-    RickAndMortyService.getAllCharacters();
+    RickAndMortyService.getAllCharacters()
     .then((data) => this.setState({mascotas: data.results}))
-    .catch((error) => console.log(error));
+    .catch((error) => console.log(error))
 
 
   }
