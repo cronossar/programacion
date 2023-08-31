@@ -6,17 +6,13 @@ export default class Main extends Component {
   
     constructor (props){
         super(props);
-        console.log("Hola desde el constructor");
         this.state = { mascotas: []};
     }
   
   componentDidMount(){
-    console.log("Hola desde componentDidMount ");
-    RickAndMortyService.getAllCharacters()
-    .then((data) => this.setState({mascotas: data.results}))
-    .catch((error) => console.log(error))
-
-
+    //RickAndMortyService.getAllCharacters()
+    //.then((data) => this.setState({mascotas: data.results}))
+    //.catch((error) => console.log(error))
   }
   
     render() {
@@ -44,7 +40,7 @@ export default class Main extends Component {
           </div>
         </section>
         
-        <Cards mascotas={this.state.mascotas} />
+        <Cards  />
         
       </main>
     )

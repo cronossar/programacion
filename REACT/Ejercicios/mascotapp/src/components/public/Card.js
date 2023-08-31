@@ -5,7 +5,7 @@ export const Card = ({mascota}) => {
     <div className="col">
       <div className="card shadow-sm">
         <img width="100%" src={mascota.image} alt="imagen" />
-          
+         <h3 className="mb-0 text-dark">{mascota.name}</h3> 
         <div className="card-body">
           <p className="card-text">
             This is a wider card with supporting text below as a natural lead-in
