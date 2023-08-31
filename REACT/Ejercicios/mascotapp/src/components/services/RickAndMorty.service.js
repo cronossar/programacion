@@ -1,4 +1,4 @@
-import { API_RM } from "./Api.constants";
+import { API_RM } from "../constants/Api.constants";
 
 class RickAndMortyService {
 

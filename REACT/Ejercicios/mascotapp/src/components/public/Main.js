@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RickAndMortyService from '../../services/RickAndMorty.RickAndMortyService';
+import RickAndMortyService from '../services/RickAndMorty.service.js';
 import {Cards} from './Cards';
 
 export default class Main extends Component {
