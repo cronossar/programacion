@@ -3,7 +3,7 @@ import { Detail } from "./components/public/Detail";
 import { Footer } from "./components/public/Footer";
 import Main from "./components/public/Main";
 import Navbar from "./components/public/Navbar";
-import { Switch, Route} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import { UserForm } from "./components/public/UserForm";
 
 function App() {
@@ -11,11 +11,11 @@ function App() {
     <div>
       <Navbar />
       
-      <Switch>
-        <Route exact path={"/"} component={Main} />
-        <Route path={"/details/:id"} component={Detail} />
-        <Route path={"/user-form"} component={UserForm} />
-      </Switch>
+      <Routes>
+        <Route exact path={"/"} element={<Main />} />
+        <Route path={"/details/:id"} element={Detail} />
+        <Route path={"/user-form"} element={UserForm} />
+      </Routes>
      
       <Footer />
     </div>
