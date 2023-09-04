@@ -1,9 +1,25 @@
-import './App.css'
+import "./App.css"
+import Footer from "./components/Footer"
+import Header from "./components/Header"
+import { BrowserRouter, Routes, Route  } from "react-router-dom"
+import Productos from './components/Productos'
+import useProducto from './hooks/useProducto'
+import Detalle from "./components/Detalle"
 
-export default function App() {
+function App() {
+
+  const{productos,favoritos,agregarAFavoritos,eliminarDeFavoritos} = useProducto()
+
   return (
-    <h1 className="bg-red-100  text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <BrowserRouter>
+    <Header />
+      <Routes>
+        <Route path='/' element={<Productos productos={productos} agregarAFavoritos={agregarAFavoritos} eliminarDeFavoritos={eliminarDeFavoritos} />}/>
+        <Route path='/favoritos' element={<Productos productos={favoritos} agregarAFavoritos={agregarAFavoritos} eliminarDeFavoritos={eliminarDeFavoritos} />}/>
+        <Route path='/producto/:id' element={<Detalle/>}/>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   )
 }
+export default App
