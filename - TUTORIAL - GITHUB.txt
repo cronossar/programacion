@@ -17,3 +17,20 @@ git remote --verbose // ver a donde está linkeado el archivo para el push o pul
 
 git config --global user.name "user name"
 git config --global user.email "email"
+
+----------------------------
+
+Plugin Maven: https://drive.google.com/file/d/1Kfyjq_QJh823D7S68tPPrqWjkDuYWidU/view
+
+Instalación Maven (Windows): https://drive.google.com/file/d/1a7yRbg3NZXoxgq6sTY1xj39CahuWXmkx/view
+
+Instalación Maven (Mac): 
+https://drive.google.com/file/d/1V4ovDhGclaeF_4CADviBXpaIaO1GJvUO/view
+
+Comandos bash para Mac: https://drive.google.com/file/d/1CcWAEnsYxVtIjDAQiNoFDOSMwsAheTMa/view
+
+Material de trabajo: https://drive.google.com/drive/folders/1OqYMJG1MMTpmlnF4ZqrXWCyEqZ0L0qjY
+
+Videos: https://www.youtube.com/playlist?list=PLgwlfcqa5h3zV73J6H9TwoqHWHeo8H2UC
+
+Repositorio: https://github.com/EggCooperation/Spring
