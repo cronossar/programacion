@@ -1,8 +1,9 @@
-import React from 'react'
-import './index.css'
-import { Header } from "./components/Header"
-import { ProductsList } from "./components/Products"
-import 'boxicons'
+import React from 'react';
+import './index.css';
+import { Header } from "./components/Header";
+import { ProductsList } from "./components/Products";
+import 'boxicons';
+
 
 function App() {
   
@@ -10,9 +11,12 @@ function App() {
   return (
     
       <div className='App'>
+        
         <Header />
-        <ProductsList />
+        <ProductsList/>
+        
       </div>
+      
    )
 }
 
