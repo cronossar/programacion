@@ -1,23 +1,23 @@
-import React from 'react'
+
 import Nike from "../../images/Nike.jpg"
-import { BoxIconElement } from 'boxicons'
+import 'boxicons';
 
 
 export const Header = () => {
   return (
     
     <header>
-      <a href="#">
+      <a href="/">
         <div className='logo'>
           <img src={Nike} alt="logo" width="150"/>
         </div>
       </a>
       <ul>
         <li>
-          <a href='#'>INICIO</a>
+          <a href="/">INICIO</a>
         </li>
         <li>
-          <a href='#'>PRODUCTOS</a>
+          <a href="/productos">PRODUCTOS</a>
         </li>
       </ul>
       <div className="cart">
@@ -27,3 +27,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header;

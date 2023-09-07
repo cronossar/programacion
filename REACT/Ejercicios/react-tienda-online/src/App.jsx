@@ -1,23 +1,19 @@
-import React from 'react';
-import './index.css';
-import { Header } from "./components/Header";
-import { ProductsList } from "./components/Products";
-import 'boxicons';
-
+import { Header } from "./components/Header/Header";
+import { Pages } from "./components/Pages";
+import "boxicons";
 
 function App() {
-  
-
   return (
-    
-      <div className='App'>
-        
+    <div className="App">
+      <div>
         <Header />
-        <ProductsList/>
-        
       </div>
-      
-   )
+
+      <div>
+        <Pages />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;

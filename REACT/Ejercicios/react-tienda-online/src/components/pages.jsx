@@ -1,7 +1,19 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ProductoLista } from "./Productos/index";
+import {Inicio} from "./Inicio/Inicio";
 
-export const pages = () => {
+export const Pages = () => {
   return (
-    <div>pages</div>
-  )
-}
+    
+      <Router>
+        <Routes>
+          <Route path="/Inicio" exact element={<Inicio/>} />
+          <Route path="/Productos" exact element={<ProductoLista/>} />
+        </Routes>
+      </Router>
+    
+  );
+};
+
+export default Pages;

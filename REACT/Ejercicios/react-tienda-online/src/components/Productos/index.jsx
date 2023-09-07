@@ -1,12 +1,12 @@
-import React from 'react'
+
 import IMG from "../../images/img01.jpg";
 
-export const ProductsList = () => {
+export const ProductoLista = () => {
   return (
     <>
-    <h1 className='title'>PRODUCTOS</h1>
-    <div className='productos'>
-      <div className='producto'>
+    <h1 className="title">PRODUCTOS</h1>
+    <div className="productos">
+      <div className="producto">
       <a href="#">
       <div className="producto_img">
         <img src={IMG} alt="" />
@@ -17,16 +17,16 @@ export const ProductsList = () => {
         <p>Categoria</p>
         <div className="price">$320</div>
       </div>
-      <div className='button'>
-        <button className='btn'>
+      <div className="buttom">
+        <button className="btn">
           Añadir al carrito
         </button>
         <div>
-        <a href="#" className='btn'>Vista</a>
+        <a href="#" className="btn">Vista</a>
         </div>
       </div>
       </div>
-      <div className='producto'>
+      <div className="producto">
       <a href="#">
       <div className="producto_img">
         <img src={IMG} alt="" />
@@ -37,16 +37,16 @@ export const ProductsList = () => {
         <p>Categoria</p>
         <div className="price">$320</div>
       </div>
-      <div className='button'>
-        <button className='btn'>
+      <div className="buttom">
+        <button className="btn">
           Añadir al carrito
         </button>
         <div>
-        <a href="#" className='btn'>Vista</a>
+        <a href="#" className="btn">Vista</a>
         </div>
       </div>
       </div>
-      <div className='producto'>
+      <div className="producto">
       <a href="#">
       <div className="producto_img">
         <img src={IMG} alt="" />
@@ -57,12 +57,12 @@ export const ProductsList = () => {
         <p>Categoria</p>
         <div className="price">$320</div>
       </div>
-      <div className='button'>
-        <button className='btn'>
+      <div className="buttom">
+        <button className="btn">
           Añadir al carrito
         </button>
         <div>
-        <a href="#" className='btn'>Vista</a>
+        <a href="#" className="btn">Vista</a>
         </div>
       </div>
       </div>
@@ -71,3 +71,5 @@ export const ProductsList = () => {
     </>
   )
 }
+
+export default ProductoLista;
