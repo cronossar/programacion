@@ -1,5 +1,8 @@
 import React, {useState,useEffect, createContext } from "react";
-import Data from "Data.js";
+import Data from "../Data.jsx";
+import PropTypes from 'prop-types';
+
+
 export const DataContext = createContext();
 
 export const DataProvider = (props) => {

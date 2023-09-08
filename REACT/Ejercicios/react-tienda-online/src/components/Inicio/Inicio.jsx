@@ -1,17 +1,17 @@
 import React from 'react';
 import Portada from "../../images/inicio.jpg";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Routes } from 'react-router-dom';
 
 export const Inicio = () => {
   
   return (
     <div className='inicio'>
-      <Link to="/inicio">
+      <Routes to="/inicio">
         <h1>Inicio</h1>
-      </Link>
-      <Link to="/productos">
+      </Routes>
+      <Routes to="/productos">npm run <i class="fa fa-deviantart" aria-hidden="true"></i>
           <h1>Productos</h1>
-      </Link>
+      </Routes>
       <img src={Portada} alt="inicio" />
     </div>
   )

@@ -1,18 +1,27 @@
 import React from 'react'
-import IMG from "../../images/img01.jpg";
+import PropTypes from 'prop-types';
 
-export const ProductoItem = () => {
+
+export const ProductoItem = ({
+  id,
+  title,
+  price,
+  image,
+  category
+}) => {
+
+  
   return (
     <div className="producto">
       <a href="#">
       <div className="producto_img">
-        <img src={IMG} alt="" />
+        <img src={image.default} alt={title} />
       </div>
       </a>
       <div className="producto_footer">
-        <h1>Title</h1>
-        <p>Categoria</p>
-        <div className="price">$320</div>
+        <h1>{title}</h1>
+        <p>{category}</p>
+        <div className="price">${price}</div>
       </div>
       <div className="buttom">
         <button className="btn">
