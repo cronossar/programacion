@@ -1,4 +1,4 @@
-
+import React from 'react'
 import Nike from "../../images/Nike.jpg"
 import 'boxicons';
 
@@ -14,7 +14,7 @@ export const Header = () => {
       </a>
       <ul>
         <li>
-          <a href="/">INICIO</a>
+          <a href="/inicio">INICIO</a>
         </li>
         <li>
           <a href="/productos">PRODUCTOS</a>
