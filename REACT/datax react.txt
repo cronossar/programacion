@@ -13,6 +13,9 @@ https://www.youtube.com/watch?v=Xse5iJE6784   Frontend Mentor: E-commerce produc
 
  https://www.youtube.com/watch?v=UMVb8b_VJwo   👉‍‍ APRENDE a hacer esta página usando REACT + Tailwind
 
+Carrito de Compras en React con el hook UseReducer
+https://www.youtube.com/watch?v=-eUYrsToD-E
+
 
 CODO A CODO DE PRIX
 
