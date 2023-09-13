@@ -4,7 +4,7 @@ import NoFavImg from '../img/heart.png'
 import {Link} from 'react-router-dom'
 
 export default function Producto({producto, agregarAFavoritos, eliminarDeFavoritos}) {
-
+console.log()
     const [favorito, setFavorito] = useState(false)
 
     function handleClick(){
