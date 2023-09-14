@@ -1,31 +1,21 @@
-.root{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+
 
 .header{
     display:flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgb(253, 202, 60);
-    height: 80px;
-    padding-top: 20px;
+    border-bottom: 2px solid rgb(253, 202, 60);
+       
 }
 
-.header .tituloweb{
-    color: #443963;
-  font-weight: bold;
-  font-size: 50px;
-  font-family: Arial;
-  padding-top: 20px;
-  padding-right: 20px;
-  
-    
+.navBar{
+    align-items:center;
 }
+
 
 .icon{
-    width: 50px;
+    width: 70px;
+        
 }
 
 .footer{
@@ -55,8 +45,8 @@
 }
 
 .producto img{
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
 }
 
 .producto .fav-icon{

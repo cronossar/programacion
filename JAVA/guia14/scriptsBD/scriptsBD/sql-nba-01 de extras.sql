@@ -2,7 +2,7 @@ use nba;
 
 -- 1. Mostrar el nombre de todos los jugadores ordenados alfabéticamente.
 select Nombre from jugadores order by Nombre asc;
--- 2. Mostrar el nombre de los jugadores que sean pivots (‘C’) y que pesen más de 200 libras,
+-- 2. Mostrar el nombrautore de los jugadores que sean pivots (‘C’) y que pesen más de 200 libras,
 -- ordenados por nombre alfabéticamente.
 select nombre from jugadores where posicion like '%C%' and peso>200 order by nombre;
 -- 3. Mostrar el nombre de todos los equipos ordenados alfabéticamente.
