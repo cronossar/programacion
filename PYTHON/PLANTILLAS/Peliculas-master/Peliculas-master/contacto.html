@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Peliculas Now! - Los mejores estrenos en las carteleras de España - Contacta con nosotros</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="Contacta con nosotros" />
+        <meta name="author" content="Jorge Bailo" />
+        <meta name="keywords" content="peliculas, entradas, cines, cartelera, estrenos, taquillazos, trailers, analisis, comentarios" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/js-webshim/minified/polyfiller.js"></script>
+        <script>
+	$.webshims.polyfill();
+        $(document).ready(function() {
+            function report(valid){
+               if (valid){
+                   $('#message').addClass("valid");
+                   $('#message').text("Su mensaje ha sido correctamente enviado");
+               } else {
+                   $('#message').addClass("invalid");
+                   $('#message').text("Rellene los datos correctamente");
+               }
+            };   
+            $('#contacto').submit(function(event){
+                event.preventDefault();
+                if ($('#contacto').checkValidity()){
+                    report(true);
+                } else {
+                    report(false);
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <section class="wrapper">
+            <div class="main">
+                <header>
+                    <h1>PeliculasNow! - Los mejores estrenos de cine</h1>
+                </header>
+                <nav>
+                    <ul>
+                        <li><a title="Volver al Inicio" href="index.html">Inicio</a></li>
+                        <li><a title="Trailers" href="trailers.html">Trailers</a></li>
+                        <li><a title="Populares" href="populares.html">Populares</a></li>
+                        <li><a title="Cines" href="cines.html">Cines</a></li>
+                        <li><a title="Contacto" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <aside>
+                    <h2>Top Taquillazos:</h2>
+                    <ol>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Knight Rises</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Avengers</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Ice Age: Continental Drift</h3>
+                            <p itemprop="genre">Animación</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">The Amazing Spider-Man</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Shadows</h3>
+                            <p itemprop="genre">Comedia</p>
+                        </li>
+                    </ol>
+                </aside>
+                <section>
+                    <article>
+                        <form id="contacto" name="contacto" class="contact_form" action="#" method="post">
+                            <ul>
+                                <li>
+                                    <h2>Contacta con nosotros</h2>
+                                </li>
+                                <li>
+                                    <span id="message"></span>
+                                </li>
+                                <li>
+                                    <label for="name">Nombre:</label>
+                                    <input type="text" name="name" id="name" placeholder="Tu Nombre" required />
+                                </li>
+                                <li>
+                                    <label for="email">Email:</label>
+                                    <input type="email" name="email" id="email" placeholder="Tu Email" required />
+                                </li>
+                                <li>
+                                    <label for="website">Sitio Web:</label>
+                                    <input type="url" name="website" id="website" placeholder="Tu Sitio Web" required />
+                                </li>
+                                <li>
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea name="Mensaje" id="mensaje" cols="40" rows="6" required ></textarea>
+                                </li>
+                                <li>
+                                    <button class="submit" id="submit" type="submit">Enviar</button>
+                                </li>
+                            </ul>
+                        </form>
+                    </article>
+                </section>
+            </div>
+            <div class="push"></div>
+        </section>
+        <footer>Copyright &copy; 2014 PeliculasNow. All rights reserved.</footer>
+    </body>
+</html>

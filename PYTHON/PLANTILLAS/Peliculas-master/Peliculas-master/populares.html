@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Peliculas Now! - Las películas mas populares en las carteleras de España</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="Encuentra las peliculas más populares en todas las carteleras de España" />
+        <meta name="author" content="Jorge Bailo" />
+        <meta name="keywords" content="peliculas, entradas, cines, cartelera, estrenos, taquillazos, trailers, analisis, comentarios" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/js-webshim/minified/polyfiller.js"></script>
+        <script>
+            $.webshims.polyfill();
+            $(document).ready(function() {
+                $('canvas').each(function() {
+                    var values = $(this).attr("data-feed").split(",");
+                    var context = this.getContext("2d");
+                    context.font = "bold 14px sans-serif";
+                    var index = 0;
+                    for (var i = 0; i < values.length; i++) {
+                        var info = values[i].split(":");
+                        var val = info[1];
+                        if (val > 0) {
+                            var pos = index * 36;
+                            context.fillStyle = "#292929";
+                            context.fillRect(0, pos, 290, 26);
+                            context.fillStyle = getChartColor(val);
+                            context.fillRect(0, pos, val * 2.9, 26);
+                            context.fillStyle = "rgba(255, 255, 255, .9)";
+                            context.fillText(info[0] + " " + val + "%", 10, pos + 18);
+                            index++;
+                        }
+                    }
+                    if (index === 0) {
+                        context.fillStyle = "#FFFFFF";
+                        context.fillText("No Data Available", 40, 50);
+                    }
+                });
+                function getChartColor(val) {
+                    var result = "";
+                    if (val < 40) {
+                        result = "red";
+                    } else {
+                        if (val < 70) {
+                            result = "orange";
+                        } else {
+                            result = "green";
+                        }
+                    }
+                    return result;
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <section class="wrapper">
+            <div class="main">
+                <header>
+                     <h1>PeliculasNow! - Los mejores estrenos de cine</h1>
+                </header>
+                <nav>
+                    <ul>
+                        <li><a title="Volver al Inicio" href="index.html">Inicio</a></li>
+                        <li><a title="Trailers" href="trailers.html">Trailers</a></li>
+                        <li><a title="Populares" href="populares.html">Populares</a></li>
+                        <li><a title="Cines" href="cines.html">Cines</a></li>
+                        <li><a title="Contacto" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+                <aside>
+                    <h2>Top Taquillazos:</h2>
+                    <ol>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Knight Rises</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Avengers</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Ice Age: Continental Drift</h3>
+                            <p itemprop="genre">Animación</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">The Amazing Spider-Man</h3>
+                            <p itemprop="genre">Acción</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Shadows</h3>
+                            <p itemprop="genre">Comedia</p>
+                        </li>
+                    </ol>
+                </aside>
+                <section>
+                    <article>
+                        <h1>Valoraciones Recibidas</h1>
+                        <div id="movies">
+                            <ul>
+                                <li itemtype="http://schema.org/Movie" itemscope="" class="">
+                                    <img width="120" alt="The Amazing Spider-Man" src="img/spiderman.jpg">
+                                    <section class="main-info">
+                                        <h3 itemprop="name">The Amazing Spider-Man</h3>
+                                        <p itemprop="genre" class="details genre">Acción,Drama,Fantasia,Ciencia Ficción</p>
+                                        <p class="details">PG-13</p>
+                                        <p class="actors">Andrew Garfield,Emma Stone,Rhys Ifans,Denis Leary,Campbell Scott</p>
+                                    </section>
+                                    <section class="charting">
+                                        <h3 itemprop="name">The Amazing Spider-Man</h3>
+                                        <p>
+                                            <canvas data-feed= "Fotogramas:60,Cinemania:70,Usuarios:40"></canvas>
+                                        </p>
+                                    </section>
+                                </li>
+                                <li itemtype="http://schema.org/Movie" itemscope="" class="">
+                                    <img width="120" alt="The Lego Movie 3D" src="img/legomovie.jpg">
+                                    <section class="main-info">
+                                        <h3 itemprop="name">The Lego Movie 3D</h3>
+                                        <p itemprop="genre" class="details genre">3D, Animación</p>
+                                        <p class="details">PG</p>
+                                        <p class="actors">Chris Pratt, Will Ferrell, Morgan Freeman</p>
+                                    </section>
+                                    <section class="charting">
+                                        <h3 itemprop="name">The Lego Movie 3D</h3>
+                                        <p>
+                                            <canvas data-feed= "Fotogramas:60,Cinemania:70,Usuarios:80"></canvas>
+                                        </p>
+                                    </section>
+                                </li>
+                                <li itemtype="http://schema.org/Movie" itemscope="" class="">
+                                    <img width="120" alt="The Monuments Men" src="img/monumentsmen.jpg">
+                                    <section class="main-info">
+                                        <h3 itemprop="name">The Monuments Men</h3>
+                                        <p itemprop="genre" class="details genre">Acción/Aventura, Documental, Suspense/Thriller</p>
+                                        <p class="details">PG-13</p>
+                                        <p class="actors"> George Clooney, Matt Damon, Bill Murray, John Goodman, Jean Dujardin,</p>
+                                        <p class="actors"> Bob Balaban, Hugh Bonneville, Cate Blanchett</p>
+                                    </section>
+                                    <section class="charting">
+                                        <h3 itemprop="name">The Monuments Men</h3>
+                                        <p> 
+                                            <canvas data-feed= "Fotogramas:50,Cinemania:60,Usuarios:60"></canvas>
+                                        </p>
+                                    </section>
+                                </li>
+                                <li itemtype="http://schema.org/Movie" itemscope="" class="">
+                                    <img width="120" alt="Vampire Academy" src="img/vampireacademy.jpg">
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Vampire Academy</h3>
+                                        <p itemprop="genre" class="details genre">Acción/Aventura, Sci-Fi/Fantasía</p>
+                                        <p class="details">PG-13</p>
+                                        <p class="actors"> Zoey Deutch, Lucy Fry, Danila Kozlovsky, Gabriel Byrne, Sarah Hyland</p>
+                                    </section>
+                                    <section class="charting">
+                                        <h3 itemprop="name">Vampire Academy</h3>
+                                        <p>
+                                            <canvas data-feed= "Fotogramas:30,Cinemania:40,Usuarios:50"></canvas>
+                                        </p>
+                                    </section>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+            </div>
+            <div class="push"></div>
+        </section>
+        <footer>Copyright &copy; 2014 PeliculasNow. All rights reserved.</footer>
+    </body>
+</html>

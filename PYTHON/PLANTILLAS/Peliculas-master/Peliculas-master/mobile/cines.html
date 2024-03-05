@@ -1,0 +1,201 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>PeliculasNow!</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <style>
+            #cines, #map { height:100%; width: 100%; padding: 0;}
+        </style>
+        <script>
+            var cines = [];
+            function importXML(xmlfile) {
+                var xmlDoc;
+                var xmlloaded = false;
+                try {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.open("GET", xmlfile, false);
+                } catch (Exception) {
+                    var ie = (typeof window.ActiveXObject !== 'undefined');
+                    if (ie) {
+                        xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+                        xmlDoc.async = false;
+                        while (xmlDoc.readyState !== 4) {
+                        }
+                        ;
+                        xmlDoc.load(xmlfile);
+                        return xmlDoc;
+                    } else {
+                        xmlDoc = document.implementation.createDocument("", "", null);
+                        xmlDoc.onload = readXML;
+                        xmlDoc.load(xmlfile);
+                        return xmlDoc;
+                    }
+                }
+                if (!xmlloaded) {
+                    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+                    xmlhttp.send("");
+                    xmlDoc = xmlhttp.responseXML;
+                    return xmlDoc;
+                }
+            }
+
+            function infoCine(marker, map, infoWindow, html) {
+                google.maps.event.addListener(marker, 'click', function() {
+                    infoWindow.setContent(html);
+                    infoWindow.open(map, marker);
+                });
+            }
+
+            function error(msg) {
+                var status = document.getElementById('status');
+                status.innerHTML = msg;
+            }
+
+            function success(position) {
+                var status = document.querySelector('#status');
+                status.innerHTML = "Consulte sus cines mas cercanos";
+
+                var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var myOptions = {
+                    zoom: 15,
+                    center: latlng,
+                    mapTypeControl: false,
+                    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"), myOptions);
+                var infoWindow = new google.maps.InfoWindow;
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: "Usted está aquí."
+                });
+                if (sessionStorage) {
+                    if (sessionStorage.getItem("xmlDoc")) {
+                        cines = JSON.parse(sessionStorage.getItem("xmlDoc"));
+                    } else {
+                        try {
+                            xmlDoc = importXML("../xml/cines.xml");
+                            var markers = xmlDoc.documentElement.getElementsByTagName("marker");
+                            for (var i = 0; i < markers.length; i++) {
+                                try {
+                                    var cineObject = new Object();
+                                    cineObject.name = markers[i].getAttribute("name");
+                                    cineObject.address = markers[i].getAttribute("address");
+                                    cineObject.lat = parseFloat(markers[i].getAttribute("lat"));
+                                    cineObject.lng = parseFloat(markers[i].getAttribute("lng"));
+                                    cineObject.html = "<b>" + cineObject.name + "</b><br/>" + cineObject.address;
+                                    cines.push(cineObject);
+                                } catch (e) {
+                                    error("Se produjo un error en la carga de los datos");
+                                }
+                            }
+                            sessionStorage.setItem("xmlDoc", JSON.stringify(cines));
+                        } catch (e) {
+                            error("Se produjo un error en la carga de los datos");
+                        }
+                    }
+                } else {
+                    xmlDoc = importXML("xml/cines.xml");
+                    var markers = xmlDoc.documentElement.getElementsByTagName("marker");
+                    for (var i = 0; i < markers.length; i++) {
+                        try {
+                            var cineObject = new Object();
+                            cineObject.name = markers[i].getAttribute("name");
+                            cineObject.address = markers[i].getAttribute("address");
+                            cineObject.lat = parseFloat(markers[i].getAttribute("lat"));
+                            cineObject.lng = parseFloat(markers[i].getAttribute("lng")),
+                                    cineObject.html = "<b>" + cineObject.name + "</b><br/>" + cineObject.address;
+                            cines.push(cineObject);
+                        } catch (e) {
+                            error("Se produjo un error en la carga de los datos");
+                        }
+                    }
+                }
+
+                try {
+                    for (var i = 0; i < cines.length; i++) {
+                        var name = cines[i].name;
+                        var address = cines[i].adress;
+                        var point = new google.maps.LatLng(
+                                parseFloat(cines[i].lat),
+                                parseFloat(cines[i].lng));
+                        var html = cines[i].html;
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: point,
+                            icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
+                        });
+                        infoCine(marker, map, infoWindow, html);
+                    }
+                }
+                catch (e) {
+                    error("Se produjo un error en la carga de los datos");
+                }
+            }
+
+            function error(msg) {
+                var status = document.getElementById('status');
+                status.innerHTML = msg;
+            }
+
+            function handle_errors(errorobj) {
+                switch (errorobj.code) {
+                    case errorobj.PERMISSION_DENIED:
+                        error("Usted no ha compartido su ubicación");
+                        break;
+                    case errorobj.POSITION_UNAVAILABLE:
+                        error("No es posible detectar su ubicación");
+                        break;
+                    case errorobj.TIMEOUT:
+                        error("Tiempo de espera excedido para detectar su ubicación");
+                        break;
+                    default:
+                        error("Error al detectar su ubicación");
+                        break;
+                }
+            }
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, handle_errors, {maximumAge: 60000, timeout: 4000});
+            } else {
+                error('Su navegador no tiene soporte para su geolocalización');
+            }
+        </script>
+        <style>
+            .ui-header .ui-title, .ui-footer .ui-title {
+                margin-right: 0 !important; margin-left: 0 !important;
+            }
+        </style>
+    </head> 
+    <body> 
+        <div data-role="page" id="cines" data-title="PeliculasNow! - Cines">
+            <div data-role="header" data-position="fixed" data-id="nav_header">
+                <h1 id="status">Cines más cercanos</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="index.html" rel="external">Estrenos</a></li>
+                        <li><a href="cines.html" class="ui-btn-active ui-btn-active ui-state-persist" rel="external">Cines</a></li>
+                        <li><a href="trailers.html" data-transition="slide" rel="external">Trailers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" id="map">
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="nav_footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html" data-rel="dialog" data-transition="pop">About</a>
+                        <li><a href="contacto.html">Contacto</a>    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

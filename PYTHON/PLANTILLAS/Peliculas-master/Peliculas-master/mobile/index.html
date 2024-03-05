@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>PeliculasNow!</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <style>
+            .ui-header .ui-title, .ui-footer .ui-title {
+                margin-right: 0 !important; margin-left: 0 !important;
+            }
+            .movies {
+                padding-left: 70px !important;
+            }
+        </style>
+    </head> 
+    <body> 
+        <div data-role="page" id="inicio" data-title="PeliculasNow!" data-cache="false">
+            <div data-role="header" data-position="fixed" data-id="nav_header">
+                <h1>Próximos Estrenos</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="index.html" class="ui-btn-active ui-state-persist" rel="external">Estrenos</a></li>
+                        <li><a href="cines.html" rel="external">Cines</a></li>
+                        <li><a href="trailers.html" rel="external">Trailers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview">
+                    <li>
+                        <a href="estrenos/spiderman.html" class="movies" data-rel="dialog" data-transition="pop">
+                            <img alt="The Amazing Spider-Man" src="../img/spiderman.jpg" />
+                            <h3 class="ui-li-heading">The Amazing Spider-Man</h3>
+                            <p class="ui-li-desc">Acción,Drama,Fantasia,Ciencia Ficción</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="estrenos/lego-3d.html" class="movies" data-rel="dialog" data-transition="pop">
+                            <img alt="The Lego Movie 3D" src="../img/legomovie.jpg" />
+                            <h3 class="ui-li-heading">The Lego Movie 3D</h3>
+                            <p class="ui-li-desc">3D, Animación</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="estrenos/monuments-men.html" class="movies" data-rel="dialog" data-transition="pop">
+                            <img alt="The Monuments Men" src="../img/monumentsmen.jpg" />
+                            <h3 class="ui-li-heading">The Monuments Men</h3>
+                            <p class="ui-li-desc">Acción/Aventura, Documental, Suspense/Thriller</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="estrenos/vampire-academy.html" class="movies" data-rel="dialog" data-transition="pop">
+                            <img alt="Vampire Academy" src="../img/vampireacademy.jpg" />
+                            <h3 class="ui-li-heading">Vampire Academy</h3>
+                            <p class="ui-li-desc">Acción/Aventura, Sci-Fi/Fantasía</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="nav_footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html">About</a>
+                        <li><a href="contacto.html" data-rel="dialog" data-transition="pop">Contacto</a>    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

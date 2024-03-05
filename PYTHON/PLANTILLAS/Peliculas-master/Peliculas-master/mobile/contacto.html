@@ -1,0 +1,97 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>PeliculasNow!</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#form_contacto').submit(function(event) {
+                    event.preventDefault();
+                    $('#message').addClass("valid");
+                    $('#message').text("Su mensaje ha sido correctamente enviado");
+                });
+            });
+        </script>
+        <style>
+            .ui-header .ui-title, .ui-footer .ui-title {
+                margin-right: 0 !important; margin-left: 0 !important;
+            }
+            #form_contacto input:required:valid, .contact_form textarea:required:valid {
+                box-shadow: 0 0 5px #5cd053;
+                border-color: green;
+            }
+            #form_contacto input:focus:invalid, .contact_form textarea:focus:invalid {
+                box-shadow: 0 0 5px #d45252;
+                border-color: red;
+            }
+            #message {
+                visibility:hidden;
+            }
+            #message.valid {
+                visibility: visible;
+                border: 1px solid #CCC;
+                color: green;
+                padding: 10px;
+                font-size: 10px;
+                margin:30px;
+            }
+            .ui-input-text{
+                border-radius: 0 !important;
+            }
+        </style>
+    </head> 
+    <body> 
+        <div data-role="page" id="contacto" data-title="PeliculasNow! - Contacta con nosotros">
+            <div data-role="header" data-position="fixed" data-id="nav_header">
+                <h1>Contacta con nosotros</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="index.html" rel="external">Estrenos</a></li>
+                        <li><a href="cines.html" rel="external">Cines</a></li>
+                        <li><a href="trailers.html" rel="external">Trailers</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+                <span id="message"></span>
+                <form id="form_contacto" name="form_contacto" action="#" method="post" data-ajax = "false">
+                    <fieldset>
+                        <div data-role="fieldcontain">
+                            <label for="name">Nombre:</label>
+                            <input type="text" name="name" id="name" placeholder="Tu Nombre" required />
+                        </div>
+
+                        <div data-role="fieldcontain">
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" id="email" placeholder="Tu Email" required />
+                        </div>
+
+                        <div data-role="fieldcontain">
+                            <label for="website">Sitio Web:</label>
+                            <input type="url" name="website" id="website" placeholder="Tu Sitio Web" required />
+                        </div>
+
+                        <div data-role="fieldcontain">
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea name="Mensaje" id="mensaje" cols="40" rows="6" required></textarea>
+                        </div>
+                        <button id="submit" type="submit">Enviar</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed" data-id="nav_footer">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="about.html" data-rel="dialog" data-transition="pop">About</a>
+                        <li><a href="contacto.html" class="ui-btn-active ui-state-persist">Contacto</a>    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
