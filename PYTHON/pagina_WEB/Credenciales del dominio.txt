@@ -1,0 +1,44 @@
+﻿Proyecto CAC  (Polo Robles Argentina)
+
+
+*********************************
+***    CLAVE CORREO     ***
+*********************************
+Nombre: Proyecto Codo a Codo
+Correo: codoacodoproyecto@gmail.com
+Clave: ThQl3a%n
+
+
+*****************************************
+***    CLAVE ADMIN DOMINIO    ***
+*****************************************
+
+
+https://dash.infinityfree.com/login
+
+
+LABEL: Pagina para PoloRoblesArgentina
+WEBSITE IP: 185.27.134.99
+HOSTING VOLUME: vol13_8
+HOME DIRECTORY: /home/vol13_8/infinityfree.com/if0_36189870
+CREATION DATE: 2024-03-19
+
+
+Username: if0_36189870
+Password: RTXH15P91yq2
+Label: Pagina para PoloRoblesArgentina
+Domain: poloroblesargentina.wuaze.com
+Correo:  codoacodoproyecto@gmail.com
+Clave: V1lB4%qk
+Dominio: poloroblesargentina.wuaze.com
+
+
+***************************
+***   CLAVES FTP    ***
+***************************
+
+
+FTP USERNAME: if0_36189870
+FTP PASSWORD: RTXH15P91yq2 
+FTP HOSTNAME: ftpupload.net
+FTP PORT (OPTIONAL): 21
