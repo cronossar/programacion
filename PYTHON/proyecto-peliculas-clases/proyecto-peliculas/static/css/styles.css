@@ -1,29 +1,51 @@
+
 :root {
 /* Variables de css */
     --bg-color:#181419;
     --color: #fff;
 }
+
+/* selector universal */
+:root {
+    --bg-color: #181419;
+    --color: green;
+}
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     background-color: var(--bg-color);
     color: var(--color);
+
+
+body {
+    background-color: #181419;
+    color: white;
+
     font-size: 24px;
     font-family: Nunito, Georgia;
 }
+
 
 header {
     position: fixed;
 }
 
+
 a {
     text-decoration: none;
     color: blue;
+
     font-size: 1rem;
+
+    font-size: 1rem
+
 }
 
 
