@@ -30,3 +30,7 @@ label {
 .color-distinto {
     color: red;
 }
+
+.relleno {
+    font-variation-settings:'FILL' 1
+}
