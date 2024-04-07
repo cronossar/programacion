@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugador de Polo 1 - Polo Robles</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+</head>
+<DIV class="size-bar">
+<form action="/search" method="get" class="search-form">
+    <input type="text" name="q" class="search-input" placeholder="Buscar...">
+    <button type="submit" class="search-button">Buscar</button>
+</form>
+</DIV>
+<body>
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <!-- Logo de la empresa -->
+                <div class="header-logo">
+                    <img src="../img/pre-logo.png" alt="Logo de la empresa">
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <div class="container">
+                <!-- Menú -->
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../catalogo.html">Catálogo</a></li>
+                        <li><a href="#">Carrito de compra</a></li>
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Ubicación de la tienda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div>
+            <h1>Jugador de Polo Taqueando N°1</h1>
+            <h3>Algo</h3>
+
+        </div>
+        <div class="slider">
+            <span id="slide-1"></span>
+            <span id="slide-2"></span>
+            <span id="slide-3"></span>
+            <div class="image-container">
+              <img src="../img/esculturas/JP1/PR 001.JPG" class="slide" width="500" height="300" />
+              <img src="../img/esculturas/JP1/PR 001 (1).JPG" class="slide" width="500" height="300" />
+              <img src="../img/esculturas/JP1/PR 001 (2).JPG" class="slide" width="500" height="300" />
+            </div>
+            <div class="buttons">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+            </div>
+          </div>
+        <section class="dimensiones">
+            <div>
+                <h2>Dimensiones</h2>
+                <table >
+                    <tr>
+                        <td>Materiales</td>
+                        <td>Resina en base de madera</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensiones</td>
+                        <td>9cm x 17cm x 17cm</td>
+                    </tr>
+                </table>
+            </div>
+
+           
+
+        </section>
+
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Acerca de Polo</a></li>
+                    <li><a href="#">Buscar</a></li>
+                    <li><a href="#">Trabajar en Polo</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Contacto con Polo</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <ul>
+                    <li><a href="https://m.facebook.com/profile.php?id=100046452861886"><img src="../img/rrss/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="https://www.instagram.com/Polo.Robles.Argentina/"><img src="../img/rrss/instagram.png" alt="Instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright Polo Robles Argentina - 2024. Todos los derechos reservados.
+                Defensa de las y los consumidores. Para reclamos <a href="#">ingresá acá</a>.
+            </p>
+        </div>
+    </footer>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
