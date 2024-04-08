@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Polo Robles Esculturas</title>
-        <link rel="stylesheet" href="css/styles.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Boxicons JS -->
-        <link href='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js' rel='stylesheet'>
-    </head>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<DIV class="size-bar">
+    <form action="/search" method="get" class="search-form">
+        <input type="text" name="q" class="search-input" placeholder="Buscar...">
+        <button type="submit" class="search-button">Buscar</button>
+    </form>
+    </DIV>
 <body>
     <!-- Navegacion y logo -->
     
-    <header class="hero">
-        <nav class="nav-hero">
-            <div class="container nav-container">
-                <div class="logo">
-                    <div class="container-loguito">
-                        <img src="img/pre-logo.png" class="loguito">
-                    </div>
-                    <div class="logo-name">
-                        <h2>Esculturas bien argentinas</h2>
-                    </div>
-                    
-                </div>
-                    <div class="links">
-                    <a href="#" class="link">Inicio</a>
-                    <a href="#" class="link">Servicios</a>
-                    <a href="#" class="link">Proyectos</a>
-                    <a href="#" class="link">Clientes</a>
-                    <a href="#" class="link link-active">Contacto</a>
-                    <i class='bx bx-search-alt'></i>
-                    <input type="text" placeholder="Busqueda..." >
-                     
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <!-- Logo de la empresa -->
+                <div class="header-logo">
+                    <img src="./img/pre-logo.png" alt="Logo de la empresa">
                 </div>
             </div>
-        </nav>
-        
+        </div>
+        <div class="bottom-bar">
+            <div class="container">
+                <!-- Menú -->
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="./index.html">Inicio</a></li>
+                        <li><a href="./catalogo.html">Catálogo</a></li>
+                        <li><a href="#">Carrito de compra</a></li>
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Ubicación de la tienda</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
     <!-- Mi parte principal -->
     <main>
@@ -48,12 +49,17 @@
                 Decorá tu hogar con el mejor estilo de campo.
             </h3>
         </section>
-        
+        <!-- busqueda en la plataforma -->
+        <section id="search">
+            <h2>¿Qué estas buscando?</h2>
+            <input type="text" placeholder="Busqueda..." >
+        </section>
+       
             <!--cada objeto-->
             <div class="contenedor-objetos">
                 <div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>
@@ -65,7 +71,7 @@
                 </div>
                 <div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>
@@ -76,7 +82,7 @@
                     </div>
                 </div><div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>
@@ -87,7 +93,7 @@
                     </div>
                 </div><div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>
@@ -98,7 +104,7 @@
                     </div>
                 </div><div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>
@@ -109,7 +115,7 @@
                     </div>
                 </div><div class="objeto">
                     <figure>
-                        <!-- <a href="./templates/JP1" target="_blank"> -->
+                        <a href="./templates/JP1" target="_blank">
                         <img src="./img/esculturas/JP1/PR 001.JPG" alt="Jugador de Polo 1">
                     </a>
                     </figure>

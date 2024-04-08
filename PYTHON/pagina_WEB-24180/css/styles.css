@@ -24,30 +24,14 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Establece el alto mínimo de la ventana del navegador */
+    font-family: 'Roboto', sans-serif;
 }
 
 main {
     flex-grow: 1; /* Hace que el contenido principal crezca para ocupar todo el espacio disponible */
+    background-color: #1a1b1f;
 }
 
-/* .container {
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-/* Estilos del header */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    font-family: 'Roboto', sans-serif;
-    }
 /* INICIA HEADER */
 .container{
     width: 90%;
@@ -84,7 +68,7 @@ body{
 
 .logo{
     display:flex;
-    width: 50vw;
+    width: 30vw;
     
     
 }
@@ -110,6 +94,8 @@ body{
 }
 
 .link{
+    display: flex;
+    align-items: center;
     display: inline-block;
     color: inherit;
     text-decoration: none;
@@ -172,69 +158,7 @@ body{
     background-color: #0070c9;
     color: #fff;
 }
-
-/* Estilos del footer */
-#footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center; /* Alinea el texto al centro */
-}
-
-.footer-social ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.footer-social ul li {
-    display: inline-block; /* Para que los elementos se muestren en línea */
-    margin-right: 20px; /* Espacio entre los iconos */
-}
-
-.footer-social ul li:last-child {
-    margin-right: 0; /* Quita el margen derecho del último elemento para evitar espacios adicionales */
-}
-
-.footer-social ul li img {
-    width: 32px; /* Establece el ancho de los iconos */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-a {
-    color: #ffffff; /* Cambia el color del texto de todos los enlaces a blanco */
-}
-.search-form {
-    display: flex;
-    align-items: center;
-}
-
-.search-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 5px;
-    flex: 1;
-}
-
-.search-button {
-    padding: 0;
-    background-color: white;
-    border:1px solid #ccc;
-    border-radius: 1000px;
-    width: 70px;
-    cursor: pointer;
-}
-
-.search-button img {
-    width: 20px; /* ajusta el tamaño del icono según sea necesario */
-}
-.size-bar{
-    padding: 5px 500px;
-    
-}
-
+/* CONTENEDOR DE IMAGENES CATALOGO */
 /* Gonzalo */
 
 .contenedor-objetos{
@@ -339,3 +263,66 @@ a {
       background-color: rgba(240, 238, 238, 0.938);
   border: 1px solid black;
 border-collapse: collapse;}
+
+/* Estilos del footer */
+#footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center; /* Alinea el texto al centro */
+}
+
+.footer-social ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-social ul li {
+    display: inline-block; /* Para que los elementos se muestren en línea */
+    margin-right: 20px; /* Espacio entre los iconos */
+}
+
+.footer-social ul li:last-child {
+    margin-right: 0; /* Quita el margen derecho del último elemento para evitar espacios adicionales */
+}
+
+.footer-social ul li img {
+    width: 32px; /* Establece el ancho de los iconos */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+a {
+    color: #ffffff; /* Cambia el color del texto de todos los enlaces a blanco */
+}
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+    flex: 1;
+}
+
+.search-button {
+    padding: 0;
+    background-color: white;
+    border:1px solid #ccc;
+    border-radius: 1000px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.search-button img {
+    width: 20px; /* ajusta el tamaño del icono según sea necesario */
+}
+.size-bar{
+    padding: 5px 500px;
+    
+}
+
