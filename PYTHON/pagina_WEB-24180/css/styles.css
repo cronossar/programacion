@@ -69,8 +69,8 @@ main {
 .logo{
     display:flex;
     width: 30vw;
-    
-    
+
+
 }
 
 .logo-name{
@@ -80,17 +80,17 @@ main {
     justify-content: left;
     flex-grow:1 ;
     padding-left: 10px;
-   
-   
+
+
 }
 
 .loguito{
-    
+
     display: flex;
     align-items: center;
     width: 80px; height: 80px;
-   
-   
+
+
 }
 
 .link{
@@ -125,6 +125,9 @@ main {
     width: 35%;
     max-height: 100vh;
 }
+/* .mockup:hover{
+    transform: scale(1.2);
+} */
 
 .hero-textos{
     width: 48%;
@@ -154,10 +157,7 @@ main {
 }
 
 /* FINAL DEL HEADER */
-.btn-primary {
-    background-color: #0070c9;
-    color: #fff;
-}
+
 /* CONTENEDOR DE IMAGENES CATALOGO */
 /* Gonzalo */
 
@@ -260,69 +260,396 @@ main {
     background-color: whitesmoke;
   }
   table, td {
-      background-color: rgba(240, 238, 238, 0.938);
-  border: 1px solid black;
-border-collapse: collapse;}
+    background-color: rgba(240, 238, 238, 0.938);
+    border: 1px solid black;
+    border-collapse: collapse;}
 
-/* Estilos del footer */
-#footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center; /* Alinea el texto al centro */
+/* check */
+.subtitle{
+    font-size: 42px;
 }
 
-.footer-social ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.subtitle--modifier{
+    text-align: center;
+    margin-bottom: 16px;
 }
 
-.footer-social ul li {
-    display: inline-block; /* Para que los elementos se muestren en línea */
-    margin-right: 20px; /* Espacio entre los iconos */
+.copy__section{
+    color: var(--black2);
+    font-size: 22px;
+    line-height: 32px;
+    margin-bottom: 60px;
 }
 
-.footer-social ul li:last-child {
-    margin-right: 0; /* Quita el margen derecho del último elemento para evitar espacios adicionales */
+.copy__section--modifier{
+    text-align: center;
+    margin-bottom: 32px;
 }
 
-.footer-social ul li img {
-    width: 32px; /* Establece el ancho de los iconos */
-    height: auto; /* Mantiene la proporción de la imagen */
-}
-
-a {
-    color: #ffffff; /* Cambia el color del texto de todos los enlaces a blanco */
-}
-.search-form {
+.check{
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
-.search-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-right: 5px;
-    flex: 1;
+.check__item{
+    width: 30%;
+    padding-right: 10px;
+    display: flex;
+    border-right: 2px solid var(--black2);
 }
 
-.search-button {
-    padding: 0;
-    background-color: white;
-    border:1px solid #ccc;
-    border-radius: 1000px;
-    width: 70px;
+.bx-check{
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-right: 20px;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.check__number{
+    font-weight: 700;
+}
+
+.check__copy{
+    font-weight: 300;
+}
+/* CUADRO INGRESE EMAIL/COMIENCE AHORA */
+.newsletter{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 40px;
+    height: auto;
+    font-family: inherit;
+    position: relative;
+    border-radius: 6px;
+}
+
+.newsletter--modifier{
+    margin: 40;
+    width: 45%;
+}
+
+.newsletter__input{
+    width: 100%;
+    height: 100%;
+    padding: 22px 10px;
+    outline: none;
+    font-family: inherit;
+    border-radius: 6px;
+    border: 1px solid var(--black1)
+}
+
+.newsletter__submit{
+    position: absolute;
+    right: 8px;
+    top: 10%;
+    height: 80%;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    color: #fff;
+    padding: 0 15px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 700;
     cursor: pointer;
 }
 
-.search-button img {
-    width: 20px; /* ajusta el tamaño del icono según sea necesario */
+/* Estilos del footer */
+.footer{
+    background: #fafafa;
 }
-.size-bar{
-    padding: 5px 500px;
-    
+.title__footer{
+    text-align: center;
+    padding-bottom: 10px;
 }
 
+
+
+
+.get-email{
+    width: 100%;
+    justify-content: space-evenly;
+    flex-wrap: 10;
+
+    padding-bottom: 30px;
+}
+
+.socialmedia{
+    width: fit-content;
+    position: relative;
+    margin-top: 24px;
+    margin-left: 410px;
+    display: flex;
+    color: var(--black2);
+}
+
+.socialmedia__icon{
+    font-size: 28px;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+.socialmedia__legend{
+    color: var(--black2);
+    margin-right: 16px;
+}
+
+
+
+/* TIPOS DE PANTALLA */
+@media screen and (max-width:900px){
+    .mockup{
+        width: 600px;
+        height: auto;
+    }
+
+    .title{
+        font-size: 50px;
+    }
+
+    .copy{
+        font-size: 22px;
+    }
+
+    .cta{
+        padding: 15px 22px;
+    }
+
+    .container-cards{
+        justify-content: space-evenly;
+    }
+
+    .services .card{
+        width: 45%;
+    }
+
+    .background{
+        width: 52%;
+    }
+
+    .card{
+        width: 42%;
+    }
+
+    .testimony-container{
+        justify-content: space-evenly;
+    }
+
+    .testimony__card{
+        width: 45%;
+    }
+
+    .check__item{
+        width: 45%;
+        margin-bottom: 35px;
+    }
+
+    .newsletter{
+        width: 80%;
+    }
+
+    .download{
+        width: 100%;
+    }
+
+    .download__app{
+        justify-content: space-between;
+    }
+
+    .download__item{
+        width: 45%;
+    }
+
+    .get-email{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .socialmedia__icon{
+        font-size: 18px;
+    }
+
+    .socialmedia__legend{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:700px){
+    main .container,
+    footer .container{
+        padding: 60px 0;
+    }
+
+    .nav__container{
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .nav__hero{
+        height: auto;
+    }
+
+    .logo{
+        padding: 15px 0 ;
+        text-align: center;
+    }
+
+    .links{
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .link{
+        padding: 7px 10px;
+    }
+
+
+    .hero__main{
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        min-height: 70px;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .hero__textos{
+        width: 100%;
+        text-align: center;
+    }
+
+    .mockup{
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .title{
+        font-size: 35px;
+    }
+
+    .copy{
+        font-size: 20px;
+    }
+
+    .subtitle{
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .copy__section{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .services .card{
+        width: 80%;
+    }
+
+    .container-bg{
+        justify-content: space-evenly;
+    }
+
+    .card{
+        margin-bottom: 40px;
+        width: 65%;
+    }
+
+    .card__title{
+        font-size: 35px;
+    }
+
+    .card__button{
+        width: 100%;
+    }
+
+    .background{
+        width: 65%;
+        margin-bottom: 40px;
+    }
+
+    .background__copy{
+        display: none;
+    }
+
+    .testimony__card{
+        width: 65%;
+    }
+
+    .testimony__name{
+        font-size: 20px;
+    }
+
+    .container--modifier{
+        width: 80%;
+    }
+
+    .item__contact{
+        width: 100%;
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width:500px){
+    .mockup{
+        width: 80%;
+        margin-bottom: 15px;
+    }
+
+    .services .card{
+        width: 95%;
+    }
+
+    .card{
+        width: 95%;
+    }
+
+    .background{
+        width: 95%;
+    }
+
+    .testimony__card{
+        width: 95%;
+    }
+
+    .testimony__history{
+        font-size: 20px;
+    }
+
+    .container--modifier{
+        width: 90%;
+    }
+
+    .newsletter{
+        width: 100%;
+        display: none;
+    }
+
+    .newsletter--modifier{
+        display: block;
+    }
+
+    .check__item{
+        width: 100%;
+        border: none;
+        padding: none;
+        justify-content: center;
+    }
+
+    .download__item{
+        width: 49%;
+    }
+
+    .download__title{
+        font-size: 16px;
+    }
+
+    .download__logo{
+        font-size: 30px;
+    }
+}
