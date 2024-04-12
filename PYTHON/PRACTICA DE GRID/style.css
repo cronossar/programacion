@@ -1,0 +1,90 @@
+/* VIDEO EXPLICATIVO https://www.youtube.com/watch?v=9w3gy2dYN_E */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #ee9d9d;
+    color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+
+.contenedor > div,
+.contenedor .navegador,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer{
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenedor .navegador{
+    background: #12203c;
+    color: white;
+    /* Decirle a esta columna que ocupe su lugar arriba,
+     desde columna 1 a 4, esto es si conocemos la cantidad de columnas,
+     sino solo poner -1 y ocupara todas*/
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.contenedor .contenido{
+    grid-column: span 2;
+}
+
+.contenedor .sidebar{
+    grid-column: 3 / 4;
+    background: #faa43d;
+    /* cuatro items para centrar contenido vertical y horizontal */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* para tomar una linea mas o es lo mismo 2 / 4 */
+    grid-row: span 2;
+    /* tamaño minimo fijo */
+    min-height: 100px;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2{
+    background: #55a8fd;
+    color:white;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .footer{
+    background: #12203c;
+    color: #fff;
+    grid-column: span 3;
+}
+
+
+@media screen and (max-width:768px){
+    .contenedor .contenido{
+        grid-column: 1 / -1;
+    }
+
+    .contenedor .sidebar{
+        grid-column: 1 / -1;
+    }
+}
+
+
