@@ -1,37 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style_area.css">
+    <link rel="stylesheet" href="img/pre-logo.png">
+    <script src="carrito.js"></script>
+    
+    <title>Tratando de que sea Responsive</title>
 </head>
+
 <body>
     <div class="contenedor">
         <header class="navegador">
-            <h1>HEADER</h1>
+            <div class="logo">
+                <img src="img/pre-logo.png" class="loguito">
+            </div>
+            
+            <div class="texto-logo">P  o l o  R o b l e s</div>
 
+            <!-- MENU TORTA -->
+            <div class="bars">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            
+            <nav class="nav-bar">
+                <ul>
+                    <li>
+                    <a href="#" class="active">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="#">Nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            
         </header>
-
+        <script src="script.js"></script>
         <main class="contenido">
             <h1>Contenido</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                <br>Amet perspiciatis veniam illum eos dolor repellat quasi dolores dolore corporis 
-                <br> rem voluptatibus quas architecto autem molestiae ratione quisquam culpa, tenetur nihil!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                <br>Amet perspiciatis veniam illum eos dolor repellat quasi dolores dolore corporis 
-                <br> rem voluptatibus quas architecto autem molestiae ratione quisquam culpa, tenetur nihil!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                <br><br>Amet perspiciatis veniam illum eos dolor repellat quasi dolores dolore corporis 
-                <br> rem voluptatibus quas architecto autem molestiae ratione quisquam culpa, tenetur nihil!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                <br>Amet perspiciatis veniam illum eos dolor repellat quasi dolores dolore corporis 
-                <br> rem voluptatibus quas architecto autem molestiae ratione quisquam culpa, tenetur nihil!</p>
+            <div class="contenedor-items">
+                <div class="item">
+                    <span class="titulo-item">Equitación</span>
+                    <img src="img/equitacion.png" alt="" class="img-item">
+                    <span class="precio-item">$15.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Cuadro tema Polo</span>
+                    <img src="img/cuadro_de_polo.png" alt="" class="img-item">
+                    <span class="precio-item">$25.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Polo Taqueando 01</span>
+                    <img src="img/PR_001.png" alt="" class="img-item">
+                    <span class="precio-item">$35.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Polo Taqueando 02</span>
+                    <img src="img/PR_002.png" alt="" class="img-item">
+                    <span class="precio-item">$18.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Polo Taqueando 03</span>
+                    <img src="img/PR_003.png" alt="" class="img-item">
+                    <span class="precio-item">$32.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Polo Taqueando 04</span>
+                    <img src="img/PR_004.png" alt="" class="img-item">
+                    <span class="precio-item">$54.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Caballo Criollo</span>
+                    <img src="img/PR_005.png" alt="" class="img-item">
+                    <span class="precio-item">$32.000</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Caballo Arabe</span>
+                    <img src="img/PR_006.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Arabe grande</span>
+                    <img src="img/PR_007.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Arabe chico</span>
+                    <img src="img/PR_008.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Jockey chico</span>
+                    <img src="img/PR_009.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Jockey grande</span>
+                    <img src="img/PR_011.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Jugador de Polo</span>
+                    <img src="img/PR_012.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Petiso de Polo mediano</span>
+                    <img src="img/PR_013.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Toro Hereford</span>
+                    <img src="img/PR_014.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Polista en reposo</span>
+                    <img src="img/PR_015.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+                <div class="item">
+                    <span class="titulo-item">Yegua y potrillo</span>
+                    <img src="img/PR_018.png" alt="" class="img-item">
+                    <span class="precio-item">$42.800</span>
+                    <button class="boton-item">Agregar al Carrito</button>
+                </div>
+            </div>
+            <!-- Carrito de Compras -->
+            <div class="carrito" id="carrito">
+                <div class="header-carrito">
+                    <h2>Tu Carrito</h2>
+                </div>
+    
+                <div class="carrito-items">
+<!--                     
+                    <div class="carrito-item">
+                        <img src="img/boxengasse.png" width="80px" alt="">
+                        <div class="carrito-item-detalles">
+                            <span class="carrito-item-titulo">Box Engasse</span>
+                            <div class="selector-cantidad">
+                                <i class="fa-solid fa-minus restar-cantidad"></i>
+                                <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                                <i class="fa-solid fa-plus sumar-cantidad"></i>
+                            </div>
+                            <span class="carrito-item-precio">$15.000,00</span>
+                        </div>
+                       <span class="btn-eliminar">
+                            <i class="fa-solid fa-trash"></i>
+                       </span>
+                    </div>
+                    <div class="carrito-item">
+                        <img src="img/skinglam.png" width="80px" alt="">
+                        <div class="carrito-item-detalles">
+                            <span class="carrito-item-titulo">Skin Glam</span>
+                            <div class="selector-cantidad">
+                                <i class="fa-solid fa-minus restar-cantidad"></i>
+                                <input type="text" value="3" class="carrito-item-cantidad" disabled>
+                                <i class="fa-solid fa-plus sumar-cantidad"></i>
+                            </div>
+                            <span class="carrito-item-precio">$18.000,00</span>
+                        </div>
+                       <button class="btn-eliminar">
+                            <i class="fa-solid fa-trash"></i>
+                       </button>
+                    </div>
+                     -->
+                </div>
+                <div class="carrito-total">
+                    <div class="fila">
+                        <strong>Tu Total</strong>
+                        <span class="carrito-precio-total">
+                            $120.000,00
+                        </span>
+                    </div>
+                    <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+                </div>
+            </div>
         </main>
-        
+
         <aside class="sidebar">
             <h1>Sidebar</h1>
         </aside>
@@ -39,9 +222,9 @@
         <div class="widget-1">
             <h3>WIDGET-1</h3>
         </div>
-        
+
         <div class="widget-2">
-            <h3>WIDGET-1</h3>
+            <h3>WIDGET-2</h3>
         </div>
 
         <footer class="footer">
@@ -49,6 +232,7 @@
         </footer>
 
     </div>
-
+    
 </body>
+
 </html>

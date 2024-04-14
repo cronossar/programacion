@@ -85,6 +85,11 @@ body{
     .contenedor .sidebar{
         grid-column: 1 / -1;
     }
+
+    .contenedor .widget-1,
+.contenedor .widget-2{
+    grid-column: span 2;
+}
 }
 
 
