@@ -218,7 +218,7 @@ body {
   border: 1px solid #666;
   width: 35%;
   margin-top: 150px;
-  margin-left: 710px;
+  margin-left: 770px;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: auto;
@@ -347,6 +347,34 @@ body {
   grid-area: footer;
 }
 
+
+@media screen and (max-width: 1061px) {
+  .contenedor {
+    grid-template-areas:
+      "navegador navegador navegador"
+      "contenido contenido contenido"
+      "sidebar sidebar sidebar"
+      "widget-1 widget-1 widget-2"
+      "footer footer footer";
+  }
+
+  .texto-logo{
+    font-size: x-small;
+  }
+
+  .navegador{
+    padding: 0px 30px;
+  }
+
+  
+
+  .contenido .carrito{
+      width: 80%;
+      margin-left: 40px;
+      margin-top: 30px;
+      border-radius: 10px;
+      position: sticky;
+  }
 
   @media screen and (max-width: 772px) {
     .contenedor {
