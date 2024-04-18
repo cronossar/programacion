@@ -427,7 +427,19 @@ footer{
     }
 }
 
+@media (max-width: 1070px){
+.logo img{
+    width: 54px;
+}
+}
+
+
 @media (max-width: 900px){
+
+    .logo img{
+        display: none;
+    }
+
     .grid .item{
         height: 150px;
     }
