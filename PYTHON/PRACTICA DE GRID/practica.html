@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-    //USO DE CONDICIONALES IF - ELSE
+    // //USO DE CONDICIONALES IF - ELSE
     var nota = 7;
     console.log("El examen ha resultado:");
     // Condición
@@ -20,7 +20,7 @@
     }
     console.log("Estoy", calificacion);
 </script>
-
+<!-- // Estructuras de control SWITCH -->
 <script>
     var nota = 7;
     console.log("He realizado mi examen. Mi resultado es el siguiente:");
@@ -34,10 +34,60 @@
             break;
         case 7:
         case 6:
-        
+            calificacion = "Bien"
+            break
+        case 5: 
+            calificacion = "Suficiente"
+            break
+        case 4: 
+        case 3: 
+        case 2:
+        case 1: 
+        case 0: 
+            calificacion = "Insuficiente"
+            break;
+            default:
+                // cualquier otro caso
+                calificacion = "Nota Erronea"
+            break;
     }
-    console.log("Obtuve nota: ");
+    console.log("He obtenido un", calificacion)
+
+</script>
+
+<!-- //ESTRUCTURAS DE CONTROL CON "AND" -->
+<!-- <script>
+var altura = 0;
+var edad = 0;
+altura = parseFloat(prompt("Ingrese la altura"));
+edad = parseInt(prompt("Ingrese la edad"));
+if (altura > 1.30 && edad > 14) {
+    console.log("Cumple con los requisitos");
+} else {
+    console.log("No cumple con los requisitos");
+}   
+</script> -->
+<!-- //ESTRUCTURAS DE CONTROL CON "OR" -->
+<!-- <script>
+    var color;
+color = prompt("Ingrese el color del auto");
+if (color == "Rojo" || color == "Verde") {
+    console.log("El auto pertenece a la categoría A");
+} else{
+    console.log("El auto pertenece a la categoría B");
+}
+</script> -->
+
+<!-- ESTRUCTURAS DE CONTROL "BUCLES E ITERACCIONES" -->
+<script>
+    i = 0; // Inicialización de la variable contador
+// Condición: Mientras la variable contador sea menor de 5
+while (i < 5) {
+  console.log("Valor de i:", i);
+  i = i + 1; // Incrementamos el valor de i
+}
 </script>
 
 </body>
+
 </html>
